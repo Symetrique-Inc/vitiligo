@@ -1,0 +1,37 @@
+[
+  {
+    "id": "assumption-1",
+    "topic": "Prevalence Estimate",
+    "statement": "An estimated 70 million or more people worldwide live with vitiligo (0.5%–2.0% global prevalence).",
+    "clinicalBasis": "Extrapolated from worldwide epidemiological studies; ranges vary significantly by country (e.g. higher reported incidence in parts of India, lower in Nordic countries).",
+    "boardActionRequired": "Review whether to present a single 70M figure or a dynamic range (0.5% to 2.0% of world population, ~40M–160M) based on current Global Vitiligo Foundation consensus."
+  },
+  {
+    "id": "assumption-2",
+    "topic": "Hearing Loss Association",
+    "statement": "AAD notes an estimated 12%–38% of people with vitiligo have some degree of hearing loss due to inner ear melanocytes.",
+    "clinicalBasis": "Stria vascularis in the cochlea contains melanocytes essential for endocochlear potential. While subclinical sensorineural loss is documented in studies, routine audiometric screening is not universal in standard clinical practice.",
+    "boardActionRequired": "Confirm clinical phrasing so patients are advised of the association without inducing undue alarm or unwarranted urgent audiograms."
+  },
+  {
+    "id": "assumption-3",
+    "topic": "Thyroid Screening Cadence",
+    "statement": "Thyroid peroxidase antibodies (TPOAb) and TSH blood tests are recommended periodically for individuals with generalized vitiligo.",
+    "clinicalBasis": "Autoimmune thyroid disease is the most common comorbidity (15%–25% in various cohorts).",
+    "boardActionRequired": "Confirm whether the hub should specify a baseline check and annual or bi-annual interval for pediatric and adult cohorts."
+  },
+  {
+    "id": "assumption-4",
+    "topic": "Food and Diet Advice",
+    "statement": "There is no scientific evidence that specific food combinations (e.g. fish with milk or sour foods) cause or worsen vitiligo.",
+    "clinicalBasis": "Strong consensus in dermatology (IADVL, AAD, EADV); cultural dietary restrictions frequently cause nutritional deficiencies without affecting vitiligo course.",
+    "boardActionRequired": "Approve explicit anti-stigma messaging to encourage balanced nutrition without guilt."
+  },
+  {
+    "id": "assumption-5",
+    "topic": "Repigmentation Timeline & Expectations",
+    "statement": "Noticeable follicular repigmentation typically begins around 8 to 12 weeks of treatment; full response requires 6 to 12+ months.",
+    "clinicalBasis": "Dependent on anatomical site (acral vs facial), disease duration, and compliance.",
+    "boardActionRequired": "Approve standard disclaimers stating that acral (hands/feet) and mucosal areas may have limited repigmentation."
+  }
+]

@@ -1,0 +1,228 @@
+{
+  "en": {
+    "brand": {
+      "name": "VITILIGO HUB",
+      "tagline": "See Beyond the Skin",
+      "subline": "Clear information. Expert insights. Practical support.",
+      "quoteScript": "Different skin. Same dreams.",
+      "footerQuote": "Different journeys. Same strength."
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "understand": "Understand Vitiligo",
+      "myLife": "My Life & Daily Living",
+      "treatment": "Treatment & Care",
+      "expertInsights": "Expert Insights",
+      "resources": "Resources & Support",
+      "searchPlaceholder": "Search topics, questions, treatments...",
+      "findDoctor": "Find a Doctor",
+      "language": "Language"
+    },
+    "hero": {
+      "eyebrow": "THE GLOBAL VITILIGO HUB",
+      "title": "See Beyond the Skin",
+      "subtitle": "Clear information. Expert insights. Practical support.",
+      "lead": "Helping people around the world understand vitiligo and live with greater confidence.",
+      "ctaPrimary": "Explore Vitiligo →",
+      "ctaSecondary": "Watch our story"
+    },
+    "audiences": {
+      "title": "How can we help you today?",
+      "card1": {
+        "title": "I want to understand vitiligo",
+        "desc": "Facts, biology, myths and causes explained in simple words."
+      },
+      "card2": {
+        "title": "I am living with vitiligo",
+        "desc": "Daily life, emotional support, confidence, and community stories."
+      },
+      "card3": {
+        "title": "I am supporting someone",
+        "desc": "Guidance for parents, partners, families, and friends."
+      },
+      "card4": {
+        "title": "I am a healthcare professional",
+        "desc": "Clinical guidelines, research summaries, and patient resources."
+      }
+    },
+    "coreBelief": {
+      "quote": "Treatment is a choice. Camouflage is a choice. Showing your skin is a choice.",
+      "sub": "Different beliefs. Same need: accurate information without judgment."
+    },
+    "stats": {
+      "headline": "Millions of people worldwide live with vitiligo",
+      "number": "70M+",
+      "numberLabel": "estimated worldwide",
+      "explore": "Explore global data →"
+    },
+    "quickHelp": {
+      "title": "Get the right help",
+      "subtitle": "Find trusted resources in your area",
+      "derm": "Find a Dermatologist",
+      "centres": "Treatment Centres",
+      "groups": "Support Groups",
+      "trials": "Clinical Trials",
+      "mental": "Mental Health Support"
+    },
+    "stigmaSection": {
+      "badge": "Let's change the conversation",
+      "heroTitle": "Vitiligo changes the skin. It shouldn't change how the world sees you.",
+      "mythsTitle": "Myths vs Facts",
+      "mythsSubtitle": "Let's separate myth from reality.",
+      "notTrue": "Not true",
+      "fact": "Fact",
+      "sourceLabel": "Medical Source:"
+    },
+    "dermatologist": {
+      "title": "Why should I see a dermatologist?",
+      "subtitle": "A dermatologist is a medical doctor who specializes in the skin, hair and nails.",
+      "step1Title": "Get the diagnosis right",
+      "step1Desc": "Not every light patch is vitiligo. Conditions like tinea versicolor and post-inflammatory hypopigmentation can mimic vitiligo. Accurate diagnosis is essential.",
+      "step2Title": "Develop an individual treatment plan",
+      "step2Desc": "Several treatment options exist. Dermatologists tailor plans to restore colour, halt progression, or combine therapies effectively.",
+      "step3Title": "Address personal concerns and preferences",
+      "step3Desc": "Not everyone wants repigmentation. Some prefer treating, some camouflage, and some embrace natural skin as is.",
+      "step4Title": "Monitor for associated conditions",
+      "step4Desc": "Regular checks help screen for related autoimmune conditions like thyroid disease and offer timely specialist referrals."
+    },
+    "twoPerspectives": {
+      "eyebrow": "Two Perspectives. One Condition.",
+      "sub": "Different questions. Shared understanding.",
+      "patientTitle": "Patient Perspective",
+      "patientQuote": "I want my skin to look normal again. Will treatment work for me?",
+      "patientBtn": "Watch patient stories",
+      "doctorTitle": "Doctor Perspective",
+      "doctorQuote": "Treatment aims to control disease activity and restore pigmentation, but response varies by individual.",
+      "doctorBtn": "Watch doctor insights"
+    },
+    "ask": {
+      "title": "Have a question you're afraid to ask?",
+      "subtitle": "Ask anonymously. Get reliable answers from experts.",
+      "placeholder": "Type your question here...",
+      "submit": "Ask Anonymously",
+      "popular": "Popular questions:",
+      "weeklyTitle": "Answers from our experts — updated every week",
+      "disclaimer": "Safe, anonymous & confidential. We do not diagnose. Answers are reviewed by certified clinicians for educational purposes only."
+    },
+    "footer": {
+      "disclaimer": "Medical Disclaimer: The information on Vitiligo Hub is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified dermatologist or physician.",
+      "copyright": "© 2026 Vitiligo Hub. Supported by Global Vitiligo Research Alliance. All rights reserved.",
+      "accessibility": "WCAG 2.2 AA Compliant",
+      "languageToggle": "Switch Language"
+    }
+  },
+  "hi": {
+    "brand": {
+      "name": "विटिलिगो हब",
+      "tagline": "त्वचा से परे देखें",
+      "subline": "सटीक जानकारी। विशेषज्ञ अंतर्दृष्टि। व्यावहारिक सहायता।",
+      "quoteScript": "अलग त्वचा। वही सपने।",
+      "footerQuote": "अलग सफर। वही हौसला।"
+    },
+    "nav": {
+      "home": "होम",
+      "about": "हमारे बारे में",
+      "understand": "विटिलिगो को समझें",
+      "myLife": "मेरा जीवन और दिनचर्या",
+      "treatment": "उपचार और देखभाल",
+      "expertInsights": "विशेषज्ञ राय",
+      "resources": "संसाधन व सहायता",
+      "searchPlaceholder": "विषय, प्रश्न या उपचार खोजें...",
+      "findDoctor": "डॉक्टर खोजें",
+      "language": "भाषा"
+    },
+    "hero": {
+      "eyebrow": "द ग्लोबल विटिलिगो हब",
+      "title": "त्वचा से परे देखें",
+      "subtitle": "सटीक जानकारी। विशेषज्ञ अंतर्दृष्टि। व्यावहारिक सहायता।",
+      "lead": "दुनिया भर के लोगों को विटिलिगो को समझने और पूरे आत्मविश्वास के साथ जीने में मदद करना।",
+      "ctaPrimary": "विटिलिगो को जानें →",
+      "ctaSecondary": "हमारी कहानी देखें"
+    },
+    "audiences": {
+      "title": "आज हम आपकी क्या मदद कर सकते हैं?",
+      "card1": {
+        "title": "मैं विटिलिगो को समझना चाहता/चाहती हूँ",
+        "desc": "सरल भाषा में तथ्य, त्वचा विज्ञान, भ्रम और कारण।"
+      },
+      "card2": {
+        "title": "मैं विटिलिगो के साथ जी रहा/रही हूँ",
+        "desc": "दैनिक जीवन, भावनात्मक सहायता, आत्मविश्वास और प्रेरक कहानियाँ।"
+      },
+      "card3": {
+        "title": "मैं किसी प्रियजन का साथ दे रहा/रही हूँ",
+        "desc": "माता-पिता, जीवनसाथी, परिवार और दोस्तों के लिए मार्गदर्शन।"
+      },
+      "card4": {
+        "title": "मैं स्वास्थ्य सेवा पेशेवर हूँ",
+        "desc": "नैदानिक दिशानिर्देश, शोध सारांश और रोगी संसाधन।"
+      }
+    },
+    "coreBelief": {
+      "quote": "उपचार एक विकल्प है। छुपाना एक विकल्प है। अपनी त्वचा को गर्व से दिखाना भी एक विकल्प है।",
+      "sub": "अलग मान्यताएँ। वही ज़रूरत: बिना किसी पूर्वाग्रह के सटीक जानकारी।"
+    },
+    "stats": {
+      "headline": "दुनिया भर में लाखों लोग विटिलिगो के साथ जी रहे हैं",
+      "number": "7 करोड़+",
+      "numberLabel": "वैश्विक अनुमान",
+      "explore": "वैश्विक डेटा देखें →"
+    },
+    "quickHelp": {
+      "title": "सही सहायता प्राप्त करें",
+      "subtitle": "अपने क्षेत्र में विश्वसनीय संसाधन खोजें",
+      "derm": "त्वचा रोग विशेषज्ञ खोजें",
+      "centres": "उपचार केंद्र",
+      "groups": "सहायता समूह",
+      "trials": "क्लिनिकल परीक्षण",
+      "mental": "मानसिक स्वास्थ्य सहयोग"
+    },
+    "stigmaSection": {
+      "badge": "आइए बातचीत का नज़रिया बदलें",
+      "heroTitle": "विटिलिगो त्वचा का रंग बदलता है। दुनिया का नज़रिया नहीं बदलना चाहिए।",
+      "mythsTitle": "भ्रम बनाम तथ्य",
+      "mythsSubtitle": "आइए सच्चाई और अफ़वाहों में फ़र्क समझें।",
+      "notTrue": "सच नहीं है",
+      "fact": "सच्चाई",
+      "sourceLabel": "चिकित्सा संदर्भ:"
+    },
+    "dermatologist": {
+      "title": "त्वचा विशेषज्ञ (डर्मेटोलॉजिस्ट) से परामर्श क्यों लें?",
+      "subtitle": "डर्मेटोलॉजिस्ट त्वचा, बाल और नाखूनों के विशेषज्ञ डॉक्टर होते हैं।",
+      "step1Title": "सही निदान प्राप्त करें",
+      "step1Desc": "त्वचा का हर सफेद दाग विटिलिगो नहीं होता। अन्य संक्रमण भी विटिलिगो जैसे दिख सकते हैं। सही जांच जरूरी है।",
+      "step2Title": "व्यक्तिगत उपचार योजना बनाएं",
+      "step2Desc": "कई आधुनिक उपचार मौजूद हैं। डॉक्टर रंग वापस लाने या नए दाग रोकने के लिए सही उपाय चुनते हैं।",
+      "step3Title": "व्यक्तिगत प्राथमिकताओं का सम्मान",
+      "step3Desc": "हर कोई रंग वापस नहीं चाहता। कुछ इलाज चाहते हैं, कुछ मेकअप और कुछ अपनी त्वचा को वैसे ही स्वीकार करते हैं।",
+      "step4Title": "अन्य स्थितियों की निगरानी",
+      "step4Desc": "थायरॉयड जैसी अन्य ऑटोइम्यून समस्याओं की समय पर जांच और आवश्यक परामर्श सुनिश्चित होता है।"
+    },
+    "twoPerspectives": {
+      "eyebrow": "दो दृष्टिकोण। एक स्थिति।",
+      "sub": "अलग प्रश्न। साझा समझ।",
+      "patientTitle": "रोगी का दृष्टिकोण",
+      "patientQuote": "मैं चाहता हूँ कि मेरी त्वचा सामान्य दिखे। क्या उपचार मेरे लिए काम करेगा?",
+      "patientBtn": "रोगियों की कहानियाँ देखें",
+      "doctorTitle": "डॉक्टर का दृष्टिकोण",
+      "doctorQuote": "उपचार का उद्देश्य रोग को रोकना और रंग वापस लाना है, लेकिन प्रभाव हर व्यक्ति में अलग होता है।",
+      "doctorBtn": "डॉक्टरों की सलाह देखें"
+    },
+    "ask": {
+      "title": "क्या आपके मन में कोई ऐसा सवाल है जिसे पूछने में झिझक है?",
+      "subtitle": "गुमनाम रूप से पूछें। विशेषज्ञों से विश्वसनीय उत्तर पाएं।",
+      "placeholder": "अपना सवाल यहाँ लिखें...",
+      "submit": "गुमनाम रूप से पूछें",
+      "popular": "अक्सर पूछे जाने वाले सवाल:",
+      "weeklyTitle": "हमारे विशेषज्ञों के उत्तर — हर सप्ताह अपडेट",
+      "disclaimer": "सुरक्षित, गुमनाम और गोपनीय। यह नैदानिक सलाह नहीं है। सभी उत्तर प्रमाणित डॉक्टरों द्वारा केवल शिक्षा हेतु जाँचे गए हैं।"
+    },
+    "footer": {
+      "disclaimer": "चिकित्सा अस्वीकरण: विटिलिगो हब की सामग्री केवल शैक्षिक उद्देश्यों के लिए है और पेशेवर चिकित्सकीय सलाह, निदान या उपचार का विकल्प नहीं है। हमेशा योग्य त्वचा विशेषज्ञ से परामर्श लें।",
+      "copyright": "© 2026 विटिलिगो हब। सर्वाधिकार सुरक्षित।",
+      "accessibility": "WCAG 2.2 AA अनुपालन",
+      "languageToggle": "भाषा बदलें"
+    }
+  }
+}

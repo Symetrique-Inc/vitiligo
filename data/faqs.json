@@ -1,0 +1,106 @@
+[
+  {
+    "id": "faq-1",
+    "question": "Can vitiligo get worse or spread over time?",
+    "shortQuestion": "Can vitiligo get worse?",
+    "category": "Condition",
+    "answer": "Vitiligo is an unpredictable condition. In many individuals, it goes through active cycles where new patches emerge, followed by periods of complete stability that can last years. Dermatologists use medical therapies (such as short-course steroids or phototherapy) to arrest active spreading. Early intervention when new patches form helps stabilize the melanocytes.",
+    "reviewedBy": {
+      "name": "Dr. Rashmi Sharma, MD",
+      "specialty": "Consultant Dermatologist & Pigmentary Disorder Specialist",
+      "reviewedDate": "October 2026",
+      "hospital": "Global Vitiligo Care Network"
+    }
+  },
+  {
+    "id": "faq-2",
+    "question": "Will treatment work for me?",
+    "shortQuestion": "Will treatment work for me?",
+    "category": "Treatment",
+    "answer": "Treatment response varies based on several factors: the location of the patches (face and neck repigment much faster than fingertips and feet), how long you have had the patches, and the type of vitiligo. Treatments including topical JAK inhibitors, phototherapy, and combination topicals have demonstrated strong repigmentation rates in clinical trials. A personalized consultation with a dermatologist is the best first step.",
+    "reviewedBy": {
+      "name": "Dr. Marcus Vance, MD, FAAD",
+      "specialty": "Associate Professor of Dermatology",
+      "reviewedDate": "October 2026",
+      "hospital": "International Vitiligo Centre"
+    }
+  },
+  {
+    "id": "faq-3",
+    "question": "Can I get married and have a healthy family?",
+    "shortQuestion": "Can I get married?",
+    "category": "Life & Relationships",
+    "answer": "Absolutely yes. Vitiligo does not impact fertility, sexual health, life expectancy, or your ability to build a deeply fulfilling partnership. While there is a slight genetic predisposition (around 20% have a relative with vitiligo), the vast majority of children born to a parent with vitiligo never develop it. Open conversations and self-confidence are key.",
+    "reviewedBy": {
+      "name": "Dr. Ananya Iyer, MD, DNB",
+      "specialty": "Dermatology & Psychodermatology Lead",
+      "reviewedDate": "September 2026",
+      "hospital": "Metropolitan Medical Institute"
+    }
+  },
+  {
+    "id": "faq-4",
+    "question": "Should I tell my employer or colleagues about my vitiligo?",
+    "shortQuestion": "Should I tell my employer?",
+    "category": "Workplace",
+    "answer": "You are under no legal or medical obligation to disclose vitiligo to your employer unless you require reasonable accommodations (such as avoiding excessive direct UV exposure for outdoor jobs or adjusting schedules for phototherapy appointments). Many professionals find that a brief, casual mention ('It's an autoimmune condition where skin loses pigment, not contagious') eliminates workplace awkwardness or curiosity.",
+    "reviewedBy": {
+      "name": "Dr. Sarah Chen, MD",
+      "specialty": "Occupational Health & Dermatology",
+      "reviewedDate": "October 2026",
+      "hospital": "Pacific Health Alliance"
+    }
+  },
+  {
+    "id": "faq-5",
+    "question": "Is vitiligo directly hereditary?",
+    "shortQuestion": "Is it hereditary?",
+    "category": "Genetics",
+    "answer": "Vitiligo is polygenic and multifactorial. More than 50 genes contribute to risk, mostly related to immune regulation. Having a parent or sibling with vitiligo slightly elevates the risk, but having the genes alone does not cause the disease—an environmental trigger (such as skin trauma, severe sunburn, or oxidative stress) is typically needed.",
+    "reviewedBy": {
+      "name": "Dr. Marcus Vance, MD, FAAD",
+      "specialty": "Associate Professor of Dermatology",
+      "reviewedDate": "October 2026",
+      "hospital": "International Vitiligo Centre"
+    }
+  },
+  {
+    "id": "faq-6",
+    "question": "Can I use makeup and camouflage without damaging my skin?",
+    "shortQuestion": "Can I use makeup?",
+    "category": "Daily Living",
+    "answer": "Yes. Medical camouflages, waterproof concealers, self-tanners (DHA-based), and regular cosmetic makeups are completely safe for vitiligo patches when applied to intact skin. They do not cause spreading or hinder medical treatments if cleansed gently. Always wash makeup off before phototherapy or applying prescription topical ointments.",
+    "reviewedBy": {
+      "name": "Dr. Rashmi Sharma, MD",
+      "specialty": "Consultant Dermatologist",
+      "reviewedDate": "October 2026",
+      "hospital": "Global Vitiligo Care Network"
+    }
+  },
+  {
+    "id": "faq-7",
+    "question": "Why isn't my treatment working faster? How long does repigmentation take?",
+    "shortQuestion": "Why isn't treatment faster?",
+    "category": "Treatment",
+    "answer": "Repigmentation is biologically gradual. Melanocyte stem cells in the hair follicles must be stimulated to divide, migrate outward to the epidermis, and resume melanin synthesis. You typically begin seeing microscopic perifollicular 'freckles' of colour within 8 to 12 weeks of consistent phototherapy or topical medication. Full results often take 6 to 12 months.",
+    "reviewedBy": {
+      "name": "Dr. Marcus Vance, MD, FAAD",
+      "specialty": "Associate Professor of Dermatology",
+      "reviewedDate": "September 2026",
+      "hospital": "International Vitiligo Centre"
+    }
+  },
+  {
+    "id": "faq-8",
+    "question": "Can I exercise, swim, and spend time outdoors with vitiligo?",
+    "shortQuestion": "Can I exercise & swim?",
+    "category": "Daily Living",
+    "answer": "Yes! Regular exercise is wonderful for immune balance and mental health. When outdoors or swimming, practice smart sun protection: apply broad-spectrum water-resistant sunscreen (SPF 50+) to depigmented areas, wear UV-protective rash guards or light clothing, and wear a broad-brimmed hat. Vitiligo patches lack melanin and can sunburn easily.",
+    "reviewedBy": {
+      "name": "Dr. Ananya Iyer, MD, DNB",
+      "specialty": "Dermatology & Psychodermatology Lead",
+      "reviewedDate": "October 2026",
+      "hospital": "Metropolitan Medical Institute"
+    }
+  }
+]

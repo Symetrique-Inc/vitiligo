@@ -1,0 +1,101 @@
+[
+  {
+    "id": "contagious",
+    "question": "Is it contagious?",
+    "myth": "Vitiligo is contagious.",
+    "fact": "No. You cannot catch vitiligo from another person through touching, hugging, sharing food, kissing or being near them. Vitiligo is not an infection.",
+    "visualIcon": "🤝",
+    "visualCaption": "Touching someone with vitiligo cannot give you vitiligo.",
+    "category": "transmission",
+    "source": "AAD (American Academy of Dermatology)",
+    "sourceUrl": "https://www.aad.org/public/diseases/a-z/vitiligo-overview"
+  },
+  {
+    "id": "leprosy",
+    "question": "Is vitiligo a form of leprosy?",
+    "myth": "Vitiligo is a form of leprosy.",
+    "fact": "No. Vitiligo and leprosy are completely different conditions. Vitiligo involves the benign loss of skin pigment due to an autoimmune response, while leprosy (Hansen's disease) is a chronic bacterial infection caused by Mycobacterium leprae. The mistaken association has been a documented source of stigma across certain communities.",
+    "visualIcon": "🔬",
+    "visualCaption": "Vitiligo is loss of melanin, not a bacterial disease.",
+    "category": "biology",
+    "source": "WHO & IADVL",
+    "sourceUrl": "https://www.who.int"
+  },
+  {
+    "id": "food-combinations",
+    "question": "Is it caused by eating the wrong foods or food combinations?",
+    "myth": "Vitiligo is caused by eating the wrong foods or mixing certain foods (such as milk and fish).",
+    "fact": "No good scientific evidence supports this. Vitiligo is an autoimmune condition where the body attacks melanocytes, influenced by genetic susceptibility and environmental triggers, not dietary combinations.",
+    "visualIcon": "🥛🐟",
+    "visualCaption": "Myth: Drinking milk after fish causes vitiligo. Fact: No scientific evidence supports this.",
+    "category": "diet",
+    "source": "IADVL Public Education Committee",
+    "sourceUrl": "https://iadvl.org"
+  },
+  {
+    "id": "fault-punishment",
+    "question": "Does vitiligo happen because someone did something wrong?",
+    "myth": "It happens because someone did something wrong or has poor hygiene.",
+    "fact": "It is not anyone's fault. Vitiligo is an autoimmune condition. Genetic susceptibility and environmental factors contribute, but it is never caused by a person's hygiene, character, lifestyle choices, or actions.",
+    "visualIcon": "❤️",
+    "visualCaption": "Vitiligo is never a punishment. It is an autoimmune response.",
+    "category": "moral-stigma",
+    "source": "AAD Guidelines",
+    "sourceUrl": "https://www.aad.org"
+  },
+  {
+    "id": "just-cosmetic",
+    "question": "Is vitiligo just a cosmetic problem?",
+    "myth": "It's just a cosmetic problem.",
+    "fact": "Visible pigment changes are only one part. Vitiligo is an autoimmune disease that can affect confidence, social relationships, employment, and mental wellbeing. Furthermore, affected skin is prone to sunburn and requires UV care.",
+    "visualIcon": "🧠",
+    "visualCaption": "The psychosocial impact is real and deserves empathetic support.",
+    "category": "psychological",
+    "source": "AAD Psychodermatology Workgroup",
+    "sourceUrl": "https://www.aad.org"
+  },
+  {
+    "id": "dark-skin-only",
+    "question": "Do only people with dark skin get it?",
+    "myth": "Only people with dark skin get vitiligo.",
+    "fact": "Anyone can develop vitiligo, regardless of race, ethnicity, or skin tone. It occurs with equal frequency across populations; it is simply more visually prominent where there is higher contrast with surrounding skin.",
+    "visualIcon": "🌍",
+    "visualCaption": "Vitiligo affects people of all skin tones and ethnicities worldwide.",
+    "category": "demographics",
+    "source": "Global Vitiligo Foundation",
+    "sourceUrl": "https://globalvitiligofoundation.org"
+  },
+  {
+    "id": "always-inherited",
+    "question": "Is vitiligo always inherited from parents?",
+    "myth": "It is always inherited.",
+    "fact": "Family history can increase genetic risk, but vitiligo is not inevitably passed from parent to child. About 20% of people with vitiligo have at least one close relative with it, meaning 80% do not.",
+    "visualIcon": "🧬",
+    "visualCaption": "Genetic susceptibility plays a role, but inheritance is neither direct nor guaranteed.",
+    "category": "genetics",
+    "source": "NIH Genetics Home Reference",
+    "sourceUrl": "https://medlineplus.gov"
+  },
+  {
+    "id": "nothing-to-do",
+    "question": "Is there really nothing that can be done?",
+    "myth": "There is nothing that can be done for vitiligo.",
+    "fact": "Vitiligo is treatable, although response varies. Several evidence-based approaches (topical JAK inhibitors, corticosteroids, calcineurin inhibitors, narrowband UVB phototherapy, and surgery) help restore pigmentation and stabilize active disease. Work with an expert dermatologist.",
+    "visualIcon": "✨",
+    "visualCaption": "Effective modern therapies exist to halt spread and repigment skin.",
+    "category": "treatment",
+    "source": "British Association of Dermatologists & AAD",
+    "sourceUrl": "https://www.bad.org.uk"
+  },
+  {
+    "id": "must-hide",
+    "question": "Should people with vitiligo always hide their patches?",
+    "myth": "If I have vitiligo, I should hide it.",
+    "fact": "Covering is a personal choice, not a medical requirement. Some choose makeup, micropigmentation, or clothing; others choose to show their skin with pride. Neither choice is more 'correct'.",
+    "visualIcon": "🌟",
+    "visualCaption": "Treatment is a choice. Camouflage is a choice. Showing your skin is a choice.",
+    "category": "social",
+    "source": "Vitiligo Support International",
+    "sourceUrl": "https://vitiligosupport.org"
+  }
+]

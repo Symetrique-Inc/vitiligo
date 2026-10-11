@@ -1,0 +1,162 @@
+{
+  "dermatologists": [
+    {
+      "id": "doc-1",
+      "name": "Dr. Rashmi Sharma, MD",
+      "hospital": "Advanced Pigmentary & Phototherapy Clinic",
+      "city": "Mumbai",
+      "country": "India",
+      "region": "South Asia",
+      "specialties": ["Autoimmune Vitiligo", "Narrowband Phototherapy", "Pediatric Care"],
+      "acceptsNewPatients": true,
+      "telehealth": true,
+      "phone": "+91 22 4580 9100",
+      "rating": 4.9
+    },
+    {
+      "id": "doc-2",
+      "name": "Dr. Marcus Vance, MD, FAAD",
+      "hospital": "International Center for Vitiligo Excellence",
+      "city": "Boston, MA",
+      "country": "United States",
+      "region": "North America",
+      "specialties": ["JAK Inhibitor Protocols", "Cellular Grafting Surgery", "Clinical Research"],
+      "acceptsNewPatients": true,
+      "telehealth": true,
+      "phone": "+1 617 555 0192",
+      "rating": 4.95
+    },
+    {
+      "id": "doc-3",
+      "name": "Dr. Claire Dubois, MD",
+      "hospital": "Hôpital Saint-Louis Photodermatologie",
+      "city": "Paris",
+      "country": "France",
+      "region": "Europe",
+      "specialties": ["Melanocyte Biology", "Laser & Targeted Phototherapy", "Children & Teens"],
+      "acceptsNewPatients": true,
+      "telehealth": false,
+      "phone": "+33 1 42 49 49 49",
+      "rating": 4.85
+    },
+    {
+      "id": "doc-4",
+      "name": "Dr. Kofi Mensah, FWACP",
+      "hospital": "Accra Dermatology & Autoimmune Centre",
+      "city": "Accra",
+      "country": "Ghana",
+      "region": "Africa",
+      "specialties": ["Post-inflammatory Pigment Disorders", "Vitiligo in Skin of Colour", "Community Advocacy"],
+      "acceptsNewPatients": true,
+      "telehealth": true,
+      "phone": "+233 30 277 8200",
+      "rating": 4.9
+    },
+    {
+      "id": "doc-5",
+      "name": "Dr. Sofia Morales, MD",
+      "hospital": "Centro Dermatológico Especializado",
+      "city": "São Paulo",
+      "country": "Brazil",
+      "region": "Latin America",
+      "specialties": ["Topical Immunomodulation", "Psychodermatology", "Surgical Transplantation"],
+      "acceptsNewPatients": true,
+      "telehealth": true,
+      "phone": "+55 11 3120 4000",
+      "rating": 4.88
+    },
+    {
+      "id": "doc-6",
+      "name": "Dr. Tariq Al-Mansoor, FRCP",
+      "hospital": "Gulf Dermatology & Laser Institute",
+      "city": "Dubai",
+      "country": "UAE",
+      "region": "Middle East",
+      "specialties": ["Excimer Laser", "JAK Inhibitors", "Comprehensive Care"],
+      "acceptsNewPatients": true,
+      "telehealth": true,
+      "phone": "+971 4 380 5555",
+      "rating": 4.92
+    }
+  ],
+  "supportGroups": [
+    {
+      "id": "sg-1",
+      "name": "Vitiligo Support International (VSI)",
+      "scope": "Global",
+      "meetings": "Weekly virtual support circles & clinician webinars",
+      "members": "45,000+",
+      "link": "https://vitiligosupport.org"
+    },
+    {
+      "id": "sg-2",
+      "name": "Shweta Association (India)",
+      "scope": "South Asia",
+      "meetings": "Peer counseling, marriage counseling & school empowerment",
+      "members": "18,000+",
+      "link": "https://vitiligoshweta.org"
+    },
+    {
+      "id": "sg-3",
+      "name": "The Vitiligo Society UK",
+      "scope": "Europe & UK",
+      "meetings": "Youth groups, psychological support, and parliamentary advocacy",
+      "members": "12,000+",
+      "link": "https://vitiligosociety.org.uk"
+    },
+    {
+      "id": "sg-4",
+      "name": "African Vitiligo Awareness Movement (AVAM)",
+      "scope": "Pan-African",
+      "meetings": "Stigma reduction workshops, local clinics, community radio outreach",
+      "members": "8,500+",
+      "link": "#"
+    }
+  ],
+  "downloadableGuides": [
+    {
+      "id": "guide-1",
+      "title": "First Doctor Visit: Discussion Guide",
+      "description": "12 evidence-based questions to ask your dermatologist about diagnosis, staging, and step therapy.",
+      "fileType": "PDF (4 pages)",
+      "badge": "Clinical Tool"
+    },
+    {
+      "id": "guide-2",
+      "title": "School & Teacher Advocacy Packet",
+      "description": "Ready-to-use template letter for educators explaining that vitiligo is not contagious with classroom tips.",
+      "fileType": "PDF (2 pages)",
+      "badge": "For Parents"
+    },
+    {
+      "id": "guide-3",
+      "title": "Daily Sun Safety & UV Protection Protocol",
+      "description": "Dermatologist-approved guide on selecting broad-spectrum sunscreens, clothing UV ratings, and phototherapy.",
+      "fileType": "PDF (3 pages)",
+      "badge": "Daily Living"
+    },
+    {
+      "id": "guide-4",
+      "title": "Understanding Step Therapy & Insurance Approvals",
+      "description": "How to navigate medical necessity criteria, appeals, and access programs for modern treatments.",
+      "fileType": "PDF (5 pages)",
+      "badge": "Access to Care"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-1",
+      "title": "World Vitiligo Day 2026",
+      "date": "June 25, 2026",
+      "description": "Annual global campaign dedicated to building public understanding, dismantling stigma, and advancing equitable healthcare access.",
+      "tag": "Global Event"
+    },
+    {
+      "id": "ev-2",
+      "title": "International Vitiligo Research Symposium",
+      "date": "September 18, 2026",
+      "description": "Leading pigment researchers present newest clinical findings on melanocyte stem cell regeneration.",
+      "tag": "Scientific"
+    }
+  ]
+}

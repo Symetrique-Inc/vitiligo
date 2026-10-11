@@ -1,0 +1,222 @@
+[
+  {
+    "id": "understand",
+    "title": "Understand Vitiligo",
+    "color": "blue",
+    "accentHex": "#1D5FE0",
+    "tintHex": "#EAF2FF",
+    "tagline": "What is vitiligo?",
+    "description": "Condition, causes, myths and facts. Clear, reliable and easy-to-understand information for patients, families, and the public.",
+    "route": "/understand",
+    "subtopics": [
+      {
+        "id": "basics",
+        "title": "The basics",
+        "description": "What is it, symptoms, types, causes",
+        "route": "/understand#basics"
+      },
+      {
+        "id": "stigma",
+        "title": "Stigma & misconceptions",
+        "description": "What people think vs. what is true",
+        "route": "/understand/stigma"
+      },
+      {
+        "id": "biology",
+        "title": "How vitiligo affects the skin",
+        "description": "Disease process in simple terms",
+        "route": "/understand/biology"
+      },
+      {
+        "id": "ages",
+        "title": "Facts for different ages",
+        "description": "Children, adults and older adults",
+        "route": "/understand#ages"
+      },
+      {
+        "id": "numbers",
+        "title": "Key numbers",
+        "description": "Global overview and prevalence",
+        "route": "/global-data"
+      }
+    ],
+    "ctaText": "Explore Expert Insights →",
+    "ctaRoute": "/expert-insights"
+  },
+  {
+    "id": "my-life",
+    "title": "My Life & Daily Living",
+    "color": "violet",
+    "accentHex": "#7C5CE0",
+    "tintHex": "#EFEAFF",
+    "tagline": "Everyday life beyond the skin.",
+    "description": "Social, emotional and practical aspects of living with vitiligo. Practical information for real-life situations.",
+    "route": "/my-life",
+    "subtopics": [
+      {
+        "id": "family",
+        "title": "Family and relationships",
+        "description": "Talking to family, friends and partners",
+        "route": "/my-life#family"
+      },
+      {
+        "id": "work",
+        "title": "School and work",
+        "description": "Managing social and professional life",
+        "route": "/my-life#work"
+      },
+      {
+        "id": "wellbeing",
+        "title": "Emotional well-being",
+        "description": "Confidence, mental health and support",
+        "route": "/my-life#wellbeing"
+      },
+      {
+        "id": "appearance",
+        "title": "Appearance and clothing",
+        "description": "Tips and personal choices",
+        "route": "/my-life#appearance"
+      },
+      {
+        "id": "travel",
+        "title": "Travel, exercise and sun exposure",
+        "description": "Everyday practical guidance",
+        "route": "/my-life#travel"
+      }
+    ],
+    "ctaText": "Explore Resources →",
+    "ctaRoute": "/resources"
+  },
+  {
+    "id": "treatment",
+    "title": "Treatment & Care",
+    "color": "teal",
+    "accentHex": "#1FA37A",
+    "tintHex": "#E3F6EF",
+    "tagline": "Treatment and care options.",
+    "description": "Therapies, treatment journey, access to care. Understand the journey and what to expect.",
+    "route": "/treatment",
+    "subtopics": [
+      {
+        "id": "overview",
+        "title": "Overview of treatments",
+        "description": "Available options in simple terms",
+        "route": "/treatment#overview"
+      },
+      {
+        "id": "journey",
+        "title": "Treatment journey",
+        "description": "What typically happens step by step",
+        "route": "/treatment#journey"
+      },
+      {
+        "id": "access",
+        "title": "Access to care",
+        "description": "Availability, affordability and support",
+        "route": "/treatment#access"
+      },
+      {
+        "id": "steps",
+        "title": "Step therapy and guidelines",
+        "description": "How treatment decisions are made",
+        "route": "/treatment#steps"
+      },
+      {
+        "id": "living",
+        "title": "Living with treatment",
+        "description": "Monitoring progress and what to expect",
+        "route": "/treatment#living"
+      }
+    ],
+    "ctaText": "Search now →",
+    "ctaRoute": "/resources#find-doctor"
+  },
+  {
+    "id": "expert-insights",
+    "title": "Expert Insights",
+    "color": "coral",
+    "accentHex": "#F2884B",
+    "tintHex": "#FFEDE3",
+    "tagline": "Ask. Learn. Stay informed.",
+    "description": "Doctors, Q&A, latest research. Expert answers to common questions and latest updates.",
+    "route": "/expert-insights",
+    "subtopics": [
+      {
+        "id": "ask",
+        "title": "Ask a question (Q&A)",
+        "description": "Get expert answers anonymously",
+        "route": "/expert-insights#ask"
+      },
+      {
+        "id": "common-q",
+        "title": "Common questions",
+        "description": "Clear, trusted information",
+        "route": "/expert-insights#faq"
+      },
+      {
+        "id": "perspectives",
+        "title": "Doctor perspectives",
+        "description": "Clinical insights in simple language",
+        "route": "/expert-insights#perspectives"
+      },
+      {
+        "id": "research",
+        "title": "Latest research and innovation",
+        "description": "What's new in vitiligo science",
+        "route": "/expert-insights#innovation"
+      },
+      {
+        "id": "hcp",
+        "title": "For healthcare professionals",
+        "description": "Guidelines and scientific resources",
+        "route": "/expert-insights#professionals"
+      }
+    ],
+    "ctaText": "Ask now →",
+    "ctaRoute": "/expert-insights#ask"
+  },
+  {
+    "id": "resources",
+    "title": "Resources & Support",
+    "color": "blue",
+    "accentHex": "#0B1F6B",
+    "tintHex": "#EAF2FF",
+    "tagline": "Find the right support.",
+    "description": "Find a doctor, support groups, useful resources. Trusted resources for you and your community.",
+    "route": "/resources",
+    "subtopics": [
+      {
+        "id": "find-doc",
+        "title": "Find a doctor",
+        "description": "Dermatologists and treatment centres",
+        "route": "/resources#find-doctor"
+      },
+      {
+        "id": "support-groups",
+        "title": "Support groups",
+        "description": "Patient and caregiver communities",
+        "route": "/resources#support-groups"
+      },
+      {
+        "id": "practical",
+        "title": "Practical resources",
+        "description": "Guides, tools and downloadable content",
+        "route": "/resources#guides"
+      },
+      {
+        "id": "events",
+        "title": "Events and awareness",
+        "description": "Campaigns and important days",
+        "route": "/resources#events"
+      },
+      {
+        "id": "global-map",
+        "title": "Global map of resources",
+        "description": "Support in your country and region",
+        "route": "/resources#map"
+      }
+    ],
+    "ctaText": "Explore resources →",
+    "ctaRoute": "/resources"
+  }
+]

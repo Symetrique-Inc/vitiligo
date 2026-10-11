@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-script: var(--font-caveat), "Comic Sans MS", cursive;
+
+  /* Brand Palette */
+  --navy: #0B1F6B;
+  --navy-dark: #07154B;
+  --royal: #1D5FE0;
+  --violet: #7C5CE0;
+  --teal: #1FA37A;
+  --coral: #F2884B;
+  --rose: #E8456B;
+
+  /* Card Tints */
+  --tint-blue: #EAF2FF;
+  --tint-lavender: #EFEAFF;
+  --tint-mint: #E3F6EF;
+  --tint-peach: #FFEDE3;
+  --tint-pink: #FDE8EE;
+
+  /* Neutral Surface & Typography */
+  --body-text: #1E2A4A;
+  --muted-text: #5B6785;
+  --border-color: #DDE5F5;
+  --page-bg-start: #F4F8FF;
+  --page-bg-end: #F6F1FF;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--body-text);
+  background: linear-gradient(180deg, var(--page-bg-start) 0%, var(--page-bg-end) 100%);
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--body-text);
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-caveat), cursive;
+}
+
+/* Diffuse organic pastel background spheres */
+.bg-pastel-mesh {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(29, 95, 224, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(124, 92, 224, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(31, 163, 122, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(242, 136, 75, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 20% 85%, rgba(232, 69, 107, 0.04) 0%, transparent 45%);
+}
+
+/* Accessibility Focus States (WCAG 2.2 AA) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #1D5FE0;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(29, 95, 224, 0.18);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F8FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4D3EE;
+  border-radius: 9999px;
+  border: 2px solid #F4F8FF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A0B9E5;
 }
