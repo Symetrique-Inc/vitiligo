@@ -3,11 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { BookOpen, User, Users, Stethoscope } from 'lucide-react';
-import { useLanguage } from '@/components/LanguageContext';
 
 export const AudienceCards: React.FC = () => {
-  const { t } = useLanguage();
-
   const cards = [
     {
       id: 'understand',
@@ -52,8 +49,8 @@ export const AudienceCards: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 relative" aria-labelledby="audience-heading">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-8 pb-6 relative" aria-labelledby="audience-heading">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6">
           <h2
             id="audience-heading"
@@ -63,7 +60,7 @@ export const AudienceCards: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4 Audience Cards Row matching reference mockup */}
+        {/* 4 Cards Row matching reference mockup */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {cards.map((card) => {
             const Icon = card.icon;
@@ -71,10 +68,10 @@ export const AudienceCards: React.FC = () => {
               <div key={card.id} className="flex flex-col items-center">
                 <Link
                   href={card.href}
-                  className={`w-full flex flex-col items-center justify-center p-6 rounded-2xl ${card.bgColor} border border-[#DDE5F5] ${card.hoverBorder} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center min-h-[110px] group`}
+                  className={`w-full flex flex-col items-center justify-center p-5 sm:p-6 rounded-2xl ${card.bgColor} border border-[#DDE5F5] ${card.hoverBorder} transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center min-h-[105px] group`}
                 >
-                  <div className={`mb-2.5 ${card.iconColor} group-hover:scale-110 transition-transform`}>
-                    <Icon className="w-7 h-7" />
+                  <div className={`mb-2 ${card.iconColor} group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-6 h-6" />
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-[#0B1F6B] group-hover:text-[#1D5FE0] transition-colors leading-snug">
                     {card.title}
@@ -82,7 +79,7 @@ export const AudienceCards: React.FC = () => {
                 </Link>
 
                 {/* Subtle vertical connector guide line */}
-                <div className={`w-0.5 h-6 ${card.lineColor} opacity-40 hidden lg:block`} />
+                <div className={`w-0.5 h-6 ${card.lineColor} opacity-35 hidden lg:block`} />
               </div>
             );
           })}

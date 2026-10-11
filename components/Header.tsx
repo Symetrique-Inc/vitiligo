@@ -14,20 +14,22 @@ export const Header: React.FC = () => {
   const [isDoctorModalOpen, setIsDoctorModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLangOpen, setIsLangOpen] = useState(false);
 
   const navLinks = [
-    { href: '/', label: t.nav.home },
-    { href: '/about', label: t.nav.about },
-    { href: '/understand', label: t.nav.understand },
-    { href: '/my-life', label: t.nav.myLife },
-    { href: '/treatment', label: t.nav.treatment },
-    { href: '/expert-insights', label: t.nav.expertInsights },
-    { href: '/resources', label: t.nav.resources },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/understand', label: 'Understand Vitiligo' },
+    { href: '/my-life', label: 'My Life & Daily Living' },
+    { href: '/treatment', label: 'Treatment & Care' },
+    { href: '/expert-insights', label: 'Expert Insights' },
+    { href: '/resources', label: 'Resources & Support' },
   ];
 
   const quickSuggestions = [
     { title: "What is vitiligo?", href: "/understand#basics" },
     { title: "Myths vs Facts (9 Common Myths)", href: "/understand/stigma" },
+    { title: "Skin biology & melanocytes infographic", href: "/understand/biology" },
     { title: "Why see a dermatologist?", href: "/treatment#dermatologist" },
     { title: "Ask questions anonymously", href: "/expert-insights#ask" },
     { title: "Walk in My Skin daily timeline", href: "/my-life#timeline" },
@@ -40,26 +42,35 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#DDE5F5] transition-all">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5ECF6] transition-all">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* 3-petal Logo matching reference screenshot */}
             <Link
               href="/"
-              className="flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D5FE0] rounded-xl p-1"
+              className="flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D5FE0] rounded-xl py-1 pr-2 shrink-0"
             >
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#0B1F6B] via-[#1D5FE0] to-[#7C5CE0] flex items-center justify-center shadow-md shadow-[#0B1F6B]/15 group-hover:scale-105 transition-transform">
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none">
-                  {/* Stylized vitiligo dual-pigment cell mark */}
+              <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                <svg className="w-9 h-9" viewBox="0 0 32 32" fill="none">
+                  {/* Left Navy Petal */}
                   <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-2.38 1.05-4.52 2.73-6l1.27 1.27C6.73 8.35 6 9.84 6 12c0 3.31 2.69 6 6 6 2.16 0 3.65-.73 4.73-1.99l1.27 1.26C16.52 18.95 14.38 20 12 20z"
-                    fill="currentColor"
+                    d="M12 7 C7 13, 6 21, 14 27 C11 21, 10 13, 12 7 Z"
+                    fill="#0B1F6B"
                   />
-                  <circle cx="15.5" cy="8.5" r="3.5" fill="#FFFFFF" fillOpacity="0.9" />
+                  {/* Center Royal Blue Petal */}
+                  <path
+                    d="M16 4 C14 11, 14 21, 16 28 C18 21, 18 11, 16 4 Z"
+                    fill="#1D5FE0"
+                  />
+                  {/* Right Teal Petal */}
+                  <path
+                    d="M20 7 C25 13, 26 21, 18 27 C21 21, 22 13, 20 7 Z"
+                    fill="#1FA37A"
+                  />
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg tracking-tight text-[#0B1F6B] font-serif leading-none">
+                <span className="font-extrabold text-[17px] tracking-tight text-[#0B1F6B] font-serif leading-none">
                   VITILIGO HUB
                 </span>
                 <span className="text-[11px] font-medium text-[#5B6785] tracking-wide mt-0.5">
@@ -68,18 +79,18 @@ export const Header: React.FC = () => {
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center space-x-1" aria-label="Main Navigation">
+            {/* Desktop Navigation with active blue underline indicator */}
+            <nav className="hidden xl:flex items-center space-x-5" aria-label="Main Navigation">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
+                    className={`py-2 text-[13px] transition-all relative ${
                       isActive
-                        ? 'text-[#0B1F6B] bg-[#EAF2FF] font-semibold'
-                        : 'text-[#1E2A4A] hover:text-[#0B1F6B] hover:bg-gray-100/70'
+                        ? 'text-[#0B1F6B] font-bold border-b-[2.5px] border-[#1D5FE0]'
+                        : 'text-[#1E2A4A] hover:text-[#0B1F6B] font-medium hover:border-b-2 hover:border-[#1D5FE0]/40'
                     }`}
                   >
                     {link.label}
@@ -88,21 +99,21 @@ export const Header: React.FC = () => {
               })}
             </nav>
 
-            {/* Action Utilities: Search, Language, Find Doctor */}
-            <div className="hidden md:flex items-center space-x-3">
-              {/* Search Toggle */}
+            {/* Right Action Utilities matching screenshot */}
+            <div className="hidden md:flex items-center space-x-3 shrink-0">
+              {/* Search Button */}
               <div className="relative">
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="flex items-center space-x-1.5 px-3 py-2 text-sm text-[#5B6785] hover:text-[#0B1F6B] rounded-full hover:bg-gray-100 transition-colors"
+                  className="flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-medium text-[#1E2A4A] bg-[#F8FAFF] hover:bg-[#EAF2FF] rounded-full border border-[#DDE5F5] transition-colors"
                   aria-label="Search vitiligo hub"
                   aria-expanded={isSearchOpen}
                 >
-                  <Search className="w-4 h-4 text-[#1D5FE0]" />
-                  <span className="text-xs font-medium">Search</span>
+                  <Search className="w-3.5 h-3.5 text-[#1D5FE0]" />
+                  <span>Search</span>
                 </button>
 
-                {/* Search Dropdown Modal */}
+                {/* Search Dropdown */}
                 {isSearchOpen && (
                   <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-2xl shadow-xl border border-[#DDE5F5] p-3 z-50 animate-fadeIn">
                     <div className="relative">
@@ -110,14 +121,14 @@ export const Header: React.FC = () => {
                       <input
                         type="text"
                         autoFocus
-                        placeholder={t.nav.searchPlaceholder}
+                        placeholder="Search topics, questions, treatments..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-gray-200 focus:outline-none focus:border-[#1D5FE0] focus:ring-1 focus:ring-[#1D5FE0]"
                       />
                     </div>
                     <div className="mt-3 divide-y divide-gray-100 max-h-60 overflow-y-auto">
-                      <p className="text-[11px] font-semibold text-gray-400 px-2 py-1 uppercase tracking-wider">
+                      <p className="text-[10px] font-bold text-gray-400 px-2 py-1 uppercase tracking-wider">
                         Suggested Topics
                       </p>
                       {filteredSuggestions.map((item, i) => (
@@ -135,40 +146,52 @@ export const Header: React.FC = () => {
                 )}
               </div>
 
-              {/* Language Selector */}
-              <div className="relative flex items-center bg-[#F4F8FF] border border-[#DDE5F5] rounded-full p-1 text-xs font-medium">
-                <Globe className="w-3.5 h-3.5 text-[#1D5FE0] ml-2 mr-1" />
+              {/* Language Dropdown Selector (English v / हिन्दी) */}
+              <div className="relative">
                 <button
-                  onClick={() => setLocale('en')}
-                  className={`px-2 py-1 rounded-full transition-all ${
-                    locale === 'en'
-                      ? 'bg-white text-[#0B1F6B] font-bold shadow-xs'
-                      : 'text-gray-500 hover:text-gray-900'
-                  }`}
-                  aria-label="Switch to English"
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className="flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-medium text-[#1E2A4A] bg-[#F8FAFF] hover:bg-[#EAF2FF] rounded-full border border-[#DDE5F5] transition-colors"
                 >
-                  English
+                  <Globe className="w-3.5 h-3.5 text-[#1D5FE0]" />
+                  <span>{locale === 'hi' ? 'हिन्दी' : 'English'}</span>
+                  <ChevronDown className="w-3 h-3 text-gray-500" />
                 </button>
-                <button
-                  onClick={() => setLocale('hi')}
-                  className={`px-2 py-1 rounded-full transition-all ${
-                    locale === 'hi'
-                      ? 'bg-white text-[#0B1F6B] font-bold shadow-xs'
-                      : 'text-gray-500 hover:text-gray-900'
-                  }`}
-                  aria-label="Switch to Hindi (हिन्दी)"
-                >
-                  हिन्दी
-                </button>
+
+                {isLangOpen && (
+                  <div className="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-lg border border-[#DDE5F5] py-1 z-50 animate-fadeIn">
+                    <button
+                      onClick={() => {
+                        setLocale('en');
+                        setIsLangOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-1.5 text-xs hover:bg-[#EAF2FF] transition-colors ${
+                        locale === 'en' ? 'font-bold text-[#0B1F6B]' : 'text-gray-700'
+                      }`}
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => {
+                        setLocale('hi');
+                        setIsLangOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-1.5 text-xs hover:bg-[#EAF2FF] transition-colors ${
+                        locale === 'hi' ? 'font-bold text-[#0B1F6B]' : 'text-gray-700'
+                      }`}
+                    >
+                      हिन्दी (Hindi)
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Find a Doctor Navy Pill CTA */}
               <button
                 onClick={() => setIsDoctorModalOpen(true)}
-                className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md shadow-[#0B1F6B]/15 hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center space-x-2 px-5 py-2 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md shadow-[#0B1F6B]/15 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                <Stethoscope className="w-4 h-4 text-white" />
-                <span>{t.nav.findDoctor}</span>
+                <Stethoscope className="w-3.5 h-3.5 text-white" />
+                <span>Find a Doctor</span>
               </button>
             </div>
 
@@ -244,14 +267,14 @@ export const Header: React.FC = () => {
                 className="w-full flex items-center justify-center space-x-2 px-5 py-3 rounded-full text-sm font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0]"
               >
                 <Stethoscope className="w-4 h-4 text-white" />
-                <span>{t.nav.findDoctor}</span>
+                <span>Find a Doctor</span>
               </button>
             </div>
           </div>
         )}
       </header>
 
-      {/* Doctor Modal */}
+      {/* Doctor Directory Modal */}
       <FindDoctorModal
         isOpen={isDoctorModalOpen}
         onClose={() => setIsDoctorModalOpen(false)}

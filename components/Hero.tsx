@@ -1,99 +1,75 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
-import { VideoModal } from '@/components/VideoModal';
 
 export const Hero: React.FC = () => {
   const { t } = useLanguage();
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <>
-      <section className="relative pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-[#DDE5F5] shadow-xl relative overflow-hidden">
-            {/* Background decorative soft pastel circular glow */}
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-tr from-[#1D5FE0]/15 via-[#7C5CE0]/15 to-[#38BDF8]/20 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative w-full overflow-hidden bg-gradient-to-r from-white via-[#F4F9FF] to-[#EAF4FF] border-b border-[#E5ECF6]">
+      {/* Decorative subtle pastel halo rings matching the mockup background */}
+      <div className="absolute top-1/2 right-[25%] -translate-y-1/2 w-72 h-72 rounded-full border-4 border-[#C8B6F8]/35 pointer-events-none" />
+      <div className="absolute top-[45%] right-[18%] -translate-y-1/2 w-64 h-64 rounded-full border-4 border-[#F8B6CE]/35 pointer-events-none" />
+      <div className="absolute top-1/2 right-[8%] -translate-y-1/2 w-80 h-80 rounded-full border-4 border-[#7DD3FC]/35 pointer-events-none" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              {/* Left Column: Typography & CTAs */}
-              <div className="lg:col-span-5 space-y-5">
-                <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#EAF2FF] border border-[#D5E2FA] text-[11px] font-bold text-[#0B1F6B] tracking-wider uppercase">
-                  <span>{t.hero.eyebrow}</span>
-                </div>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative min-h-[380px] lg:min-h-[440px] flex flex-col lg:flex-row items-center justify-between py-8 lg:py-0">
+          {/* Left Column: Text & CTA */}
+          <div className="w-full lg:w-[42%] z-20 space-y-4 py-4 lg:py-12">
+            <span className="text-[11px] sm:text-xs font-extrabold text-[#0B1F6B] uppercase tracking-wider block">
+              THE GLOBAL VITILIGO HUB
+            </span>
 
-                <div className="space-y-3">
-                  <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-bold font-serif text-[#0B1F6B] leading-[1.12] tracking-tight">
-                    {t.hero.title}
-                  </h1>
-                  <p className="text-base sm:text-lg font-medium text-[#1E2A4A]">
-                    {t.hero.subtitle}
-                  </p>
-                  <p className="text-sm sm:text-base text-[#5B6785] leading-relaxed max-w-lg">
-                    {t.hero.lead}
-                  </p>
-                </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-bold font-serif text-[#0B1F6B] leading-[1.08] tracking-tight">
+              See Beyond the Skin
+            </h1>
 
-                {/* Primary CTA button matching mockup */}
-                <div className="pt-2 flex items-center space-x-4">
-                  <Link
-                    href="/understand"
-                    className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full text-sm font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-lg shadow-[#0B1F6B]/20 hover:shadow-xl transition-all transform hover:-translate-y-0.5"
-                  >
-                    <span>{t.hero.ctaPrimary}</span>
-                  </Link>
+            <p className="text-base sm:text-lg font-semibold text-[#1E2A4A] leading-snug">
+              Clear information. Expert insights. Practical support.
+            </p>
 
-                  <button
-                    onClick={() => setIsVideoOpen(true)}
-                    className="text-xs font-semibold text-[#7C5CE0] hover:text-[#0B1F6B] underline underline-offset-4 transition-colors"
-                  >
-                    Watch introductory video
-                  </button>
-                </div>
-              </div>
+            <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed max-w-md">
+              Helping people around the world understand vitiligo and live with greater confidence.
+            </p>
 
-              {/* Right Column: Hero Banner Image & Script Quote */}
-              <div className="lg:col-span-7 relative">
-                {/* Handwritten Script Quote matching mockup placement */}
-                <div className="absolute -top-4 right-4 sm:right-8 z-20 pointer-events-none">
-                  <p className="font-script text-3xl sm:text-4xl text-[#0B1F6B] tracking-wide rotate-[-6deg] drop-shadow-xs">
-                    &ldquo;Different skin. Same dreams.&rdquo;
-                  </p>
-                </div>
+            <div className="pt-2">
+              <Link
+                href="/understand"
+                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md shadow-[#0B1F6B]/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Explore Vitiligo</span>
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+          </div>
 
-                {/* Hero Panoramic Image with subtle rounded crop and soft border */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/90 aspect-[16/9] w-full">
-                  <Image
-                    src="/images/hero-group.jpg"
-                    alt="Diverse group of smiling people with visible vitiligo of various skin tones and a doctor in white coat with stethoscope looking up towards the light"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="object-cover object-center"
-                  />
-                  {/* Subtle inner gradient vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F6B]/15 via-transparent to-transparent pointer-events-none" />
-                </div>
-              </div>
+          {/* Center-Right Column: Panoramic People Lineup & Script Quote */}
+          <div className="w-full lg:w-[58%] relative h-[280px] sm:h-[350px] lg:h-[420px] flex items-end justify-center lg:justify-end">
+            {/* The Authentic Panoramic Lineup Image */}
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/hero-panoramic.jpg"
+                alt="Diverse group of smiling people with visible vitiligo and a physician looking upward with hope"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-contain lg:object-cover object-bottom lg:object-right"
+              />
+            </div>
+
+            {/* Handwritten Script Quote matching top right placement */}
+            <div className="absolute top-2 right-2 sm:right-6 lg:right-10 z-30 pointer-events-none">
+              <p className="font-script text-3xl sm:text-4xl lg:text-[42px] text-[#0B1F6B] tracking-wide rotate-[-4deg] drop-shadow-xs">
+                &ldquo;Different skin. Same dreams.&rdquo;
+              </p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Video Modal */}
-      <VideoModal
-        isOpen={isVideoOpen}
-        onClose={() => setIsVideoOpen(false)}
-        title="See Beyond the Skin — Global Mission"
-        speaker="Vitiligo Hub Global Community & Medical Panel"
-        role="Community Documentary"
-        duration="3:45 min"
-        transcript="Welcome to Vitiligo Hub. Around the globe, over 70 million individuals live with vitiligo. It is an autoimmune condition where melanocytes are mistakenly targeted by the body's immune system. But beyond biology, living with vitiligo involves human hearts, social relationships, choices, and dignity. Remember: Treatment is a choice. Camouflage is a choice. Showing your skin is a choice. You are never alone."
-      />
-    </>
+      </div>
+    </section>
   );
 };

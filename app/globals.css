@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-script: var(--font-caveat), "Comic Sans MS", cursive;
 
-  /* Brand Palette */
+  /* Brand Primary Accents */
   --navy: #0B1F6B;
   --navy-dark: #07154B;
   --royal: #1D5FE0;
@@ -14,7 +14,7 @@
   --coral: #F2884B;
   --rose: #E8456B;
 
-  /* Card Tints */
+  /* Light, Airy Pastel Tints (from reference mockup) */
   --tint-blue: #EAF2FF;
   --tint-lavender: #EFEAFF;
   --tint-mint: #E3F6EF;
@@ -24,16 +24,16 @@
   /* Neutral Surface & Typography */
   --body-text: #1E2A4A;
   --muted-text: #5B6785;
-  --border-color: #DDE5F5;
-  --page-bg-start: #F4F8FF;
-  --page-bg-end: #F6F1FF;
+  --border-color: #E2EAF8;
+  --page-bg-start: #FFFFFF;
+  --page-bg-end: #F6F9FF;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
   color: var(--body-text);
-  background: linear-gradient(180deg, var(--page-bg-start) 0%, var(--page-bg-end) 100%);
+  background: #FFFFFF;
   min-height: 100%;
 }
 
@@ -41,7 +41,7 @@ body {
   margin: 0;
   padding: 0;
   color: var(--body-text);
-  background: transparent;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FF 50%, #F7F5FF 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -59,14 +59,14 @@ body {
   font-family: var(--font-caveat), cursive;
 }
 
-/* Diffuse organic pastel background spheres */
+/* Lighter, colorful ambient mesh background */
 .bg-pastel-mesh {
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(29, 95, 224, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 85% 15%, rgba(124, 92, 224, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(31, 163, 122, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(242, 136, 75, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 20% 85%, rgba(232, 69, 107, 0.04) 0%, transparent 45%);
+    radial-gradient(circle at 12% 15%, rgba(29, 95, 224, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 88% 20%, rgba(124, 92, 224, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(31, 163, 122, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 75%, rgba(242, 136, 75, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(232, 69, 107, 0.03) 0%, transparent 45%);
 }
 
 /* Accessibility Focus States (WCAG 2.2 AA) */
@@ -76,23 +76,22 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
   outline: 2px solid #1D5FE0;
-  outline-offset: 3px;
-  box-shadow: 0 0 0 4px rgba(29, 95, 224, 0.18);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(29, 95, 224, 0.2);
 }
 
-/* Custom Scrollbar */
+/* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: #F4F8FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C4D3EE;
+  background: #CCD8EF;
   border-radius: 9999px;
-  border: 2px solid #F4F8FF;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #A0B9E5;
+  background: #AABEE0;
 }
