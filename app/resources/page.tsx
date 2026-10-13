@@ -1,24 +1,37 @@
-'use client';
-
-import React, { useState } from 'react';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { MedicalBadge } from '@/components/MedicalBadge';
-import { WorldMap } from '@/components/WorldMap';
-import { FindDoctorModal } from '@/components/FindDoctorModal';
-import { FolderHeart, Stethoscope, Users, Download, Calendar, ExternalLink, ShieldCheck, HeartHandshake, Search } from 'lucide-react';
-import resourcesData from '@/data/resources.json';
+import { ContentReviewStamp } from '@/components/ContentReviewStamp';
+import { SourcesBlock } from '@/components/SourcesBlock';
+import { commonSources, resourcesContent } from '@/content/siteContent';
+import { PlaceholderTag } from '@/components/PlaceholderTag';
+import {
+  HeartHandshake,
+  Users,
+  Stethoscope,
+  PhoneCall,
+  Video,
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+  Info,
+} from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Find the right support — Resources & Support | Vitiligo Hub',
+  description:
+    'Trusted resources for you and your community: mental health support, peer networks, and what to look for when choosing a dermatologist.',
+};
 
 export default function ResourcesPage() {
-  const [isDoctorModalOpen, setIsDoctorModalOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredDermatologists = resourcesData.dermatologists.filter((d) =>
-    d.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    d.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    d.country.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const exploreSections = [
+    { title: 'Mental Health Support', icon: HeartHandshake, href: '#mental-health', color: 'text-[#E8456B]', bg: 'bg-[#FDE8EE]' },
+    { title: 'Community', icon: Users, href: '#community', color: 'text-[#7C5CE0]', bg: 'bg-[#EFEAFF]' },
+    { title: 'What to Look For in a Doctor', icon: Stethoscope, href: '#dermatologist-criteria', color: 'text-[#1D5FE0]', bg: 'bg-[#EAF2FF]' },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
@@ -27,229 +40,187 @@ export default function ResourcesPage() {
       <Breadcrumbs items={[{ label: 'Resources & Support' }]} />
 
       <main className="flex-1 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Hero Banner */}
-          <section className="py-10 sm:py-14 max-w-3xl">
-            <span className="text-xs font-bold text-[#0B1F6B] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-              Section Overview &bull; Blue/Lavender Palette
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] mt-3">
-              Find the Right Support
-            </h1>
-            <p className="text-base sm:text-lg text-[#5B6785] mt-3 leading-relaxed">
-              Find certified dermatologists, join active patient communities, download practical school & clinical guides, and explore global awareness events.
-            </p>
-          </section>
-
-          {/* Interactive World Map of Resources */}
-          <section className="mb-14" id="map">
-            <WorldMap />
-          </section>
-
-          {/* Find a Doctor Section & Searchable Directory */}
-          <section className="py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-lg mb-14" id="find-doctor">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-gray-100 gap-4">
-              <div>
-                <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                  Care Network
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Section */}
+          <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-3">
+                <span className="text-xs font-bold text-[#7C5CE0] bg-[#EFEAFF] px-3.5 py-1 rounded-full uppercase tracking-wider">
+                  {resourcesContent.header.eyebrow}
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B]">
-                  Find a Specialized Dermatologist
-                </h2>
-                <p className="text-xs sm:text-sm text-[#5B6785] mt-0.5">
-                  Verified pigment disorder clinicians, academic hospital centers, and telehealth providers.
+                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] tracking-tight">
+                  {resourcesContent.header.h1}
+                </h1>
+                <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-xl">
+                  {resourcesContent.header.subheading}
+                </p>
+                <p className="text-sm text-[#1E2A4A] pt-1 leading-relaxed">
+                  {resourcesContent.header.intro}
                 </p>
               </div>
 
-              <button
-                onClick={() => setIsDoctorModalOpen(true)}
-                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full text-xs font-bold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md transition-colors whitespace-nowrap self-start sm:self-center"
-              >
-                <Stethoscope className="w-4 h-4" />
-                <span>Open Advanced Search</span>
-              </button>
+              <div className="lg:col-span-5 relative">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full max-w-md mx-auto shadow-md border-4 border-white">
+                  <Image
+                    src="/images/card-resources.jpg"
+                    alt="Hands joined in solidarity and community support."
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Explore this section */}
+          <section className="mb-14">
+            <h2 className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider mb-4">
+              Explore in this section
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {exploreSections.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <a
+                    key={idx}
+                    href={item.href}
+                    className="p-4 rounded-2xl bg-white border border-[#DDE5F5] hover:border-[#7C5CE0] hover:shadow-xs transition-all flex items-center justify-between group"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className={`w-9 h-9 rounded-xl ${item.bg} ${item.color} flex items-center justify-center shrink-0`}>
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs sm:text-sm font-bold text-[#0B1F6B] group-hover:text-[#7C5CE0] transition-colors">
+                        {item.title}
+                      </span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-[#7C5CE0] shrink-0" />
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Section: Mental Health Support */}
+          <section id="mental-health" className="mb-14">
+            <div className="mb-6">
+              <span className="text-xs font-bold text-[#E8456B] uppercase tracking-wider">
+                Emotional Wellbeing
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
+                {resourcesContent.mentalHealth.title}
+              </h2>
+              <p className="text-sm sm:text-base text-[#5B6785] mt-1">
+                {resourcesContent.mentalHealth.lead}
+              </p>
             </div>
 
-            {/* Quick Filter Search Input */}
-            <div className="my-6 relative max-w-md">
-              <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                placeholder="Quick search city or doctor name (e.g., Boston, Mumbai, Paris)..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 text-xs rounded-full border border-gray-200 focus:outline-none focus:border-[#1D5FE0]"
-              />
-            </div>
-
-            {/* Directory Cards Preview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {filteredDermatologists.map((doc) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              {resourcesContent.mentalHealth.items.map((item, idx) => (
                 <div
-                  key={doc.id}
-                  className="p-5 rounded-2xl bg-[#F8FAFF] border border-[#E2EAF8] hover:border-[#1D5FE0] transition-colors space-y-2 flex flex-col justify-between"
+                  key={idx}
+                  className="p-6 rounded-3xl bg-white border border-[#DDE5F5] shadow-xs hover:border-[#E8456B] transition-colors space-y-3 flex flex-col justify-between"
                 >
-                  <div>
-                    <h3 className="font-bold text-sm text-[#0B1F6B]">{doc.name}</h3>
-                    <p className="text-xs text-gray-500 font-medium">{doc.hospital}</p>
-                    <p className="text-xs text-[#1D5FE0] font-semibold mt-1">
-                      {doc.city}, {doc.country} &bull; {doc.region}
+                  <div className="space-y-3">
+                    <div className="w-9 h-9 rounded-xl bg-[#FDE8EE] text-[#E8456B] font-bold text-xs flex items-center justify-center">
+                      0{idx + 1}
+                    </div>
+                    <h3 className="font-bold text-base sm:text-lg text-[#0B1F6B]">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-[#1E2A4A] leading-relaxed">
+                      {item.description}
                     </p>
                   </div>
-                  <div className="pt-3 border-t border-gray-200/60 flex items-center justify-between text-xs">
-                    <span className="text-green-700 bg-green-50 px-2 py-0.5 rounded text-[10px] font-semibold">
-                      Accepting Patients
-                    </span>
-                    <a
-                      href={`tel:${doc.phone}`}
-                      className="font-semibold text-[#0B1F6B] hover:underline text-xs"
-                    >
-                      Call Clinic
-                    </a>
-                  </div>
                 </div>
               ))}
             </div>
+
+            {/* Helpline advisory note */}
+            <div className="p-4 rounded-2xl bg-[#FFF6EE] border border-[#FEDDC7] flex items-start space-x-3 text-xs sm:text-sm text-[#B34F18]">
+              <Info className="w-5 h-5 text-[#F2884B] shrink-0 mt-0.5" />
+              <span>{resourcesContent.mentalHealth.helplineNote}</span>
+            </div>
           </section>
 
-          {/* Support Groups Grid */}
-          <section className="py-12 mb-14" id="support-groups">
-            <div className="text-center sm:text-left mb-8">
+          {/* Section: Community */}
+          <section id="community" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
+            <div className="space-y-2 max-w-3xl">
               <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
-                Community Spaces
+                Peer Connection
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Patient & Caregiver Support Groups
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B]">
+                {resourcesContent.community.title}
               </h2>
-              <p className="text-sm text-[#5B6785]">
-                Connect with local chapters and virtual peer communities for emotional encouragement and mutual advice.
+              <p className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed">
+                {resourcesContent.community.body}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {resourcesData.supportGroups.map((group) => (
-                <div
-                  key={group.id}
-                  className="bg-white rounded-3xl p-6 border border-[#DDE5F5] hover:border-[#7C5CE0] transition-all shadow-sm flex flex-col justify-between"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#EFEAFF] text-[#7C5CE0]">
-                        {group.scope}
-                      </span>
-                      <span className="text-xs text-gray-400 font-medium">{group.members} Members</span>
-                    </div>
-                    <h3 className="text-lg font-bold font-serif text-[#0B1F6B]">{group.name}</h3>
-                    <p className="text-xs text-[#5B6785] leading-relaxed">{group.meetings}</p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
-                    <span className="text-xs text-gray-400">Virtual & In-Person</span>
-                    <a
-                      href={group.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-1 text-xs font-bold text-[#7C5CE0] hover:underline"
-                    >
-                      <span>Visit Community</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
-                </div>
-              ))}
+            <div className="pt-4 border-t border-gray-100 flex items-center space-x-3 text-xs sm:text-sm text-[#5B6785]">
+              <PlaceholderTag label="Coming Soon" />
+              <span>{resourcesContent.community.status}</span>
             </div>
           </section>
 
-          {/* Downloadable Practical Toolkits */}
-          <section className="py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-lg mb-14" id="guides">
-            <div className="text-center sm:text-left mb-8">
-              <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider">
-                Downloadable Toolkits
+          {/* Section: What to Look For in a Dermatologist */}
+          <section id="dermatologist-criteria" className="mb-14">
+            <div className="mb-6">
+              <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
+                Clinical Guidance
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Practical Guides & Checklists
+                {resourcesContent.dermatologistCriteria.title}
               </h2>
-              <p className="text-sm text-[#5B6785]">
-                Doctor discussion worksheets, teacher advocacy packets, and sun safety guides.
+              <p className="text-sm sm:text-base text-[#5B6785] mt-1">
+                {resourcesContent.dermatologistCriteria.lead}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {resourcesData.downloadableGuides.map((guide) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+              {resourcesContent.dermatologistCriteria.items.map((item, idx) => (
                 <div
-                  key={guide.id}
-                  className="p-5 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] hover:border-[#1FA37A] transition-colors flex items-start justify-between space-x-4"
+                  key={idx}
+                  className="p-6 rounded-3xl bg-white border border-[#DDE5F5] shadow-xs hover:border-[#1D5FE0] transition-colors space-y-2 flex items-start space-x-4"
                 >
+                  <div className="w-9 h-9 rounded-xl bg-[#EAF2FF] text-[#1D5FE0] flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-5 h-5 text-[#1D5FE0]" />
+                  </div>
                   <div className="space-y-1">
-                    <span className="text-[10px] font-bold uppercase text-[#1FA37A] bg-[#E3F6EF] px-2 py-0.5 rounded-full">
-                      {guide.badge}
-                    </span>
-                    <h3 className="font-bold text-sm text-[#0B1F6B] pt-1">{guide.title}</h3>
-                    <p className="text-xs text-[#5B6785] leading-relaxed">{guide.description}</p>
-                    <span className="text-[11px] text-gray-400 block pt-1">{guide.fileType}</span>
+                    <h3 className="font-bold text-base text-[#0B1F6B]">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-[#1E2A4A] leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-
-                  <button
-                    onClick={() => alert(`Downloading: ${guide.title}`)}
-                    className="p-2.5 rounded-full bg-white text-[#1FA37A] border border-[#BCEBD7] hover:bg-[#E3F6EF] transition-colors shrink-0 shadow-xs"
-                    title="Download guide"
-                    aria-label={`Download ${guide.title}`}
-                  >
-                    <Download className="w-4 h-4" />
-                  </button>
                 </div>
               ))}
             </div>
-          </section>
 
-          {/* Events & Awareness (World Vitiligo Day) */}
-          <section className="py-12 mb-14" id="events">
-            <div className="text-center sm:text-left mb-8">
-              <span className="text-xs font-bold text-[#F2884B] uppercase tracking-wider">
-                Global Solidarity
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Events & Awareness Campaigns
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {resourcesData.events.map((ev) => (
-                <div
-                  key={ev.id}
-                  className="bg-white rounded-3xl p-6 border border-[#DDE5F5] shadow-xs space-y-3"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#FFEDE3] text-[#F2884B]">
-                      {ev.tag}
-                    </span>
-                    <span className="text-xs font-bold text-[#0B1F6B] flex items-center">
-                      <Calendar className="w-3.5 h-3.5 mr-1 text-[#F2884B]" />
-                      {ev.date}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold font-serif text-[#0B1F6B]">{ev.title}</h3>
-                  <p className="text-xs text-[#5B6785] leading-relaxed">{ev.description}</p>
-                </div>
-              ))}
+            {/* CTA to Find a Doctor */}
+            <div className="text-center sm:text-left">
+              <Link
+                href={resourcesContent.dermatologistCriteria.ctaLink}
+                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md transition-colors"
+              >
+                <Stethoscope className="w-4 h-4 text-white" />
+                <span>{resourcesContent.dermatologistCriteria.cta}</span>
+              </Link>
             </div>
           </section>
 
-          {/* Medically Reviewed Badge */}
-          <MedicalBadge
-            reviewerName="Dr. Rashmi Sharma, MD & Patient Advisory Committee"
-            reviewerTitle="Resource Verification Board"
-            date="October 2026"
-          />
+          {/* G4 Content Review Stamp */}
+          <ContentReviewStamp />
+
+          {/* G5 Collapsible Sources Block */}
+          <SourcesBlock sources={commonSources.p03} />
         </div>
       </main>
 
       <Footer />
-
-      <FindDoctorModal
-        isOpen={isDoctorModalOpen}
-        onClose={() => setIsDoctorModalOpen(false)}
-      />
     </div>
   );
 }

@@ -611,14 +611,14 @@ export const FiveSectionCards: React.FC = () => {
           </div>
 
           {/* Bottom Left: Global Stat Card matching mockup */}
-          <div className="mt-8 max-w-sm">
+          {/* <div className="mt-8 max-w-sm">
             <div className="p-5 bg-gradient-to-br from-[#0B1F6B] via-[#142B7E] to-[#1D5FE0] text-white rounded-3xl shadow-lg space-y-3 relative overflow-hidden">
               <span className="text-[10px] font-bold tracking-wider uppercase text-blue-200">
                 Millions of people worldwide live with vitiligo.
               </span>
               <div className="flex items-baseline space-x-2">
-                <span className="text-3xl font-black text-amber-300">70M+</span>
-                <span className="text-xs text-blue-200 font-medium">(Estimated)</span>
+                <span className="text-3xl font-black text-amber-300">28.5M</span>
+                <span className="text-xs text-blue-200 font-medium">(Lancet 2024)</span>
               </div>
               <Link
                 href="/global-data"
@@ -628,7 +628,7 @@ export const FiveSectionCards: React.FC = () => {
                 <ArrowRight className="w-3 h-3 text-[#1D5FE0]" />
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

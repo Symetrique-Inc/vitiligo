@@ -2,12 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Heart, Globe, Shield, Sparkles, ArrowUp } from 'lucide-react';
-import { useLanguage } from '@/components/LanguageContext';
+import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
-  const { locale, setLocale, t } = useLanguage();
-
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -15,198 +12,132 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-white border-t border-[#DDE5F5] pt-16 pb-12 mt-20 relative overflow-hidden">
-      {/* Soft gradient accents */}
-      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#1D5FE0] via-[#7C5CE0] via-[#1FA37A] to-[#F2884B]" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Handwritten Script Quote Banner */}
-        <div className="text-center py-6 mb-12 border-b border-gray-100">
-          <p className="font-script text-3xl sm:text-4xl text-[#0B1F6B] tracking-wide">
-            &ldquo;{t.brand.footerQuote}&rdquo;
-          </p>
-          <p className="text-xs text-[#5B6785] mt-1 uppercase tracking-wider font-semibold">
-            {t.brand.subline}
-          </p>
-        </div>
-
-        {/* 4-column Navigation Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
-          {/* Brand Info */}
-          <div className="col-span-2 space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#0B1F6B] to-[#1D5FE0] flex items-center justify-center text-white font-bold text-sm">
-                VH
+    <footer className="bg-white border-t border-[#DDE5F5] pt-14 pb-10 mt-16 relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 3 Columns Footer matching DOC A G2 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+          {/* Column 1 — About */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2.5">
+              <div className="w-8 h-8 flex items-center justify-center shrink-0">
+                <svg className="w-7 h-7" viewBox="0 0 32 32" fill="none">
+                  <path d="M12 7 C7 13, 6 21, 14 27 C11 21, 10 13, 12 7 Z" fill="#0B1F6B" />
+                  <path d="M16 4 C14 11, 14 21, 16 28 C18 21, 18 11, 16 4 Z" fill="#1D5FE0" />
+                  <path d="M20 7 C25 13, 26 21, 18 27 C21 21, 22 13, 20 7 Z" fill="#1FA37A" />
+                </svg>
               </div>
-              <div>
-                <span className="font-bold text-base font-serif text-[#0B1F6B] block">
-                  VITILIGO HUB
-                </span>
-                <span className="text-xs text-[#5B6785]">
-                  See Beyond the Skin
-                </span>
-              </div>
+              <span className="font-extrabold text-base font-serif text-[#0B1F6B]">
+                VITILIGO HUB
+              </span>
             </div>
-            <p className="text-xs text-[#5B6785] leading-relaxed max-w-sm">
-              An inclusive, science-backed global hub dedicated to understanding vitiligo, dismantling social stigma, and supporting patient confidence.
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
+              About
+            </h4>
+            <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
+              Vitiligo Hub is a Symetrique initiative. We bring people living with vitiligo, their families, doctors and researchers together around one goal: better understanding and better care.
             </p>
-            <div className="pt-2 text-xs text-gray-500 space-y-1">
-              <p className="flex items-center space-x-1.5 font-medium text-[#0B1F6B]">
-                <Shield className="w-3.5 h-3.5 text-[#1FA37A]" />
-                <span>Reviewed by board-certified dermatologists</span>
-              </p>
-              <p className="flex items-center space-x-1.5 text-[#5B6785]">
-                <Sparkles className="w-3.5 h-3.5 text-[#7C5CE0]" />
-                <span>Non-judgmental &bull; Grade 8 reading level &bull; Free access</span>
-              </p>
-            </div>
           </div>
 
-          {/* Column 1: Understand */}
+          {/* Column 2 — Explore */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-[#0B1F6B] uppercase tracking-wider">
-              {t.nav.understand}
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
+              Explore
             </h4>
-            <ul className="space-y-2 text-xs text-[#5B6785]">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-[#5B6785]">
               <li>
-                <Link href="/understand#basics" className="hover:text-[#1D5FE0] transition-colors">
-                  The Basics & Causes
+                <Link href="/understand-vitiligo" className="hover:text-[#1D5FE0] transition-colors">
+                  Understand Vitiligo
                 </Link>
               </li>
               <li>
-                <Link href="/understand/stigma" className="hover:text-[#1D5FE0] transition-colors">
-                  Myths vs Facts
+                <Link href="/understand-vitiligo/stigma-and-misconceptions" className="hover:text-[#1D5FE0] transition-colors">
+                  Stigma & Misconceptions
                 </Link>
               </li>
               <li>
-                <Link href="/understand/biology" className="hover:text-[#1D5FE0] transition-colors">
-                  Biology Infographic
+                <Link href="/living-with-vitiligo" className="hover:text-[#1D5FE0] transition-colors">
+                  My Life & Daily Living
                 </Link>
               </li>
               <li>
-                <Link href="/understand#ages" className="hover:text-[#1D5FE0] transition-colors">
-                  Facts for Different Ages
+                <Link href="/treatment-and-care" className="hover:text-[#1D5FE0] transition-colors">
+                  Treatment & Care
                 </Link>
               </li>
               <li>
-                <Link href="/global-data" className="hover:text-[#1D5FE0] transition-colors">
-                  Global Prevalence Data
+                <Link href="/find-a-doctor" className="hover:text-[#1D5FE0] transition-colors">
+                  Find a Doctor
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 2: Care & Living */}
+          {/* Column 3 — Symetrique */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-[#0B1F6B] uppercase tracking-wider">
-              Care & Community
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
+              Symetrique
             </h4>
-            <ul className="space-y-2 text-xs text-[#5B6785]">
-              <li>
-                <Link href="/treatment#dermatologist" className="hover:text-[#1D5FE0] transition-colors">
-                  Why See a Dermatologist
-                </Link>
-              </li>
-              <li>
-                <Link href="/treatment#overview" className="hover:text-[#1D5FE0] transition-colors">
-                  Treatment Options
-                </Link>
-              </li>
-              <li>
-                <Link href="/my-life#timeline" className="hover:text-[#1D5FE0] transition-colors">
-                  Walk in My Skin (Timeline)
-                </Link>
-              </li>
-              <li>
-                <Link href="/patient-journeys" className="hover:text-[#1D5FE0] transition-colors">
-                  Patient Journeys
-                </Link>
-              </li>
-              <li>
-                <Link href="/my-life#wellbeing" className="hover:text-[#1D5FE0] transition-colors">
-                  Emotional Wellbeing
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Resources & Q&A */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-[#0B1F6B] uppercase tracking-wider">
-              Insights & Help
-            </h4>
-            <ul className="space-y-2 text-xs text-[#5B6785]">
-              <li>
-                <Link href="/expert-insights#ask" className="hover:text-[#1D5FE0] transition-colors">
-                  Ask Anonymous Question
-                </Link>
-              </li>
-              <li>
-                <Link href="/expert-insights#perspectives" className="hover:text-[#1D5FE0] transition-colors">
-                  Two Perspectives
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources#find-doctor" className="hover:text-[#1D5FE0] transition-colors">
-                  Doctor Directory
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources#support-groups" className="hover:text-[#1D5FE0] transition-colors">
-                  Support Groups
-                </Link>
-              </li>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-[#5B6785]">
               <li>
                 <Link href="/about" className="hover:text-[#1D5FE0] transition-colors">
-                  Editorial & Medical Board
+                  About us
                 </Link>
+              </li>
+              <li>
+                <Link href="/about#partner" className="hover:text-[#1D5FE0] transition-colors">
+                  Partner with us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#1D5FE0] transition-colors">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-[#1D5FE0] transition-colors">
+                  Privacy policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-[#1D5FE0] transition-colors">
+                  Terms of use
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    localStorage.removeItem('vitiligo_hub_cookie_consent');
+                    window.location.reload();
+                  }}
+                  className="hover:text-[#1D5FE0] transition-colors text-left"
+                >
+                  Cookie settings
+                </button>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Medical Disclaimer Banner (Mandatory & Visible) */}
-        <div className="p-4 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] text-xs text-[#5B6785] leading-relaxed mb-8 flex items-start space-x-3">
-          <Shield className="w-4 h-4 text-[#0B1F6B] shrink-0 mt-0.5" />
-          <div>
-            <span className="font-semibold text-[#0B1F6B]">Medical Disclaimer: </span>
-            {t.footer.disclaimer}
-          </div>
+        {/* G3 — Medical Disclaimer (always visible, not collapsed) */}
+        <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] text-xs text-[#5B6785] leading-relaxed mb-8">
+          <p className="font-semibold text-[#0B1F6B] mb-1">Medical Disclaimer:</p>
+          <p>
+            The information on Vitiligo Hub is for general education only. It is not medical advice and does not replace a consultation with a qualified doctor. Always speak to a dermatologist or your healthcare professional about your own skin and treatment. If you have urgent health concerns, contact a doctor or your local emergency service.
+          </p>
         </div>
 
-        {/* Bottom Bar: Copyright, Language, Accessibility */}
-        <div className="pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <div className="flex flex-wrap items-center gap-4">
-            <span>{t.footer.copyright}</span>
-            <span className="hidden sm:inline">&bull;</span>
-            <span className="inline-flex items-center text-green-700 bg-green-50 px-2 py-0.5 rounded-full font-medium">
-              {t.footer.accessibility}
-            </span>
-            <span className="hidden sm:inline">&bull;</span>
-            <Link href="/about#transparency" className="hover:underline">
-              Funding Transparency
-            </Link>
-          </div>
+        {/* Bottom Bar: Copyright & Scroll to Top */}
+        <div className="pt-6 border-t border-gray-100 flex items-center justify-between text-xs text-[#5B6785]">
+          <p>© 2026 Symetrique. All rights reserved.</p>
 
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Globe className="w-3.5 h-3.5 text-gray-400" />
-              <button
-                onClick={() => setLocale(locale === 'en' ? 'hi' : 'en')}
-                className="text-xs text-[#1D5FE0] font-medium hover:underline"
-              >
-                {locale === 'en' ? 'Switch to हिन्दी (Hindi)' : 'Switch to English'}
-              </button>
-            </div>
-
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-full bg-gray-100 hover:bg-[#EAF2FF] hover:text-[#0B1F6B] text-gray-600 transition-colors"
-              aria-label="Scroll back to top"
-            >
-              <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            aria-label="Scroll back to top"
+            className="flex items-center space-x-1 hover:text-[#0B1F6B] transition-colors"
+          >
+            <span>Back to top</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
     </footer>

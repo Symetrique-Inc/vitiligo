@@ -19,21 +19,21 @@ export const Header: React.FC = () => {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/understand', label: 'Understand Vitiligo' },
-    { href: '/my-life', label: 'My Life & Daily Living' },
-    { href: '/treatment', label: 'Treatment & Care' },
+    { href: '/understand-vitiligo', label: 'Understand Vitiligo' },
+    { href: '/living-with-vitiligo', label: 'My Life & Daily Living' },
+    { href: '/treatment-and-care', label: 'Treatment & Care' },
     { href: '/expert-insights', label: 'Expert Insights' },
     { href: '/resources', label: 'Resources & Support' },
   ];
 
   const quickSuggestions = [
-    { title: "What is vitiligo?", href: "/understand#basics" },
-    { title: "Myths vs Facts (9 Common Myths)", href: "/understand/stigma" },
-    { title: "Skin biology & melanocytes infographic", href: "/understand/biology" },
-    { title: "Why see a dermatologist?", href: "/treatment#dermatologist" },
+    { title: "What is vitiligo?", href: "/understand-vitiligo#p02-s03" },
+    { title: "Myths vs Facts (10 Common Myths)", href: "/understand-vitiligo/stigma-and-misconceptions#p03-s02" },
+    { title: "Skin biology & melanocytes infographic", href: "/understand-vitiligo#p02-s04" },
+    { title: "Why see a dermatologist?", href: "/understand-vitiligo/stigma-and-misconceptions#p03-s05" },
     { title: "Ask questions anonymously", href: "/expert-insights#ask" },
-    { title: "Walk in My Skin daily timeline", href: "/my-life#timeline" },
-    { title: "Global prevalence & 70M+ data", href: "/global-data" },
+    { title: "Treatment & Care Options", href: "/treatment-and-care" },
+    { title: "Global prevalence: The Lancet Public Health 2024", href: "/understand-vitiligo#p02-s06" },
   ];
 
   const filteredSuggestions = searchQuery.trim()
@@ -186,24 +186,24 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Find a Doctor Navy Pill CTA */}
-              <button
-                onClick={() => setIsDoctorModalOpen(true)}
+              <Link
+                href="/find-a-doctor"
                 className="inline-flex items-center space-x-2 px-5 py-2 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md shadow-[#0B1F6B]/15 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Stethoscope className="w-3.5 h-3.5 text-white" />
                 <span>Find a Doctor</span>
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Hamburger Toggle */}
             <div className="flex items-center space-x-2 xl:hidden">
-              <button
-                onClick={() => setIsDoctorModalOpen(true)}
+              <Link
+                href="/find-a-doctor"
                 className="p-2 rounded-full bg-[#0B1F6B] text-white sm:hidden"
                 aria-label="Find Doctor"
               >
                 <Stethoscope className="w-4 h-4" />
-              </button>
+              </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2.5 rounded-xl text-gray-700 hover:text-[#0B1F6B] hover:bg-gray-100"
@@ -259,16 +259,14 @@ export const Header: React.FC = () => {
             </nav>
 
             <div className="pt-2">
-              <button
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  setIsDoctorModalOpen(true);
-                }}
+              <Link
+                href="/find-a-doctor"
+                onClick={() => setIsMenuOpen(false)}
                 className="w-full flex items-center justify-center space-x-2 px-5 py-3 rounded-full text-sm font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0]"
               >
                 <Stethoscope className="w-4 h-4 text-white" />
                 <span>Find a Doctor</span>
-              </button>
+              </Link>
             </div>
           </div>
         )}

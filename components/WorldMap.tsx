@@ -76,7 +76,7 @@ export const WorldMap: React.FC = () => {
             Vitiligo Around the World
           </h3>
           <p className="text-xs sm:text-sm text-[#5B6785] mt-0.5">
-            Different contexts. Shared experiences. Estimated 70M+ people worldwide.
+            Different contexts. Shared experiences. Approximately 28.5 million people worldwide (The Lancet Public Health, 2024).
           </p>
         </div>
 
@@ -176,7 +176,7 @@ export const WorldMap: React.FC = () => {
                 className="hover:fill-[#1FA37A] transition-colors cursor-pointer"
               />
 
-              {/* Pulsing Hotspot Marker for 70M+ Highlight */}
+              {/* Pulsing Hotspot Marker for Lancet Prevalence Highlight */}
               <circle cx="610" cy="220" r="14" fill="#0B1F6B" fillOpacity="0.2" className="animate-ping" />
               <circle cx="610" cy="220" r="7" fill="#0B1F6B" />
             </svg>

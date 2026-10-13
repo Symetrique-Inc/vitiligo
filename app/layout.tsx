@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display, Caveat } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageContext";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -22,10 +23,36 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "VITILIGO HUB — See Beyond the Skin | Global Education & Support Platform",
-  description: "A warm, trustworthy, science-backed education and support platform for people with vitiligo, their families, and healthcare professionals. Clear information. Expert insights. Practical support.",
+  metadataBase: new URL('https://vitiligohub.org'),
+  title: {
+    default: "Vitiligo Hub | See Beyond the Skin — by Symetrique",
+    template: "%s | Vitiligo Hub",
+  },
+  description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.",
   keywords: ["vitiligo", "vitiligo support", "melanocytes", "dermatology", "autoimmune skin condition", "vitiligo treatment", "JAK inhibitors", "phototherapy"],
-  authors: [{ name: "Vitiligo Hub Global Medical Advisory Board" }],
+  authors: [{ name: "Symetrique & Vitiligo Hub Medical Advisory Board" }],
+  openGraph: {
+    title: "Vitiligo Hub | See Beyond the Skin — by Symetrique",
+    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.",
+    url: "https://vitiligohub.org",
+    siteName: "Vitiligo Hub",
+    images: [
+      {
+        url: "/images/hero-panoramic.jpg",
+        width: 1200,
+        height: 630,
+        alt: "A group of people of different ages and skin tones, some with vitiligo, standing together with a doctor.",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vitiligo Hub | See Beyond the Skin — by Symetrique",
+    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.",
+    images: ["/images/hero-panoramic.jpg"],
+  },
 };
 
 export const viewport: Viewport = {
@@ -45,8 +72,17 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${caveat.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-sans bg-pastel-mesh text-[#1E2A4A] antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#0B1F6B] focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <LanguageProvider>
-          {children}
+          <div id="main-content" className="flex-1 flex flex-col">
+            {children}
+          </div>
+          <CookieBanner />
         </LanguageProvider>
       </body>
     </html>
