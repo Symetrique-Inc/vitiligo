@@ -42,9 +42,9 @@ export default function TreatmentAndCarePage() {
 
       <Breadcrumbs items={[{ label: 'Treatment & Care' }]} />
 
-      <main className="flex-1 pb-16">
+      {/* <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
+         
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-3">
@@ -60,7 +60,6 @@ export default function TreatmentAndCarePage() {
                   {treatmentContent.header.subheading}
                 </p>
 
-                {/* Country approval note */}
                 <div className="pt-2">
                   <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-[#FFF6EE] border border-[#FEDDC7] text-xs font-semibold text-[#B34F18]">
                     <AlertCircle className="w-4 h-4 shrink-0 text-[#F2884B]" />
@@ -84,7 +83,7 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          {/* Explore this section */}
+         
           <section className="mb-14">
             <h2 className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider mb-4">
               Explore in this section
@@ -113,7 +112,7 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          {/* Section: Treatment Overview */}
+          
           <section id="overview" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
             <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider">
               Overview
@@ -131,7 +130,7 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          {/* Section: Topical Treatments */}
+         
           <section id="topicals" className="mb-14">
             <div className="mb-6">
               <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
@@ -164,7 +163,7 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          {/* Section: Light Therapy (Phototherapy) */}
+          
           <section id="phototherapy" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6">
             <div>
               <span className="text-xs font-bold text-[#F2884B] uppercase tracking-wider">
@@ -201,7 +200,7 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          {/* Section: Surgical Options */}
+          
           <section id="surgical" className="mb-14">
             <div className="mb-6">
               <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
@@ -236,7 +235,7 @@ export default function TreatmentAndCarePage() {
             </p>
           </section>
 
-          {/* Section: Emerging Treatments */}
+          
           <section id="emerging" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6">
             <div>
               <span className="text-xs font-bold text-[#E8456B] uppercase tracking-wider">
@@ -270,12 +269,12 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          {/* Section: What to Discuss with Your Doctor (Interactive Checklist) */}
+          
           <section id="checklist" className="mb-14">
             <DoctorChecklist />
           </section>
 
-          {/* CTA Band: Find a Doctor */}
+         
           <section className="bg-gradient-to-r from-[#0B1F6B] via-[#142B7E] to-[#1D5FE0] rounded-3xl p-8 sm:p-12 text-white shadow-lg text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 mb-14">
             <div className="space-y-2 max-w-2xl">
               <span className="text-xs font-bold uppercase tracking-wider text-blue-200">
@@ -298,13 +297,13 @@ export default function TreatmentAndCarePage() {
             </Link>
           </section>
 
-          {/* G4 Content Review Stamp */}
+         
           <ContentReviewStamp />
 
-          {/* G5 Collapsible Sources Block */}
+         
           <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main>
+      </main> */}
 
       <Footer />
     </div>

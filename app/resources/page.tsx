@@ -39,9 +39,9 @@ export default function ResourcesPage() {
 
       <Breadcrumbs items={[{ label: 'Resources & Support' }]} />
 
-      <main className="flex-1 pb-16">
+      {/* <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
+        
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-3">
@@ -74,7 +74,7 @@ export default function ResourcesPage() {
             </div>
           </section>
 
-          {/* Explore this section */}
+         
           <section className="mb-14">
             <h2 className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider mb-4">
               Explore in this section
@@ -103,7 +103,7 @@ export default function ResourcesPage() {
             </div>
           </section>
 
-          {/* Section: Mental Health Support */}
+         
           <section id="mental-health" className="mb-14">
             <div className="mb-6">
               <span className="text-xs font-bold text-[#E8456B] uppercase tracking-wider">
@@ -138,14 +138,14 @@ export default function ResourcesPage() {
               ))}
             </div>
 
-            {/* Helpline advisory note */}
+            
             <div className="p-4 rounded-2xl bg-[#FFF6EE] border border-[#FEDDC7] flex items-start space-x-3 text-xs sm:text-sm text-[#B34F18]">
               <Info className="w-5 h-5 text-[#F2884B] shrink-0 mt-0.5" />
               <span>{resourcesContent.mentalHealth.helplineNote}</span>
             </div>
           </section>
 
-          {/* Section: Community */}
+         
           <section id="community" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
             <div className="space-y-2 max-w-3xl">
               <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
@@ -165,7 +165,7 @@ export default function ResourcesPage() {
             </div>
           </section>
 
-          {/* Section: What to Look For in a Dermatologist */}
+          
           <section id="dermatologist-criteria" className="mb-14">
             <div className="mb-6">
               <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
@@ -200,7 +200,6 @@ export default function ResourcesPage() {
               ))}
             </div>
 
-            {/* CTA to Find a Doctor */}
             <div className="text-center sm:text-left">
               <Link
                 href={resourcesContent.dermatologistCriteria.ctaLink}
@@ -212,13 +211,13 @@ export default function ResourcesPage() {
             </div>
           </section>
 
-          {/* G4 Content Review Stamp */}
+          
           <ContentReviewStamp />
 
-          {/* G5 Collapsible Sources Block */}
+          
           <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main>
+      </main> */}
 
       <Footer />
     </div>

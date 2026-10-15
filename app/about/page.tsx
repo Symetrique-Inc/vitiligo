@@ -30,9 +30,9 @@ export default function AboutPage() {
 
       <Breadcrumbs items={[{ label: 'About' }]} />
 
-      <main className="flex-1 pb-16">
+      {/* <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
+          
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-12">
             <span className="text-xs font-bold text-[#1D5FE0] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
               About Symetrique
@@ -45,7 +45,7 @@ export default function AboutPage() {
             </p>
           </section>
 
-          {/* Mission & What We Do */}
+          
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
             <div className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs space-y-4">
               <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
@@ -77,7 +77,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Why Vitiligo */}
+          
           <section className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
             <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
               Focus
@@ -95,7 +95,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Our Values (4 Cards) */}
+          
           <section className="mb-14" aria-labelledby="values-heading">
             <div className="mb-6">
               <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
@@ -149,7 +149,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Partner with Us Section & Contact Form */}
+        
           <section id="partner" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mb-12">
             <div className="max-w-3xl space-y-6">
               <div>
@@ -263,10 +263,10 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* G4 Review Stamp */}
+          
           <ContentReviewStamp />
         </div>
-      </main>
+      </main> */}
 
       <Footer />
     </div>

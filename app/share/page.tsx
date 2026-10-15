@@ -22,9 +22,9 @@ export default function SharePage() {
 
       <Breadcrumbs items={[{ label: 'Share your experience' }]} />
 
-      <main className="flex-1 pb-16">
+      {/* <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
+          
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10">
             <div className="max-w-3xl space-y-3">
               <div className="inline-flex items-center space-x-2">
@@ -42,7 +42,7 @@ export default function SharePage() {
             </div>
           </section>
 
-          {/* Data Promise Callout Block */}
+         
           <section className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6 max-w-4xl">
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-[#0B1F6B]">
@@ -83,7 +83,7 @@ export default function SharePage() {
               </div>
             </div>
 
-            {/* Legal compliance placeholder notice */}
+            
             <div className="p-4 rounded-2xl bg-[#FFF6EE] border border-[#FEDDC7] text-xs text-[#B34F18] flex items-start space-x-2.5">
               <Lock className="w-4 h-4 text-[#F2884B] shrink-0 mt-0.5" />
               <span>
@@ -109,13 +109,13 @@ export default function SharePage() {
             </div>
           </section>
 
-          {/* G4 Content Review Stamp */}
+          
           <ContentReviewStamp />
 
-          {/* G5 Collapsible Sources Block */}
+          
           <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main>
+      </main> */}
 
       <Footer />
     </div>

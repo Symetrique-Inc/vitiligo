@@ -22,9 +22,9 @@ export default function FindDoctorPage() {
 
       <Breadcrumbs items={[{ label: 'Find a Doctor' }]} />
 
-      <main className="flex-1 pb-16">
+      {/* <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
+          
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10">
             <div className="max-w-3xl space-y-3">
               <div className="inline-flex items-center space-x-2">
@@ -42,7 +42,7 @@ export default function FindDoctorPage() {
             </div>
           </section>
 
-          {/* Directory Search Interface (Disabled / Coming Soon state) */}
+          
           <section className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-8">
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-[#0B1F6B]">
@@ -56,7 +56,7 @@ export default function FindDoctorPage() {
               </p>
             </div>
 
-            {/* Mocked disabled search inputs */}
+           
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 opacity-75">
               <div className="md:col-span-8 relative">
                 <MapPin className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -80,7 +80,7 @@ export default function FindDoctorPage() {
               </div>
             </div>
 
-            {/* Information Notice */}
+            
             <div className="p-6 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA] space-y-3">
               <div className="flex items-center space-x-2 text-[#1D5FE0]">
                 <Clock className="w-5 h-5" />
@@ -110,13 +110,13 @@ export default function FindDoctorPage() {
             </div>
           </section>
 
-          {/* G4 Content Review Stamp */}
+        
           <ContentReviewStamp />
 
-          {/* G5 Collapsible Sources Block */}
+          
           <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main>
+      </main> */}
 
       <Footer />
     </div>
