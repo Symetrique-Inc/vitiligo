@@ -17,14 +17,20 @@ export const Header: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isLangOpen, setIsLangOpen] = useState(false);
 
-  const navLinks = [
+  // const navLinks = [
+  //   { href: '/', label: 'Home' },
+  //   // { href: '/about', label: 'About' },
+  //   { href: '/understand-vitiligo', label: 'Understand Vitiligo' },
+  //   { href: '/living-with-vitiligo', label: 'My Life & Daily Living' },
+  //   // { href: '/treatment-and-care', label: 'Treatment & Care' },
+  //   // { href: '/expert-insights', label: 'Expert Insights' },
+  //   // { href: '/resources', label: 'Resources & Support' },
+  // ];
+   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
     { href: '/understand-vitiligo', label: 'Understand Vitiligo' },
     { href: '/living-with-vitiligo', label: 'My Life & Daily Living' },
-    { href: '/treatment-and-care', label: 'Treatment & Care' },
-    { href: '/expert-insights', label: 'Expert Insights' },
-    { href: '/resources', label: 'Resources & Support' },
+   
   ];
 
   const quickSuggestions = [
