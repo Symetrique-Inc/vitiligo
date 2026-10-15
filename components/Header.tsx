@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import { Search, Globe, Stethoscope, Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
 import { FindDoctorModal } from '@/components/FindDoctorModal';
-import { div } from 'framer-motion/client';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
