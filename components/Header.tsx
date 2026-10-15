@@ -25,6 +25,12 @@ export const Header: React.FC = () => {
   //   // { href: '/expert-insights', label: 'Expert Insights' },
   //   // { href: '/resources', label: 'Resources & Support' },
   // ];
+   const navLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/understand-vitiligo', label: 'Understand Vitiligo' },
+    { href: '/living-with-vitiligo', label: 'My Life & Daily Living' },
+   
+  ];
 
   const quickSuggestions = [
     { title: "What is vitiligo?", href: "/understand-vitiligo#p02-s03" },
