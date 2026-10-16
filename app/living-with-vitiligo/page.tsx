@@ -54,7 +54,7 @@ export default function LivingWithVitiligoPage() {
                   Everyday life beyond the skin
                 </h1>
                 <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-xl">
-                  Practical information for real-life situations. Living with vitiligo is about much more than skin — from relationships and work to emotional wellbeing and everyday tips.
+                  Living with vitiligo is about much more than skin — from relationships and work to emotional wellbeing and everyday tips.
                 </p>
               </div>
 
@@ -120,7 +120,7 @@ export default function LivingWithVitiligoPage() {
 
               <div className="p-6 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] space-y-3 pt-4">
                 <h3 className="font-bold text-sm text-[#0B1F6B]">What can help:</h3>
-                <ul className="space-y-2 text-xs sm:text-sm text-[#5B6785] list-disc list-inside">
+                <ul className="bullet-list bullet-rose">
                   <li><strong>Talk about how you feel.</strong> Sharing with someone you trust — a friend, family member or counsellor — can make a real difference.</li>
                   <li><strong>Connect with others who understand.</strong> Online communities and support groups for people with vitiligo can help you feel less alone.</li>
                   <li><strong>Consider professional support.</strong> A psychologist or counsellor with experience in skin conditions can offer practical strategies for building confidence and managing difficult emotions.</li>
@@ -183,7 +183,7 @@ export default function LivingWithVitiligoPage() {
 
               <div className="p-6 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] space-y-3">
                 <h3 className="font-bold text-sm text-[#0B1F6B]">Practical tips:</h3>
-                <ul className="space-y-2 text-xs sm:text-sm text-[#5B6785] list-disc list-inside">
+                <ul className="bullet-list bullet-blue">
                   <li><strong>You are not obligated to explain your skin to anyone.</strong> If you choose to, a simple explanation is enough: &ldquo;I have vitiligo — it’s a skin condition where some areas lose their colour.&rdquo;</li>
                   <li><strong>Equality and anti-discrimination:</strong> If vitiligo is affecting your confidence at work, speak to your HR department or occupational health service. In many countries, visible skin conditions are covered by equality and anti-discrimination laws.</li>
                   <li><strong>Prepare for social situations:</strong> Decide in advance how you want to respond to questions or stares, so you feel more in control.</li>
@@ -250,7 +250,7 @@ export default function LivingWithVitiligoPage() {
                 Some people with vitiligo choose to use cosmetic camouflage to cover lighter patches for certain occasions. This is a personal choice and neither necessary nor expected.
               </p>
 
-              <ul className="space-y-2 text-xs sm:text-sm text-[#5B6785] list-disc list-inside">
+              <ul className="bullet-list bullet-coral">
                 <li><strong>Camouflage creams and cover-up products</strong> are available in a wide range of skin tones. Many are waterproof and long-lasting.</li>
                 <li><strong>Self-tanning products</strong> can help reduce the contrast between affected and unaffected areas, though results vary.</li>
                 <li><strong>Micropigmentation (cosmetic tattooing)</strong> is an option for small, stable patches, particularly on the lips or around the eyes. Discuss this with your dermatologist first.</li>

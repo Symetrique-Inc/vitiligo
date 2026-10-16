@@ -18,6 +18,7 @@ import {
   Info,
   CheckCircle2,
   AlertCircle,
+  Users,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function TreatmentAndCarePage() {
     { title: 'Light Therapy (Phototherapy)', icon: Sun, href: '#phototherapy', color: 'text-[#F2884B]', bg: 'bg-[#FFEDE3]' },
     { title: 'Surgical Options', icon: Scissors, href: '#surgical', color: 'text-[#7C5CE0]', bg: 'bg-[#EFEAFF]' },
     { title: 'Emerging Treatments', icon: Microscope, href: '#emerging', color: 'text-[#E8456B]', bg: 'bg-[#FDE8EE]' },
+    { title: 'Your Care Team', icon: Users, href: '#care-team', color: 'text-[#7C5CE0]', bg: 'bg-[#EFEAFF]' },
     { title: 'What to Discuss with Doctor', icon: Stethoscope, href: '#checklist', color: 'text-[#0B1F6B]', bg: 'bg-[#EAF2FF]' },
   ];
 
@@ -42,7 +44,7 @@ export default function TreatmentAndCarePage() {
 
       <Breadcrumbs items={[{ label: 'Treatment & Care' }]} />
 
-      {/* <main className="flex-1 pb-16">
+      <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
          
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
@@ -269,7 +271,52 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          
+          {/* Your Care Team */}
+          <section id="care-team" className="py-10 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6">
+            <div>
+              <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
+                Multidisciplinary Support
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
+                Your Care Team
+              </h2>
+              <p className="text-sm sm:text-base text-[#5B6785] mt-1">
+                Managing vitiligo is not just about one doctor. Your care team may include:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-5 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA]">
+                <h3 className="font-bold text-sm text-[#0B1F6B]">Dermatologist</h3>
+                <p className="text-xs text-[#5B6785] mt-1">
+                  Your primary specialist for diagnosis, treatment and skin monitoring.
+                </p>
+              </div>
+              <div className="p-5 rounded-2xl bg-[#EFEAFF] border border-[#DCD3FC]">
+                <h3 className="font-bold text-sm text-[#0B1F6B]">General practitioner (GP)</h3>
+                <p className="text-xs text-[#5B6785] mt-1">
+                  Coordinates overall health, refers to specialists and monitors for related conditions like thyroid disease.
+                </p>
+              </div>
+              <div className="p-5 rounded-2xl bg-[#E3F6EF] border border-[#BCEBD7]">
+                <h3 className="font-bold text-sm text-[#0B1F6B]">Psychologist or counsellor</h3>
+                <p className="text-xs text-[#5B6785] mt-1">
+                  Supports emotional wellbeing, helps manage anxiety, depression or self-esteem issues.
+                </p>
+              </div>
+              <div className="p-5 rounded-2xl bg-[#FFEDE3] border border-[#FEDDC7]">
+                <h3 className="font-bold text-sm text-[#0B1F6B]">Pharmacist</h3>
+                <p className="text-xs text-[#5B6785] mt-1">
+                  Advises on medications, topical treatments and sun-protection products.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] text-xs sm:text-sm text-[#1E2A4A] leading-relaxed">
+              <strong>You are the most important member of your care team.</strong> Your observations about how vitiligo is changing, what triggers flare-ups and how treatment feels help your doctors make the best decisions for you.
+            </div>
+          </section>
+
           <section id="checklist" className="mb-14">
             <DoctorChecklist />
           </section>
@@ -303,7 +350,7 @@ export default function TreatmentAndCarePage() {
          
           <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main> */}
+      </main>
 
       <Footer />
     </div>

@@ -7,7 +7,6 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { ContentReviewStamp } from '@/components/ContentReviewStamp';
 import { SourcesBlock } from '@/components/SourcesBlock';
 import { UnderstandAccordion } from '@/components/UnderstandAccordion';
-import { BiologyInfographic } from '@/components/BiologyInfographic';
 import { KeyNumbersLancet } from '@/components/KeyNumbersLancet';
 import { commonSources } from '@/content/siteContent';
 import {
@@ -61,15 +60,7 @@ export default function UnderstandVitiligoPage() {
       color: 'text-[#1FA37A]',
       bg: 'bg-[#E3F6EF]',
     },
-    {
-      title: 'Treatment Journey',
-      description: 'Therapies, expectations and what to discuss',
-      icon: Bandage,
-      href: '/treatment-and-care',
-      color: 'text-[#F2884B]',
-      bg: 'bg-[#FFEDE3]',
-      fullWidth: true,
-    },
+    
   ];
 
   return (
@@ -128,9 +119,7 @@ export default function UnderstandVitiligoPage() {
                   <Link
                     key={idx}
                     href={tile.href}
-                    className={`p-5 rounded-2xl bg-white border border-[#DDE5F5] hover:border-[#1D5FE0] hover:shadow-md transition-all group flex items-center justify-between ${
-                      tile.fullWidth ? 'md:col-span-2' : ''
-                    }`}
+                    className="p-5 rounded-2xl bg-white border border-[#DDE5F5] hover:border-[#1D5FE0] hover:shadow-md transition-all group flex items-center justify-between"
                   >
                     <div className="flex items-center space-x-3.5">
                       <div className={`w-11 h-11 rounded-xl ${tile.bg} ${tile.color} flex items-center justify-center shrink-0`}>
@@ -181,11 +170,6 @@ export default function UnderstandVitiligoPage() {
                 <p>Vitiligo is an autoimmune disease. It is not simply a cosmetic condition.</p>
               </div>
             </div>
-          </section>
-
-          {/* P02-S04 — What happens in vitiligo? Infographic */}
-          <section className="mb-14">
-            <BiologyInfographic />
           </section>
 
           {/* P02-S05 — Why does vitiligo matter beyond the skin? Accordion */}

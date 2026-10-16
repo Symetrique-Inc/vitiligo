@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <Breadcrumbs items={[{ label: 'About' }]} />
 
-      {/* <main className="flex-1 pb-16">
+      <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-12">
@@ -266,7 +266,7 @@ export default function AboutPage() {
           
           <ContentReviewStamp />
         </div>
-      </main> */}
+      </main>
 
       <Footer />
     </div>

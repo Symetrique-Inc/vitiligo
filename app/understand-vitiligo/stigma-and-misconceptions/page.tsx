@@ -12,7 +12,6 @@ import { StigmaCarousel } from '@/components/StigmaCarousel';
 import { regionCards, commonSources } from '@/content/siteContent';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 import {
-  Stethoscope,
   HeartHandshake,
   CheckCircle2,
   Play,
@@ -31,7 +30,7 @@ export default function StigmaAndMisconceptionsPage() {
     { id: 'p03-s02', label: 'Myths vs Facts' },
     { id: 'p03-s03', label: 'Why Stigma Happens' },
     { id: 'p03-s04', label: 'Your Skin, Your Choice' },
-    { id: 'p03-s05', label: 'Your Care Team' },
+    { id: 'p03-s05', label: 'See a Dermatologist' },
     { id: 'p03-s06', label: 'Real Stories' },
   ];
 
@@ -275,63 +274,6 @@ export default function StigmaAndMisconceptionsPage() {
                 <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
                   A dermatologist can also watch for signs of another autoimmune disease. If it affects the skin, hair or nails, they can diagnose and treat it. If another part of the body is affected, they can refer you to the right specialist.
                 </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-2 border-t border-gray-100 gap-4">
-              <Link
-                href="/find-a-doctor"
-                className="inline-flex items-center space-x-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#1FA37A] text-white hover:bg-[#188563] shadow-xs transition-colors self-start"
-              >
-                <Stethoscope className="w-4 h-4" />
-                <span>Find a dermatologist near you →</span>
-              </Link>
-              <span className="text-xs text-[#5B6785]">Source: AAD</span>
-            </div>
-
-            {/* Your Care Team block from DOC B */}
-            <div className="pt-8 border-t border-gray-100 space-y-5">
-              <div>
-                <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
-                  Multidisciplinary Support
-                </span>
-                <h3 className="text-xl font-bold font-serif text-[#0B1F6B] mt-1">
-                  Your Care Team
-                </h3>
-                <p className="text-xs sm:text-sm text-[#5B6785] mt-1">
-                  Managing vitiligo is not just about one doctor. Your care team may include:
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="p-5 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA]">
-                  <h4 className="font-bold text-sm text-[#0B1F6B]">Dermatologist</h4>
-                  <p className="text-xs text-[#5B6785] mt-1">
-                    Your primary specialist for diagnosis, treatment and skin monitoring.
-                  </p>
-                </div>
-                <div className="p-5 rounded-2xl bg-[#EFEAFF] border border-[#DCD3FC]">
-                  <h4 className="font-bold text-sm text-[#0B1F6B]">General practitioner (GP)</h4>
-                  <p className="text-xs text-[#5B6785] mt-1">
-                    Coordinates overall health, refers to specialists and monitors for related conditions like thyroid disease.
-                  </p>
-                </div>
-                <div className="p-5 rounded-2xl bg-[#E3F6EF] border border-[#BCEBD7]">
-                  <h4 className="font-bold text-sm text-[#0B1F6B]">Psychologist or counsellor</h4>
-                  <p className="text-xs text-[#5B6785] mt-1">
-                    Supports emotional wellbeing, helps manage anxiety, depression or self-esteem issues.
-                  </p>
-                </div>
-                <div className="p-5 rounded-2xl bg-[#FFEDE3] border border-[#FEDDC7]">
-                  <h4 className="font-bold text-sm text-[#0B1F6B]">Pharmacist</h4>
-                  <p className="text-xs text-[#5B6785] mt-1">
-                    Advises on medications, topical treatments and sun-protection products.
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] text-xs sm:text-sm text-[#1E2A4A] leading-relaxed">
-                <strong>You are the most important member of your care team.</strong> Your observations about how vitiligo is changing, what triggers flare-ups and how treatment feels help your doctors make the best decisions for you.
               </div>
             </div>
           </section>

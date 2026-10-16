@@ -77,9 +77,6 @@ export const AudienceCards: React.FC = () => {
                     {card.title}
                   </h3>
                 </Link>
-
-                {/* Subtle vertical connector guide line */}
-                <div className={`w-0.5 h-6 ${card.lineColor} opacity-35 hidden lg:block`} />
               </div>
             );
           })}

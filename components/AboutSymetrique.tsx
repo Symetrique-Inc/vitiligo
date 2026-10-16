@@ -14,21 +14,21 @@ export const AboutSymetrique: React.FC = () => {
           <span className="text-xs font-bold text-[#1D5FE0] tracking-wider uppercase block mb-2">
             WHO WE ARE
           </span>
-          <h2
+          {/* <h2
             id="about-symetrique-heading"
             className="text-3xl sm:text-4xl lg:text-[42px] font-bold font-serif text-[#0B1F6B] leading-tight"
           >
             Patient-centred. Authentic. Connecting innovators.
-          </h2>
+          </h2> */}
         </div>
 
         {/* Two-Column Text */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 text-[#1E2A4A] text-base sm:text-lg leading-relaxed mb-16">
           <div className="space-y-4">
-            <p>
+            <p className="text-[#0B1F6B]">
               Vitiligo Hub is built by Symetrique. We started with a simple belief: the people who live with a condition understand it in ways no textbook can. Too often their experience is missing from the conversations where care is designed and new treatments are developed.
             </p>
-            <p className="text-[#5B6785]">
+            <p className="text-[#0A0A0A]">
               We are changing that. We listen to people living with vitiligo and to the doctors who care for them. With clear consent, we collect real experiences — how symptoms change, how treatment feels, what daily life is like — and turn them into reliable evidence. We then work with researchers and pharmaceutical companies so that new treatments and services reflect what patients actually need.
             </p>
           </div>
@@ -95,7 +95,7 @@ export const AboutSymetrique: React.FC = () => {
           <h3 className="text-lg font-bold font-serif text-[#0B1F6B] mb-3">
             Your experience, your choice
           </h3>
-          <ul className="space-y-2 text-sm text-[#1E2A4A] mb-4 list-disc list-inside">
+          <ul className="bullet-list bullet-blue mb-4">
             <li>You decide whether to share your experience. Taking part is always optional.</li>
             <li>We only share information with partners in a form that does not identify you.</li>
             <li>We never sell your personal data.</li>
