@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/treatment-and-care',
     '/expert-insights',
     '/resources',
-    '/find-a-doctor',
     '/share',
     '/privacy',
     '/terms',

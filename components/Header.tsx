@@ -3,15 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Globe, Stethoscope, Menu, X, ChevronDown } from 'lucide-react';
+import { Search, Globe, Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
-import { FindDoctorModal } from '@/components/FindDoctorModal';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
   const { locale, setLocale, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDoctorModalOpen, setIsDoctorModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -185,26 +183,10 @@ export const Header: React.FC = () => {
                   </div>
                 )}
               </div>
-
-              {/* Find a Doctor Navy Pill CTA */}
-              <Link
-                href="/find-a-doctor"
-                className="inline-flex items-center space-x-2 px-5 py-2 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md shadow-[#0B1F6B]/15 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <Stethoscope className="w-3.5 h-3.5 text-white" />
-                <span>Find a Doctor</span>
-              </Link>
             </div>
 
             {/* Mobile Hamburger Toggle */}
             <div className="flex items-center space-x-2 xl:hidden">
-              <Link
-                href="/find-a-doctor"
-                className="p-2 rounded-full bg-[#0B1F6B] text-white sm:hidden"
-                aria-label="Find Doctor"
-              >
-                <Stethoscope className="w-4 h-4" />
-              </Link>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2.5 rounded-xl text-gray-700 hover:text-[#0B1F6B] hover:bg-gray-100"
@@ -258,26 +240,9 @@ export const Header: React.FC = () => {
                 );
               })}
             </nav>
-
-            <div className="pt-2">
-              <Link
-                href="/find-a-doctor"
-                onClick={() => setIsMenuOpen(false)}
-                className="w-full flex items-center justify-center space-x-2 px-5 py-3 rounded-full text-sm font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0]"
-              >
-                <Stethoscope className="w-4 h-4 text-white" />
-                <span>Find a Doctor</span>
-              </Link>
-            </div>
           </div>
         )}
       </header>
-
-      {/* Doctor Directory Modal */}
-      <FindDoctorModal
-        isOpen={isDoctorModalOpen}
-        onClose={() => setIsDoctorModalOpen(false)}
-      />
     </>
   );
 };

@@ -25,10 +25,8 @@ import {
   MessageSquare,
   ArrowRight,
 } from 'lucide-react';
-import { FindDoctorModal } from '@/components/FindDoctorModal';
 
 export const FiveSectionCards: React.FC = () => {
-  const [isDoctorModalOpen, setIsDoctorModalOpen] = useState(false);
 
   return (
     <>
@@ -78,7 +76,7 @@ export const FiveSectionCards: React.FC = () => {
               className="bg-white border-2 border-[#7C5CE0]/30 hover:border-[#7C5CE0] p-4 rounded-2xl text-center shadow-xs transition-colors"
             >
               <h3 className="font-bold text-sm text-[#0B1F6B]">Resources & Support</h3>
-              <p className="text-[11px] text-[#5B6785] mt-1">Find a doctor, support groups, useful resources</p>
+              <p className="text-[11px] text-[#5B6785] mt-1">Support groups, guides & practical resources</p>
             </Link>
           </div>
 
@@ -389,13 +387,13 @@ export const FiveSectionCards: React.FC = () => {
 
               {/* Bottom Banner */}
               <div className="p-4 bg-[#F8FAFF] border-t border-[#DDE5F5] flex flex-col justify-between space-y-2">
-                <span className="text-[11px] font-bold text-[#0B1F6B]">Find a dermatologist in your area.</span>
-                <button
-                  onClick={() => setIsDoctorModalOpen(true)}
+                <span className="text-[11px] font-bold text-[#0B1F6B]">Explore evidence-based therapies.</span>
+                <Link
+                  href="/treatment-and-care"
                   className="w-full text-center py-2 px-3 rounded-full text-xs font-semibold bg-[#1FA37A] text-white hover:bg-[#188563] transition-colors"
                 >
-                  Search now →
-                </button>
+                  View treatments →
+                </Link>
               </div>
             </div>
 
@@ -540,15 +538,15 @@ export const FiveSectionCards: React.FC = () => {
                 </span>
 
                 <div className="space-y-2.5 divide-y divide-gray-100">
-                  <Link href="/resources#find-doctor" className="pt-2 first:pt-0 flex items-center justify-between group">
+                  <Link href="/resources#mental-health" className="pt-2 first:pt-0 flex items-center justify-between group">
                     <div className="flex items-start space-x-2 pr-1">
-                      <Stethoscope className="w-4 h-4 text-[#1D5FE0] shrink-0 mt-0.5" />
+                      <HeartHandshake className="w-4 h-4 text-[#E8456B] shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="text-xs font-bold text-[#0B1F6B] group-hover:text-[#1D5FE0]">Find a doctor</h4>
-                        <p className="text-[10px] text-[#5B6785]">Dermatologists & care centres</p>
+                        <h4 className="text-xs font-bold text-[#0B1F6B] group-hover:text-[#E8456B]">Mental health support</h4>
+                        <p className="text-[10px] text-[#5B6785]">Emotional wellbeing & guidance</p>
                       </div>
                     </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#1D5FE0] shrink-0" />
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-[#E8456B] shrink-0" />
                   </Link>
 
                   <Link href="/resources#support-groups" className="pt-2 flex items-center justify-between group">
@@ -631,11 +629,6 @@ export const FiveSectionCards: React.FC = () => {
           </div> */}
         </div>
       </section>
-
-      <FindDoctorModal
-        isOpen={isDoctorModalOpen}
-        onClose={() => setIsDoctorModalOpen(false)}
-      />
     </>
   );
 };

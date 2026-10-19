@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { SourcesBlock } from '@/components/SourcesBlock';
-import { commonSources, resourcesContent } from '@/content/siteContent';
+import { resourcesContent } from '@/content/siteContent';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 import {
   HeartHandshake,
@@ -39,7 +37,7 @@ export default function ResourcesPage() {
 
       <Breadcrumbs items={[{ label: 'Resources & Support' }]} />
 
-      {/* <main className="flex-1 pb-16">
+      <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
@@ -199,25 +197,9 @@ export default function ResourcesPage() {
                 </div>
               ))}
             </div>
-
-            <div className="text-center sm:text-left">
-              <Link
-                href={resourcesContent.dermatologistCriteria.ctaLink}
-                className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md transition-colors"
-              >
-                <Stethoscope className="w-4 h-4 text-white" />
-                <span>{resourcesContent.dermatologistCriteria.cta}</span>
-              </Link>
-            </div>
           </section>
-
-          
-          <ContentReviewStamp />
-
-          
-          <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main> */}
+      </main>
 
       <Footer />
     </div>

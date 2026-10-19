@@ -4,11 +4,8 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { SourcesBlock } from '@/components/SourcesBlock';
 import { UnderstandAccordion } from '@/components/UnderstandAccordion';
 import { KeyNumbersLancet } from '@/components/KeyNumbersLancet';
-import { commonSources } from '@/content/siteContent';
 import {
   Layers,
   Users,
@@ -17,7 +14,6 @@ import {
   Bandage,
   Info,
   ArrowRight,
-  Stethoscope,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -223,11 +219,10 @@ export default function UnderstandVitiligoPage() {
 
             <div className="flex flex-wrap gap-3 shrink-0">
               <Link
-                href="/find-a-doctor"
+                href="/treatment-and-care"
                 className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] transition-colors shadow-xs"
               >
-                <Stethoscope className="w-3.5 h-3.5" />
-                <span>Find a Doctor</span>
+                <span>Explore Treatment Options</span>
               </Link>
               <Link
                 href="/understand-vitiligo/stigma-and-misconceptions"
@@ -276,12 +271,6 @@ export default function UnderstandVitiligoPage() {
               </Link>
             </div>
           </section>
-
-          {/* G4 Review Stamp */}
-          <ContentReviewStamp />
-
-          {/* G5 Sources */}
-          <SourcesBlock sources={commonSources.p03} />
         </div>
       </main>
 

@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { UserCheck, Shield, Users, Sparkles, Send, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import { UserCheck, Shield, Users, Sparkles, Send, CheckCircle2, ExternalLink } from 'lucide-react';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 
 export default function AboutPage() {
@@ -34,15 +34,52 @@ export default function AboutPage() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-12">
-            <span className="text-xs font-bold text-[#1D5FE0] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-              About Symetrique
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] mt-3 tracking-tight">
-              About Vitiligo Hub
-            </h1>
-            <p className="text-base sm:text-lg text-[#5B6785] mt-2 max-w-2xl leading-relaxed">
-              Our purpose, our mission and the people behind this platform.
-            </p>
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div>
+                <span className="text-xs font-bold text-[#1D5FE0] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
+                  Vitiligo Hub
+                </span>
+                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] mt-3 tracking-tight">
+                  About Vitiligo Hub
+                </h1>
+                <p className="text-base sm:text-lg font-semibold text-[#1D5FE0] mt-2">
+                  Vitiligo Hub — An initiative by Symetrique
+                </p>
+                <p className="text-sm sm:text-base text-[#5B6785] mt-1 max-w-2xl leading-relaxed">
+                  Our purpose, our mission and the people behind this platform.
+                </p>
+              </div>
+
+              {/* Symetrique initiative logo badge & website link */}
+              <div className="shrink-0 pt-2 lg:pt-0">
+                <a
+                  href="https://thesymetrique.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-start gap-2.5 p-4 sm:p-5 rounded-2xl bg-[#F8FAFF] hover:bg-[#F0F5FF] border border-[#DDE5F5] hover:border-[#1D5FE0]/40 transition-all shadow-xs hover:shadow-md"
+                  title="Visit the Symetrique official website (opens in new tab)"
+                >
+                  <div className="flex items-center justify-between w-full gap-4">
+                    <span className="text-[11px] font-bold text-[#5B6785] uppercase tracking-wider">
+                      An Initiative By
+                    </span>
+                    <span className="text-xs font-semibold text-[#1D5FE0] inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                      <span>thesymetrique.com</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <Image
+                      src="/symetrique-logo.png"
+                      alt="Symetrique"
+                      width={180}
+                      height={25}
+                      className="h-7 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
           </section>
 
           
@@ -262,9 +299,6 @@ export default function AboutPage() {
               )}
             </div>
           </section>
-
-          
-          <ContentReviewStamp />
         </div>
       </main>
 

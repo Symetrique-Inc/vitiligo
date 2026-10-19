@@ -3,9 +3,6 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { SourcesBlock } from '@/components/SourcesBlock';
-import { commonSources } from '@/content/siteContent';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 import { ShieldCheck, Heart, ArrowRight, Lock, CheckCircle2 } from 'lucide-react';
 
@@ -22,7 +19,7 @@ export default function SharePage() {
 
       <Breadcrumbs items={[{ label: 'Share your experience' }]} />
 
-      {/* <main className="flex-1 pb-16">
+      <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10">
@@ -108,14 +105,8 @@ export default function SharePage() {
               </Link>
             </div>
           </section>
-
-          
-          <ContentReviewStamp />
-
-          
-          <SourcesBlock sources={commonSources.p03} />
         </div>
-      </main> */}
+      </main>
 
       <Footer />
     </div>

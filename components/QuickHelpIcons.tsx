@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Stethoscope, Building2, Users2, FlaskConical, HeartHandshake } from 'lucide-react';
+import { Sparkles, Building2, Users2, FlaskConical, HeartHandshake } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
 
 export const QuickHelpIcons: React.FC = () => {
@@ -11,8 +11,8 @@ export const QuickHelpIcons: React.FC = () => {
   const items = [
     {
       title: t.quickHelp.derm,
-      icon: Stethoscope,
-      href: '/resources#find-doctor',
+      icon: Sparkles,
+      href: '/treatment-and-care',
       color: '#1D5FE0',
       bgColor: 'bg-[#EAF2FF]',
       borderColor: 'border-[#1D5FE0]/20',

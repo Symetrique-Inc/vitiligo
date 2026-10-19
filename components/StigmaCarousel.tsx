@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight, X, ArrowRight, HelpCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ArrowRight, HelpCircle, CheckCircle2 } from 'lucide-react';
 import { tenMyths } from '@/content/siteContent';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 
@@ -127,33 +127,41 @@ export const StigmaCarousel: React.FC<StigmaCarouselProps> = ({
 
                 {/* Expanded Full Explanation (Back of card toggle) */}
                 {isExpanded && (
-                  <div className="pt-2 text-xs text-[#5B6785] leading-relaxed border-t border-gray-100 animate-fadeIn space-y-2">
-                    <p>{card.fullExplanation}</p>
-                    {card.visualCaption && (
-                      <p className="text-[11px] text-gray-400 italic">
-                        {card.visualCaption}
+                  <div className="pt-3 animate-fadeIn space-y-3">
+                    <div className="p-4 rounded-2xl bg-[#F4F8FF] border border-[#D5E2FA] space-y-2.5">
+                      <div className="flex items-center space-x-1.5 text-xs font-bold text-[#1D5FE0]">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                        <span className="uppercase tracking-wider text-[11px]">The Medical Fact</span>
+                      </div>
+                      <p className="text-sm sm:text-[15px] font-medium text-[#1E2A4A] leading-relaxed">
+                        {card.fullExplanation}
                       </p>
-                    )}
+                      {card.visualCaption && (
+                        <div className="pt-2.5 border-t border-[#D5E2FA]/70 flex items-start space-x-2 text-xs sm:text-sm text-[#0B1F6B] font-semibold">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#1D5FE0] mt-1.5 shrink-0" />
+                          <span>{card.visualCaption}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>
 
               {/* Bottom: Read more expander & source */}
-              <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+              <div className="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between text-xs sm:text-sm">
                 <button
                   onClick={() => setExpandedCardId(isExpanded ? null : card.id)}
-                  className="font-semibold text-[#1D5FE0] hover:underline"
+                  className="font-bold text-[#1D5FE0] hover:text-[#0B1F6B] transition-colors py-1 inline-flex items-center space-x-1"
                 >
-                  {isExpanded ? 'Show less' : 'Read more →'}
+                  <span>{isExpanded ? 'Show less ↑' : 'Read more →'}</span>
                 </button>
 
-                <a
-                  href="#sources"
-                  className="text-[11px] font-medium text-gray-400 bg-gray-100 px-2.5 py-0.5 rounded-full hover:text-[#0B1F6B]"
+                <span
+                  className="text-[11px] font-semibold text-[#5B6785] bg-[#F8FAFF] border border-[#DDE5F5] px-2.5 py-1 rounded-full"
                   title={`Source: ${card.source}`}
                 >
                   {card.source}
-                </a>
+                </span>
               </div>
             </div>
           );

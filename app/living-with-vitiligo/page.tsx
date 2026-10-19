@@ -4,9 +4,6 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { SourcesBlock } from '@/components/SourcesBlock';
-import { commonSources } from '@/content/siteContent';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 import {
   Smile,
@@ -305,12 +302,6 @@ export default function LivingWithVitiligoPage() {
               </Link>
             </div>
           </section>
-
-          {/* G4 Review Stamp */}
-          <ContentReviewStamp />
-
-          {/* G5 Sources */}
-          <SourcesBlock sources={commonSources.p03} />
         </div>
       </main>
 

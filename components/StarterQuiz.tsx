@@ -27,9 +27,9 @@ export const StarterQuiz: React.FC = () => {
       title: "What is your primary focus right now?",
       options: [
         { label: "Understanding the cause & debunking myths", value: "basics" },
-        { label: "Medical treatment options & dermatologist care", value: "treatment" },
+        { label: "Medical treatment options & evidence-based therapies", value: "treatment" },
         { label: "Emotional wellbeing, relationships & confidence", value: "life" },
-        { label: "Finding a specialized doctor or clinic near me", value: "doctor" },
+        { label: "Support groups, practical guides & resources", value: "resources" },
       ],
       field: "goal" as const,
     },
@@ -67,12 +67,12 @@ export const StarterQuiz: React.FC = () => {
         color: "#1FA37A",
       };
     }
-    if (answers.goal === 'doctor') {
+    if (answers.goal === 'resources') {
       return {
-        title: "Recommended Path: Specialist Directory & Clinics",
-        desc: "Find certified pigment specialists, hospitals, and telehealth options equipped to formulate an individualized plan.",
-        link: "/resources#find-doctor",
-        linkText: "Search Doctor Directory →",
+        title: "Recommended Path: Support Groups & Community Resources",
+        desc: "Connect with peer support circles, caregiver communities, and practical worksheets for daily living.",
+        link: "/resources",
+        linkText: "Explore Support Resources →",
         badge: "Resources",
         color: "#0B1F6B",
       };

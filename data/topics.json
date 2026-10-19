@@ -128,8 +128,8 @@
         "route": "/treatment#living"
       }
     ],
-    "ctaText": "Search now →",
-    "ctaRoute": "/resources#find-doctor"
+    "ctaText": "Explore treatments →",
+    "ctaRoute": "/treatment-and-care"
   },
   {
     "id": "expert-insights",
@@ -182,14 +182,14 @@
     "accentHex": "#0B1F6B",
     "tintHex": "#EAF2FF",
     "tagline": "Find the right support.",
-    "description": "Find a doctor, support groups, useful resources. Trusted resources for you and your community.",
+    "description": "Support groups, practical guides, and community networks for you and your family.",
     "route": "/resources",
     "subtopics": [
       {
-        "id": "find-doc",
-        "title": "Find a doctor",
-        "description": "Dermatologists and treatment centres",
-        "route": "/resources#find-doctor"
+        "id": "mental-health",
+        "title": "Mental health support",
+        "description": "Emotional wellbeing and counselling guidance",
+        "route": "/resources#mental-health"
       },
       {
         "id": "support-groups",

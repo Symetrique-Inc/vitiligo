@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { SourcesBlock } from '@/components/SourcesBlock';
-import { commonSources, treatmentContent } from '@/content/siteContent';
+import { treatmentContent } from '@/content/siteContent';
 import { DoctorChecklist } from '@/components/DoctorChecklist';
 import {
   Sparkles,
@@ -320,35 +318,6 @@ export default function TreatmentAndCarePage() {
           <section id="checklist" className="mb-14">
             <DoctorChecklist />
           </section>
-
-         
-          <section className="bg-gradient-to-r from-[#0B1F6B] via-[#142B7E] to-[#1D5FE0] rounded-3xl p-8 sm:p-12 text-white shadow-lg text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 mb-14">
-            <div className="space-y-2 max-w-2xl">
-              <span className="text-xs font-bold uppercase tracking-wider text-blue-200">
-                Next Steps
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif">
-                Ready to speak with a specialist?
-              </h2>
-              <p className="text-sm text-blue-100">
-                A qualified dermatologist can confirm diagnosis, assess disease stability, and tailor a safe, effective care plan for you.
-              </p>
-            </div>
-
-            <Link
-              href="/find-a-doctor"
-              className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold bg-[#1FA37A] text-white hover:bg-[#188060] shadow-md transition-colors whitespace-nowrap"
-            >
-              <Stethoscope className="w-4 h-4" />
-              <span>Find a Doctor</span>
-            </Link>
-          </section>
-
-         
-          <ContentReviewStamp />
-
-         
-          <SourcesBlock sources={commonSources.p03} />
         </div>
       </main>
 

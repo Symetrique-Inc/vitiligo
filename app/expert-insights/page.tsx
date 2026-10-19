@@ -4,9 +4,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { ContentReviewStamp } from '@/components/ContentReviewStamp';
-import { SourcesBlock } from '@/components/SourcesBlock';
-import { commonSources, expertInsightsContent } from '@/content/siteContent';
+import { expertInsightsContent } from '@/content/siteContent';
 import { AskExpertForm } from '@/components/AskExpertForm';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 import {
@@ -223,12 +221,6 @@ export default function ExpertInsightsPage() {
           <section className="mb-14">
             <AskExpertForm />
           </section>
-
-          {/* G4 Content Review Stamp */}
-          <ContentReviewStamp />
-
-          {/* G5 Collapsible Sources Block */}
-          <SourcesBlock sources={commonSources.p03} />
         </div>
       </main>
 

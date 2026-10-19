@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Stethoscope, CheckCircle2, ShieldAlert, ArrowRight } from 'lucide-react';
-import { FindDoctorModal } from '@/components/FindDoctorModal';
+import React from 'react';
+import { CheckCircle2, ShieldAlert } from 'lucide-react';
 
 export const DermatologistSteps: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const steps = [
     {
@@ -100,24 +98,9 @@ export const DermatologistSteps: React.FC = () => {
                 <strong className="text-[#0B1F6B]">No.</strong> Having vitiligo does not mean a person will automatically develop thyroid disease, another autoimmune condition, or hearing loss. The vast majority of people with vitiligo live healthy, active lives.
               </p>
             </div>
-
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full text-xs font-bold bg-[#1FA37A] text-white hover:bg-[#188563] shadow-md shrink-0 transition-transform hover:-translate-y-0.5"
-            >
-              <Stethoscope className="w-4 h-4" />
-              <span>Find a Dermatologist</span>
-              <ArrowRight className="w-4 h-4 ml-1" />
-            </button>
           </div>
         </div>
       </section>
-
-      {/* Directory Modal */}
-      <FindDoctorModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </>
   );
 };
