@@ -26,15 +26,20 @@ export const Footer: React.FC = () => {
                   <path d="M20 7 C25 13, 26 21, 18 27 C21 21, 22 13, 20 7 Z" fill="#1FA37A" />
                 </svg>
               </div>
-              <span className="font-extrabold text-base font-serif text-[#0B1F6B]">
-                VITILIGO HUB
-              </span>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-base font-serif text-[#0B1F6B] leading-tight">
+                  VITILIGO HUB
+                </span>
+                <span className="text-[11px] text-[#5B6785] font-medium">
+                  An initiative by Symetrique
+                </span>
+              </div>
             </div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
               About
             </h4>
             <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
-              Vitiligo Hub is a Symetrique initiative. We bring people living with vitiligo, their families, doctors and researchers together around one goal: better understanding and better care.
+              Vitiligo Hub is a patient-centred initiative by Symetrique, bringing together people living with vitiligo, healthcare professionals, researchers and pharmaceutical partners. Through reliable information and consent-based patient-reported insights, we aim to improve understanding of vitiligo and help shape research around patient needs.
             </p>
           </div>
 

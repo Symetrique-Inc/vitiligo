@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { AudienceCards } from '@/components/AudienceCards';
+import { HomeMythsSection } from '@/components/HomeMythsSection';
+import { HomeBeginSection } from '@/components/HomeBeginSection';
 import { AboutSymetrique } from '@/components/AboutSymetrique';
 import { Footer } from '@/components/Footer';
 
@@ -31,16 +32,17 @@ export default function HomePage() {
       {/* G1 — Global Header */}
       <Header />
 
-      <main id="main-content" className="flex-1">
-        {/* P01-S01 — Hero */}
+      <main id="main-content" className="flex-1 space-y-3 sm:space-y-4">
+        {/* Hero Section */}
         <Hero />
 
-        {/* P01-S02 — How can we help you today? (4 tiles overlapping hero bottom) */}
-        <div className="relative z-30 -mt-6 sm:-mt-10 mb-8">
-          <AudienceCards />
-        </div>
+        {/* Section 2 — Think You Know Vitiligo? Let's Separate Myths from Facts */}
+        <HomeMythsSection />
 
-        {/* P01-S03 — About Symetrique (two-column text, 3 feature cards, data promise, CTA band) */}
+        {/* Section 3 — Where would you like to begin? */}
+        <HomeBeginSection />
+
+        {/* Section 4 — About Symetrique (Mission, Feature Cards, Data Promise, CTA Band) */}
         <AboutSymetrique />
       </main>
 

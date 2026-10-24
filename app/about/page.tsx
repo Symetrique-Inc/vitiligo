@@ -5,7 +5,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Image from 'next/image';
-import { UserCheck, Shield, Users, Sparkles, Send, CheckCircle2, ExternalLink } from 'lucide-react';
+import { UserCheck, Shield, Users, Sparkles, Send, CheckCircle2 } from 'lucide-react';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 
 export default function AboutPage() {
@@ -33,102 +33,37 @@ export default function AboutPage() {
       <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           
-          <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-12">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-              <div>
-                <span className="text-xs font-bold text-[#1D5FE0] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-                  Vitiligo Hub
+          {/* Primary Focus Section: Why Vitiligo with image */}
+          <section className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mt-4 mb-14">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-4">
+                <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
+                  Focus
                 </span>
-                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] mt-3 tracking-tight">
-                  About Vitiligo Hub
+                <h1 className="text-3xl sm:text-4xl lg:text-[40px] font-bold font-serif text-[#0B1F6B] leading-tight">
+                  Why Vitiligo
                 </h1>
-                <p className="text-base sm:text-lg font-semibold text-[#1D5FE0] mt-2">
-                  Vitiligo Hub — An initiative by Symetrique
-                </p>
-                <p className="text-sm sm:text-base text-[#5B6785] mt-1 max-w-2xl leading-relaxed">
-                  Our purpose, our mission and the people behind this platform.
-                </p>
+                <div className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed space-y-3.5">
+                  <p>
+                    Vitiligo is often dismissed as a cosmetic issue. In reality, it is an autoimmune condition that can affect mental health, self-esteem and overall wellbeing. Despite affecting millions of people worldwide, it receives far less research attention and public understanding than many other conditions.
+                  </p>
+                  <p>
+                    The Vitiligo Hub is our commitment to changing that. We are building a trusted space where patients, families and healthcare professionals can find clear information, share experiences and connect with a global community that understands.
+                  </p>
+                </div>
               </div>
 
-              {/* Symetrique initiative logo badge & website link */}
-              <div className="shrink-0 pt-2 lg:pt-0">
-                <a
-                  href="https://thesymetrique.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-start gap-2.5 p-4 sm:p-5 rounded-2xl bg-[#F8FAFF] hover:bg-[#F0F5FF] border border-[#DDE5F5] hover:border-[#1D5FE0]/40 transition-all shadow-xs hover:shadow-md"
-                  title="Visit the Symetrique official website (opens in new tab)"
-                >
-                  <div className="flex items-center justify-between w-full gap-4">
-                    <span className="text-[11px] font-bold text-[#5B6785] uppercase tracking-wider">
-                      An Initiative By
-                    </span>
-                    <span className="text-xs font-semibold text-[#1D5FE0] inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                      <span>thesymetrique.com</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 pt-0.5">
-                    <Image
-                      src="/symetrique-logo.png"
-                      alt="Symetrique"
-                      width={180}
-                      height={25}
-                      className="h-7 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-                    />
-                  </div>
-                </a>
+              {/* Right Column: Image */}
+              <div className="lg:col-span-5 relative h-[260px] sm:h-[320px] lg:h-[340px] rounded-2xl overflow-hidden border border-[#E5ECF6] shadow-xs">
+                <Image
+                  src="/images/card-understand.jpg"
+                  alt="Person with vitiligo smiling with confidence"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-center"
+                />
               </div>
-            </div>
-          </section>
-
-          
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
-            <div className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs space-y-4">
-              <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                Purpose
-              </span>
-              <h2 className="text-2xl font-bold font-serif text-[#0B1F6B]">
-                Our Mission
-              </h2>
-              <p className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed">
-                Symetrique exists to put patient experience at the centre of healthcare. We believe the people who live with a condition hold knowledge that no clinical study alone can capture. By listening to their stories, measuring what they report and turning it into reliable evidence, we help shape treatments, services and policies that truly serve patients.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs space-y-4">
-              <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider">
-                Methodology
-              </span>
-              <h2 className="text-2xl font-bold font-serif text-[#0B1F6B]">
-                What We Do
-              </h2>
-              <div className="text-sm text-[#1E2A4A] leading-relaxed space-y-3">
-                <p>
-                  We design and run patient-reported outcome programmes. Working directly with people living with conditions like vitiligo, we collect real-world data on symptoms, quality of life, treatment experiences and daily challenges. Every piece of information is gathered with informed consent, stored securely and handled to the highest ethical and privacy standards.
-                </p>
-                <p>
-                  We then translate this evidence into insights that pharmaceutical companies, clinicians and health systems can act on — so new therapies are tested against outcomes that matter to patients, and care pathways reflect real needs.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          
-          <section className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
-            <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
-              Focus
-            </span>
-            <h2 className="text-2xl font-bold font-serif text-[#0B1F6B]">
-              Why Vitiligo
-            </h2>
-            <div className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed space-y-3 max-w-4xl">
-              <p>
-                Vitiligo is often dismissed as a cosmetic issue. In reality, it is an autoimmune condition that can affect mental health, self-esteem and overall wellbeing. Despite affecting millions of people worldwide, it receives far less research attention and public understanding than many other conditions.
-              </p>
-              <p>
-                The Vitiligo Hub is our commitment to changing that. We are building a trusted space where patients, families and healthcare professionals can find clear information, share experiences and connect with a global community that understands.
-              </p>
             </div>
           </section>
 

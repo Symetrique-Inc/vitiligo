@@ -3,70 +3,73 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
-import { useLanguage } from '@/components/LanguageContext';
 
 export const Hero: React.FC = () => {
-  const { t } = useLanguage();
-
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-r from-white via-[#F4F9FF] to-[#EAF4FF] border-b border-[#E5ECF6]">
-      {/* Decorative subtle pastel halo rings matching the mockup background */}
-      <div className="absolute top-1/2 right-[25%] -translate-y-1/2 w-72 h-72 rounded-full border-4 border-[#C8B6F8]/35 pointer-events-none" />
-      <div className="absolute top-[45%] right-[18%] -translate-y-1/2 w-64 h-64 rounded-full border-4 border-[#F8B6CE]/35 pointer-events-none" />
-      <div className="absolute top-1/2 right-[8%] -translate-y-1/2 w-80 h-80 rounded-full border-4 border-[#7DD3FC]/35 pointer-events-none" />
-
+    <section className="relative w-full pt-3 pb-2" aria-label="Hero">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative min-h-[380px] lg:min-h-[440px] flex flex-col lg:flex-row items-center justify-between py-8 lg:py-0">
-          {/* Left Column: Text & CTA */}
-          <div className="w-full lg:w-[42%] z-20 space-y-4 py-4 lg:py-12">
-            <span className="text-[11px] sm:text-xs font-extrabold text-[#0B1F6B] uppercase tracking-wider block">
-              THE GLOBAL VITILIGO HUB
-            </span>
+        {/* Single Unified Combined Hero Card */}
+        <div className="relative rounded-3xl overflow-hidden border border-[#E4DCF5] bg-[#F5F1FD] shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[440px] lg:min-h-[480px]">
+            
+            {/* Left Content Portion (Larger: 7 cols / ~58%) */}
+            <div className="lg:col-span-7 p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center items-center text-center z-10">
+              
+              {/* Top Label */}
+              <span className="text-xs sm:text-[13px] font-bold tracking-widest text-[#5E4D9A] uppercase mb-3 sm:mb-4">
+                Vitiligo Hub
+              </span>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-bold font-serif text-[#0B1F6B] leading-[1.08] tracking-tight">
-              See Beyond the Skin
-            </h1>
+              {/* Main Headline */}
+              <h1 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[44px] font-bold font-serif text-[#1F1749] leading-tight tracking-tight mb-3">
+                Your Skin. Your Choice.
+              </h1>
 
-            <p className="text-base sm:text-lg font-semibold text-[#1E2A4A] leading-snug">
-              Clear information. Expert insights. Practical support.
-            </p>
+              {/* Italic Empathy Subtitle */}
+              <p className="text-base sm:text-lg lg:text-[19px] italic font-serif text-[#392E69] leading-snug mb-3.5 sm:mb-4 max-w-xl">
+                Treatment is a choice. Camouflage is a choice. Showing your skin is a choice.
+              </p>
 
-            <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed max-w-md">
-              Helping people around the world understand vitiligo and live with greater confidence.
-            </p>
+              {/* Narrative Paragraph */}
+              <p className="text-sm sm:text-base text-[#574F72] leading-relaxed max-w-lg mb-6 sm:mb-7">
+                Your journey with vitiligo is uniquely yours. Whether you explore treatment, choose camouflage or embrace your skin as it is, your choices deserve respect.
+              </p>
 
-            <div className="pt-2">
-              <Link
-                href="/understand"
-                className="inline-flex items-center space-x-2 px-7 py-3 rounded-full text-xs sm:text-sm font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] shadow-md shadow-[#0B1F6B]/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-              >
-                <span>Explore Vitiligo</span>
-                <ArrowRight className="w-4 h-4 ml-1" />
-              </Link>
+              {/* Action Area: Button + Slogan below */}
+              <div className="flex flex-col items-center">
+                <Link
+                  href="/understand-vitiligo"
+                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-[#433275] hover:bg-[#342460] text-white text-sm sm:text-base font-semibold shadow-md shadow-[#433275]/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                >
+                  Explore Vitiligo
+                </Link>
+
+                <span className="text-xs sm:text-[13px] text-[#676180] font-normal mt-3">
+                  Different skin. Same dreams.
+                </span>
+              </div>
+
             </div>
-          </div>
 
-          {/* Center-Right Column: Panoramic People Lineup & Script Quote */}
-          <div className="w-full lg:w-[58%] relative h-[280px] sm:h-[350px] lg:h-[420px] flex items-end justify-center lg:justify-end">
-            {/* The Authentic Panoramic Lineup Image */}
-            <div className="relative w-full h-full">
+            {/* Right Photo Portion (5 cols / ~42%) */}
+            <div className="lg:col-span-5 relative min-h-[340px] sm:min-h-[400px] lg:min-h-full h-full w-full overflow-hidden border-t lg:border-t-0 lg:border-l border-[#E4DCF5]/70">
               <Image
                 src="/images/hero-panoramic.jpg"
-                alt="Diverse group of smiling people with visible vitiligo and a physician looking upward with hope"
+                alt="Diverse group of smiling people with vitiligo standing proudly with a healthcare professional"
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-contain lg:object-cover object-bottom lg:object-right"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-[center_right] sm:object-right"
               />
+
+              {/* Overlaid Handwritten Script Quote */}
+              <div className="absolute top-5 left-5 sm:top-7 sm:left-7 z-20 pointer-events-none">
+                <p className="font-script text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] text-[#1B3B86] drop-shadow-xs rotate-[-1.5deg] leading-tight">
+                  &ldquo;Different skin. Same dreams.&rdquo;
+                </p>
+              </div>
             </div>
 
-            {/* Handwritten Script Quote matching top right placement */}
-            <div className="absolute top-2 right-2 sm:right-6 lg:right-10 z-30 pointer-events-none">
-              <p className="font-script text-3xl sm:text-4xl lg:text-[42px] text-[#0B1F6B] tracking-wide rotate-[-4deg] drop-shadow-xs">
-                &ldquo;Different skin. Same dreams.&rdquo;
-              </p>
-            </div>
           </div>
         </div>
       </div>

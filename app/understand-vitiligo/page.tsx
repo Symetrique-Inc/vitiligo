@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { UnderstandAccordion } from '@/components/UnderstandAccordion';
 import { KeyNumbersLancet } from '@/components/KeyNumbersLancet';
+import { SkinBiologyComparison } from '@/components/SkinBiologyComparison';
 import {
   Layers,
   Users,
@@ -137,33 +138,37 @@ export default function UnderstandVitiligoPage() {
 
           {/* P02-S03 — What is vitiligo? */}
           <section id="p02-s03" className="py-10 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mb-14">
-            <div className="max-w-4xl space-y-6">
-              <div>
+            <div className="max-w-6xl space-y-8">
+              <div className="space-y-4">
                 <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
                   Section 1
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
+                <h2 className="text-2xl sm:text-4xl font-bold font-serif text-[#0B1F6B] mt-1">
                   What is vitiligo?
                 </h2>
+                <p className="text-xl sm:text-2xl font-serif text-[#0B1F6B] font-semibold leading-snug">
+                  Vitiligo is more than a change in skin colour.
+                </p>
+
+                <div className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed space-y-3.5 max-w-3xl">
+                  <p>
+                    Vitiligo is a medical condition in which areas of the skin lose their natural colour. The affected areas may look lighter than the surrounding skin and can sometimes appear white or pink.
+                  </p>
+                  <p>
+                    Vitiligo develops when the body&apos;s immune system mistakenly attacks melanocytes — the cells that produce pigment. Melanocytes give colour to the skin, hair and eyes, and they also help protect the skin from ultraviolet (UV) radiation. Vitiligo can appear at any age, though it often begins before the age of 30. It affects people of all skin tones and backgrounds equally. It is not contagious — you cannot catch vitiligo from another person.
+                  </p>
+                </div>
+
+                {/* Key-message callout */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA] flex items-start space-x-3 text-sm text-[#0B1F6B] font-semibold max-w-3xl">
+                  <Info className="w-5 h-5 text-[#1D5FE0] shrink-0 mt-0.5" />
+                  <p>Vitiligo is an autoimmune disease. It is not simply a cosmetic condition.</p>
+                </div>
               </div>
 
-              <p className="text-xl sm:text-2xl font-serif text-[#0B1F6B] font-semibold leading-snug">
-                Vitiligo is more than a change in skin colour.
-              </p>
-
-              <div className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed space-y-4">
-                <p>
-                  Vitiligo is a medical condition in which areas of the skin lose their natural colour. The affected areas may look lighter than the surrounding skin and can sometimes appear white or pink.
-                </p>
-                <p>
-                  Vitiligo develops when the body&apos;s immune system mistakenly attacks melanocytes — the cells that produce pigment. Melanocytes give colour to the skin, hair and eyes, and they also help protect the skin from ultraviolet (UV) radiation. Vitiligo can appear at any age, though it often begins before the age of 30. It affects people of all skin tones and backgrounds equally. It is not contagious — you cannot catch vitiligo from another person.
-                </p>
-              </div>
-
-              {/* Key-message callout (accent colour, icon: info) */}
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA] flex items-start space-x-3 text-sm text-[#0B1F6B] font-semibold">
-                <Info className="w-5 h-5 text-[#1D5FE0] shrink-0 mt-0.5" />
-                <p>Vitiligo is an autoimmune disease. It is not simply a cosmetic condition.</p>
+              {/* Interactive Cellular Mechanism & Healthy Skin Comparison */}
+              <div className="pt-6 border-t border-[#EEF2FA]">
+                <SkinBiologyComparison />
               </div>
             </div>
           </section>

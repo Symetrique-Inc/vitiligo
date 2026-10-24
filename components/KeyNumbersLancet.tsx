@@ -92,9 +92,9 @@ export const KeyNumbersLancet: React.FC = () => {
           </span>
         </div>
 
-        <div className="relative h-44 sm:h-52 w-full bg-gradient-to-b from-[#F0F5FF] to-[#FAF8FF] rounded-xl border border-gray-200 overflow-hidden flex items-center justify-center p-4">
+        {/* <div className="relative h-44 sm:h-52 w-full bg-gradient-to-b from-[#F0F5FF] to-[#FAF8FF] rounded-xl border border-gray-200 overflow-hidden flex items-center justify-center p-4">
           <svg viewBox="0 0 900 450" className="w-full h-full opacity-60">
-            {/* World continents outline */}
+            
             <path d="M 120 80 Q 220 70 260 120 Q 230 180 180 220 Q 150 200 120 150 Z" fill="#C5D9F8" />
             <path d="M 220 240 Q 280 250 290 320 Q 260 410 220 440 Q 190 350 200 280 Z" fill="#D2C7F7" />
             <path d="M 420 80 Q 520 70 540 140 Q 480 170 420 150 Z" fill="#93C5FD" stroke="#1D5FE0" strokeWidth="2" />
@@ -102,7 +102,7 @@ export const KeyNumbersLancet: React.FC = () => {
             <path d="M 540 90 Q 750 80 780 210 Q 680 320 570 240 Q 540 160 540 90 Z" fill="#FEDFCB" stroke="#F2884B" strokeWidth="2" />
             <path d="M 720 320 Q 820 310 830 380 Q 770 420 710 390 Z" fill="#D2EFE4" />
 
-            {/* Glowing highlight markers on Central Europe and South Asia */}
+            
             <circle cx="470" cy="110" r="10" fill="#1D5FE0" fillOpacity="0.3" className="animate-ping" />
             <circle cx="470" cy="110" r="5" fill="#1D5FE0" />
             <circle cx="610" cy="200" r="12" fill="#F2884B" fillOpacity="0.3" className="animate-ping" />
@@ -112,7 +112,7 @@ export const KeyNumbersLancet: React.FC = () => {
           <div className="absolute bottom-3 left-4 text-[11px] text-[#5B6785] bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-gray-200">
             Highlighted: South Asia & Central Europe (~0.52% general population)
           </div>
-        </div>
+        </div> */}
 
         {/* Bullet facts */}
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#1E2A4A] list-disc list-inside pt-1">

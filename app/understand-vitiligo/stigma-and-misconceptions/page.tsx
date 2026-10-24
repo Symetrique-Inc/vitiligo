@@ -97,8 +97,8 @@ export default function StigmaAndMisconceptionsPage() {
 
           {/* Sub-section 2: Your Skin, Your Choice (One unified section) */}
           <section id="p03-s04" className="py-10 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mb-16 space-y-10 scroll-mt-32">
-            {/* Core Principle Quote Card */}
-            <div className="rounded-3xl bg-[#EFEAFF] border border-[#DCD3FC] p-8 sm:p-12 text-center space-y-3">
+            
+            {/* <div className="rounded-3xl bg-[#EFEAFF] border border-[#DCD3FC] p-8 sm:p-12 text-center space-y-3">
               <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider block">
                 Core Principle
               </span>
@@ -113,7 +113,7 @@ export default function StigmaAndMisconceptionsPage() {
                   &ldquo;Treatment is a choice. Camouflage is a choice. Showing your skin is a choice.&rdquo;
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* 4 Pillars of Medical Guidance */}
             <div className="space-y-4">

@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { treatmentContent } from '@/content/siteContent';
 import { DoctorChecklist } from '@/components/DoctorChecklist';
+import { TreatmentJourneyCycle } from '@/components/TreatmentJourneyCycle';
 import {
   Sparkles,
   Sun,
@@ -17,6 +18,7 @@ import {
   CheckCircle2,
   AlertCircle,
   Users,
+  RotateCcw,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
 
 export default function TreatmentAndCarePage() {
   const exploreSections = [
+    { title: 'Step-by-Step Care Cycle', icon: RotateCcw, href: '#journey', color: 'text-[#1D5FE0]', bg: 'bg-[#EAF2FF]' },
     { title: 'Treatment Overview', icon: Sparkles, href: '#overview', color: 'text-[#1FA37A]', bg: 'bg-[#E3F6EF]' },
     { title: 'Topical Treatments', icon: Sparkles, href: '#topicals', color: 'text-[#1D5FE0]', bg: 'bg-[#EAF2FF]' },
     { title: 'Light Therapy (Phototherapy)', icon: Sun, href: '#phototherapy', color: 'text-[#F2884B]', bg: 'bg-[#FFEDE3]' },
@@ -112,7 +115,9 @@ export default function TreatmentAndCarePage() {
             </div>
           </section>
 
-          
+          {/* Core Interactive Step-by-Step Treatment Journey Cycle */}
+          <TreatmentJourneyCycle />
+
           <section id="overview" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
             <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider">
               Overview
