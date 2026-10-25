@@ -31,10 +31,17 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 30px;
   font-family: var(--font-sans);
   color: var(--body-text);
   background: #FFFFFF;
   min-height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {

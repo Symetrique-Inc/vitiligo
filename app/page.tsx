@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
-import { HomeMythsSection } from '@/components/HomeMythsSection';
-import { HomeBeginSection } from '@/components/HomeBeginSection';
-import { AboutSymetrique } from '@/components/AboutSymetrique';
 import { Footer } from '@/components/Footer';
+import { LandingHero } from '@/components/landing/LandingHero';
+import { LandingFactBand } from '@/components/landing/LandingFactBand';
+import { LandingJourneyCards } from '@/components/landing/LandingJourneyCards';
+import { LandingSupportPanel } from '@/components/landing/LandingSupportPanel';
+import { LandingAbout } from '@/components/landing/LandingAbout';
 
 export const metadata: Metadata = {
   title: 'Vitiligo Hub | See Beyond the Skin — by Symetrique',
@@ -21,32 +22,27 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
-      {/* Skip link for WCAG 2.2 accessibility */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#0B1F6B] text-white rounded-md text-xs font-semibold"
-      >
-        Skip to main content
-      </a>
-
-      {/* G1 — Global Header */}
+      {/* Existing Original Header (Untouched with all nav tabs, search, lang switcher, mobile menu) */}
       <Header />
 
-      <main id="main-content" className="flex-1 space-y-3 sm:space-y-4">
-        {/* Hero Section */}
-        <Hero />
+      <main id="main-content" className="flex-1 home-page">
+        {/* Section 1: Hero with Arch Framed Image */}
+        <LandingHero />
 
-        {/* Section 2 — Think You Know Vitiligo? Let's Separate Myths from Facts */}
-        <HomeMythsSection />
+        {/* Section 2: Full-width Lancet Fact Band */}
+        <LandingFactBand />
 
-        {/* Section 3 — Where would you like to begin? */}
-        <HomeBeginSection />
+        {/* Section 3: Your Starting Point (6-column grid with 5 Journey Cards) */}
+        <LandingJourneyCards />
 
-        {/* Section 4 — About Symetrique (Mission, Feature Cards, Data Promise, CTA Band) */}
-        <AboutSymetrique />
+        {/* Section 4: Support Panel */}
+        <LandingSupportPanel />
+
+        {/* Section 5: About Section */}
+        <LandingAbout />
       </main>
 
-      {/* G2 & G3 — Footer & Medical Disclaimer */}
+      {/* Existing Original Footer (Untouched with all 3 columns, disclaimer, copyright, back-to-top) */}
       <Footer />
     </div>
   );
