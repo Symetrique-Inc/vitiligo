@@ -146,3 +146,73 @@ select:focus-visible {
 .bullet-teal { --bullet-color: #1FA37A; }
 .bullet-coral { --bullet-color: #F2884B; }
 
+/* Print Stylesheet for Patient Guides */
+@media print {
+  header,
+  footer,
+  nav,
+  .guide-toc,
+  .guide-actions,
+  .guide-related,
+  .guide-next-link,
+  .guide-crumb,
+  .cookie-banner,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .bg-pastel-mesh {
+    background: none !important;
+  }
+
+  .guide-layout {
+    display: block !important;
+  }
+
+  .guide-hero {
+    padding: 0 !important;
+  }
+
+  .guide-hero h1 {
+    font-size: 26pt !important;
+    color: #000000 !important;
+  }
+
+  .guide-chapter {
+    break-inside: auto;
+    page-break-inside: auto;
+    border-top: 1px solid #cccccc !important;
+    padding: 16pt 0 !important;
+  }
+
+  .guide-chapter h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+    color: #000000 !important;
+  }
+
+  table {
+    min-width: 0 !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  th, td {
+    border: 1px solid #cccccc !important;
+    color: #000000 !important;
+    background: transparent !important;
+  }
+
+  .guide-sources a::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555555;
+  }
+}
+
+

@@ -56,6 +56,18 @@ export const LandingSupportPanel: React.FC = () => {
               ↗
             </span>
           </Link>
+          <Link
+            href="/latest-developments"
+            className="flex items-center justify-between no-underline py-3.5 sm:py-4 text-sm sm:text-[15px] font-medium text-[#1E2A4A] hover:text-[#1D5FE0] transition-colors group"
+          >
+            <span>Latest treatment developments</span>
+            <span
+              aria-hidden="true"
+              className="text-[#0B1F6B] group-hover:text-[#1D5FE0] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            >
+              ↗
+            </span>
+          </Link>
         </div>
       </div>
     </section>

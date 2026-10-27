@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               About
             </h4>
             <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
-              Vitiligo Hub is a patient-centred initiative by Symetrique, bringing together people living with vitiligo, healthcare professionals, researchers and pharmaceutical partners. Through reliable information and consent-based patient-reported insights, we aim to improve understanding of vitiligo and help shape research around patient needs.
+              Vitiligo Hub is an initiative by Symetrique for people living with vitiligo and those who support them. Our aim is to make information easier to understand and help people prepare for conversations about their care.
             </p>
           </div>
 

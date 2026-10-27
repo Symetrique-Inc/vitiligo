@@ -41,13 +41,13 @@ export const LandingHero: React.FC = () => {
             style={{ borderRadius: '48% 48% 8px 8px' }}
           >
             <Image
-              src="/images/hero-panoramic.jpg"
-              alt="A multi-generational family group smiling with vitiligo, looking toward a bright window together"
+              src="/images/home-hero.jpg"
+              alt="Illustration of a diverse family and young people with vitiligo smiling and looking upward together"
               fill
               priority
               loading="eager"
               sizes="(max-width: 760px) 400px, (max-width: 1024px) 45vw, 500px"
-              className="object-cover object-[78%_36%] sm:object-[77%_35%] lg:object-[76%_34%]"
+              className="object-cover object-[68%_25%]"
             />
           </div>
           <p className="text-[11px] text-[#5B6785] text-right mt-2.5">

@@ -1,331 +1,387 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { treatmentContent } from '@/content/siteContent';
-import { DoctorChecklist } from '@/components/DoctorChecklist';
-import { TreatmentJourneyCycle } from '@/components/TreatmentJourneyCycle';
-import {
-  Sparkles,
-  Sun,
-  Scissors,
-  Microscope,
-  Stethoscope,
-  ArrowRight,
-  Info,
-  CheckCircle2,
-  AlertCircle,
-  Users,
-  RotateCcw,
-} from 'lucide-react';
+import { GuideHero } from '@/components/guide/GuideHero';
+import { GuideTableOfContents } from '@/components/guide/GuideTableOfContents';
+import { GuideChapter } from '@/components/guide/GuideChapter';
+import { GuideTable } from '@/components/guide/GuideTable';
+import { GuideExample } from '@/components/guide/GuideExample';
+import { GuideSources } from '@/components/guide/GuideSources';
+import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
+import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
 export const metadata: Metadata = {
-  title: 'Treatment and care options | Vitiligo Hub',
+  title: 'Treatment and care | Vitiligo Hub',
   description:
-    'Understand the journey and what to expect. Evidence-based information on topical creams, phototherapy, surgical options, emerging research, and questions for your dermatologist.',
+    'Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan.',
+  openGraph: {
+    title: 'Treatment and care | Vitiligo Hub',
+    description:
+      'Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan.',
+  },
 };
 
-export default function TreatmentAndCarePage() {
-  const exploreSections = [
-    { title: 'Step-by-Step Care Cycle', icon: RotateCcw, href: '#journey', color: 'text-[#1D5FE0]', bg: 'bg-[#EAF2FF]' },
-    { title: 'Treatment Overview', icon: Sparkles, href: '#overview', color: 'text-[#1FA37A]', bg: 'bg-[#E3F6EF]' },
-    { title: 'Topical Treatments', icon: Sparkles, href: '#topicals', color: 'text-[#1D5FE0]', bg: 'bg-[#EAF2FF]' },
-    { title: 'Light Therapy (Phototherapy)', icon: Sun, href: '#phototherapy', color: 'text-[#F2884B]', bg: 'bg-[#FFEDE3]' },
-    { title: 'Surgical Options', icon: Scissors, href: '#surgical', color: 'text-[#7C5CE0]', bg: 'bg-[#EFEAFF]' },
-    { title: 'Emerging Treatments', icon: Microscope, href: '#emerging', color: 'text-[#E8456B]', bg: 'bg-[#FDE8EE]' },
-    { title: 'Your Care Team', icon: Users, href: '#care-team', color: 'text-[#7C5CE0]', bg: 'bg-[#EFEAFF]' },
-    { title: 'What to Discuss with Doctor', icon: Stethoscope, href: '#checklist', color: 'text-[#0B1F6B]', bg: 'bg-[#EAF2FF]' },
-  ];
+const tocItems = [
+  { id: 'state', label: '01 · Start with your current state.' },
+  { id: 'topicals', label: '02 · Skin medicines are not all the same.' },
+  { id: 'ruxolitinib', label: '03 · Ruxolitinib cream is a targeted option for eligible patients.' },
+  { id: 'phototherapy', label: '04 · What actually happens during narrowband UVB?' },
+  { id: 'targeted', label: '05 · When might targeted light or surgery enter the discussion?' },
+  { id: 'systemic', label: '06 · What are oral treatments intended to do?' },
+  { id: 'maintenance', label: '07 · What happens after a response?' },
+  { id: 'access', label: '08 · Check eligibility, access and cost separately.' },
+];
 
+export default function TreatmentAndCarePage() {
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
+      {/* Existing Original Header (Untouched) */}
       <Header />
 
-      <Breadcrumbs items={[{ label: 'Treatment & Care' }]} />
+      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
+        {/* Guide Hero */}
+        <GuideHero
+          crumbLabel="← All starting points"
+          crumbHref="/#start"
+          eyebrow="Treatment and care"
+          title="Know what each option does, demands and cannot promise."
+          lead="Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan."
+          edition="EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 7 MIN READ"
+          startHref="#state"
+        />
 
-      <main className="flex-1 pb-16">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-         
-          <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-3">
-                <div className="inline-flex items-center space-x-2">
-                  <span className="text-xs font-bold text-[#1FA37A] bg-[#E3F6EF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-                    {treatmentContent.header.eyebrow}
-                  </span>
-                </div>
-                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] tracking-tight">
-                  {treatmentContent.header.h1}
-                </h1>
-                <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-xl">
-                  {treatmentContent.header.subheading}
-                </p>
+        {/* Guide 2-Column Responsive Layout */}
+        <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
+          {/* Sticky Chapter Navigation on Desktop */}
+          <GuideTableOfContents items={tocItems} />
 
-                <div className="pt-2">
-                  <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-[#FFF6EE] border border-[#FEDDC7] text-xs font-semibold text-[#B34F18]">
-                    <AlertCircle className="w-4 h-4 shrink-0 text-[#F2884B]" />
-                    <span>{treatmentContent.header.countryNote}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full max-w-md mx-auto shadow-md border-4 border-white">
-                  <Image
-                    src="/images/card-treatment.jpg"
-                    alt="Close-up of caring hands during skin examination and consultation."
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-center"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-
-         
-          <section className="mb-14">
-            <h2 className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider mb-4">
-              Explore in this section
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {exploreSections.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={idx}
-                    href={item.href}
-                    className="p-4 rounded-2xl bg-white border border-[#DDE5F5] hover:border-[#1FA37A] hover:shadow-xs transition-all flex items-center justify-between group"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <div className={`w-9 h-9 rounded-xl ${item.bg} ${item.color} flex items-center justify-center shrink-0`}>
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <span className="text-xs sm:text-sm font-bold text-[#0B1F6B] group-hover:text-[#1FA37A] transition-colors">
-                        {item.title}
-                      </span>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-[#1FA37A] shrink-0" />
-                  </a>
-                );
-              })}
-            </div>
-          </section>
-
-          {/* Core Interactive Step-by-Step Treatment Journey Cycle */}
-          <TreatmentJourneyCycle />
-
-          <section id="overview" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-4">
-            <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider">
-              Overview
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B]">
-              Treatment Overview
-            </h2>
-            <p className="text-base text-[#1E2A4A] leading-relaxed">
-              {treatmentContent.header.intro}
-            </p>
-            <div className="space-y-3 pt-2 text-sm sm:text-base text-[#1E2A4A] leading-relaxed">
-              {treatmentContent.overview.paragraphs.map((p, idx) => (
-                <p key={idx}>{p}</p>
-              ))}
-            </div>
-          </section>
-
-         
-          <section id="topicals" className="mb-14">
-            <div className="mb-6">
-              <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                Prescription Creams & Ointments
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Topical Treatments
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {treatmentContent.topicals.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-3xl bg-white border border-[#DDE5F5] shadow-xs flex flex-col justify-between hover:border-[#1D5FE0] transition-colors"
-                >
-                  <div className="space-y-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#EAF2FF] text-[#1D5FE0] font-bold text-xs flex items-center justify-center">
-                      0{idx + 1}
-                    </div>
-                    <h3 className="font-bold text-lg text-[#0B1F6B]">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-[#1E2A4A] leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          
-          <section id="phototherapy" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6">
-            <div>
-              <span className="text-xs font-bold text-[#F2884B] uppercase tracking-wider">
-                Phototherapy
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Light Therapy (Phototherapy)
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-2xl bg-[#FFEDE3] border border-[#FEDDC7] space-y-3">
-                <h3 className="font-bold text-base sm:text-lg text-[#0B1F6B]">
-                  Narrowband UVB phototherapy
-                </h3>
-                <p className="text-sm text-[#1E2A4A] leading-relaxed">
-                  The most widely used light treatment for vitiligo. It involves exposing affected skin to a specific wavelength of ultraviolet light, usually two to three times per week at a clinic. Many people see gradual repigmentation over several months.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA] space-y-3">
-                <h3 className="font-bold text-base sm:text-lg text-[#0B1F6B]">
-                  Excimer laser
-                </h3>
-                <p className="text-sm text-[#1E2A4A] leading-relaxed">
-                  A targeted form of light therapy that focuses on individual patches. It can be effective for small, stable areas of vitiligo.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-xl bg-[#F8FAFF] border border-[#DDE5F5] flex items-center space-x-3 text-xs sm:text-sm text-[#5B6785]">
-              <Info className="w-4 h-4 text-[#1D5FE0] shrink-0" />
-              <span>Light therapy is often combined with topical treatments for better results.</span>
-            </div>
-          </section>
-
-          
-          <section id="surgical" className="mb-14">
-            <div className="mb-6">
-              <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
-                For Stable Vitiligo
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Surgical Options
-              </h2>
-              <p className="text-sm sm:text-base text-[#5B6785] mt-2">
-                {treatmentContent.surgical.intro}
+          {/* Guide Article Content */}
+          <article className="min-w-0">
+            {/* Chapter 01 */}
+            <GuideChapter
+              id="state"
+              index="01 / 08"
+              title="Start with your current state."
+              nextChapter={{
+                id: 'topicals',
+                label: 'Skin medicines are not all the same.',
+              }}
+            >
+              <GuideTable
+                headers={['Your situation', 'Options to discuss', 'Before deciding']}
+                rows={[
+                  [
+                    'Uncertain diagnosis',
+                    'Confirm the cause of the patch',
+                    'Do not select a pigment treatment from appearance alone.',
+                  ],
+                  [
+                    'New or enlarging patches',
+                    'Assess activity and consider controlling further loss',
+                    'Colour return is a separate review question.',
+                  ],
+                  [
+                    'Stable patches with a wish for colour return',
+                    'Compare topical, light and selected procedural options',
+                    'Location and previous response affect expectations.',
+                  ],
+                  [
+                    'Improvement already achieved',
+                    'Agree maintenance and monitoring',
+                    'Clarify how the intensive starting routine changes.',
+                  ],
+                  [
+                    'Previous limited benefit',
+                    'Review the adequacy and burden of the trial',
+                    'Identify what a different option would change.',
+                  ],
+                ]}
+              />
+              <p className="my-0">
+                This is a map for a clinical conversation, not an automated treatment recommendation. A person may fit several rows at once. Read the relevant option in detail, then discuss eligibility and risks.
               </p>
-            </div>
+            </GuideChapter>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-              {treatmentContent.surgical.options.map((opt, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-3xl bg-white border border-[#DDE5F5] shadow-xs space-y-2 hover:border-[#7C5CE0] transition-colors"
-                >
-                  <h3 className="font-bold text-lg text-[#0B1F6B]">
-                    {opt.title}
-                  </h3>
-                  <p className="text-sm text-[#1E2A4A] leading-relaxed">
-                    {opt.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-xs sm:text-sm text-[#5B6785] italic">
-              {treatmentContent.surgical.note}
-            </p>
-          </section>
-
-          
-          <section id="emerging" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6">
-            <div>
-              <span className="text-xs font-bold text-[#E8456B] uppercase tracking-wider">
-                Future Directions
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Emerging Treatments
-              </h2>
-              <p className="text-sm sm:text-base text-[#5B6785] mt-1">
-                {treatmentContent.emerging.intro}
+            {/* Chapter 02 */}
+            <GuideChapter
+              id="topicals"
+              index="02 / 08"
+              title="Skin medicines are not all the same."
+              nextChapter={{
+                id: 'ruxolitinib',
+                label: 'Ruxolitinib cream is a targeted option for eligible patients.',
+              }}
+            >
+              <p className="my-0">
+                <strong className="font-semibold text-[#0B1F6B]">Topical corticosteroids</strong> reduce local inflammation and can support colour return. They may suit limited areas, but prolonged or inappropriate use can cause skin thinning, stretch marks or visible vessels.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {treatmentContent.emerging.areas.map((area, idx) => (
-                <div
-                  key={idx}
-                  className="p-4 rounded-2xl bg-[#FDE8EE] border border-[#F8C8D4] flex items-center space-x-3"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-[#E8456B] shrink-0" />
-                  <span className="text-sm font-semibold text-[#0B1F6B]">
-                    {area}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="p-4 rounded-xl bg-[#F8FAFF] border border-[#DDE5F5] flex items-center space-x-3 text-xs sm:text-sm text-[#5B6785]">
-              <Info className="w-4 h-4 text-[#1D5FE0] shrink-0" />
-              <span>{treatmentContent.emerging.trialNote}</span>
-            </div>
-          </section>
-
-          {/* Your Care Team */}
-          <section id="care-team" className="py-10 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14 space-y-6">
-            <div>
-              <span className="text-xs font-bold text-[#7C5CE0] uppercase tracking-wider">
-                Multidisciplinary Support
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Your Care Team
-              </h2>
-              <p className="text-sm sm:text-base text-[#5B6785] mt-1">
-                Managing vitiligo is not just about one doctor. Your care team may include:
+              <p className="my-0">
+                <strong className="font-semibold text-[#0B1F6B]">Tacrolimus and pimecrolimus</strong> are calcineurin inhibitors. They are often considered for sensitive sites because they do not thin skin; temporary burning or stinging can occur. Their use for vitiligo is off label in some jurisdictions.
               </p>
-            </div>
+              <p className="my-0">
+                Your written instructions should name the medicine, strength, exact areas, application schedule, planned duration and review date. Instructions for the body are not automatically suitable for eyelids or folds.
+              </p>
+              <GuideExample title="A practical example">
+                <p>
+                  Two creams may look similar but serve different roles. Keep their original labels and ask which goes on which area. If directions conflict with what you remember from the appointment, check with the prescriber or pharmacist.
+                </p>
+              </GuideExample>
+              <p className="my-0">
+                Ask what irritation is expected and what warrants contacting the clinic. More frequent application does not automatically improve a result. Do not extend or restart an old prescription without advice.
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://www.nhs.uk/conditions/vitiligo/treatment/',
+                    label: 'NHS: treatment',
+                  },
+                ]}
+              />
+            </GuideChapter>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-5 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA]">
-                <h3 className="font-bold text-sm text-[#0B1F6B]">Dermatologist</h3>
-                <p className="text-xs text-[#5B6785] mt-1">
-                  Your primary specialist for diagnosis, treatment and skin monitoring.
-                </p>
-              </div>
-              <div className="p-5 rounded-2xl bg-[#EFEAFF] border border-[#DCD3FC]">
-                <h3 className="font-bold text-sm text-[#0B1F6B]">General practitioner (GP)</h3>
-                <p className="text-xs text-[#5B6785] mt-1">
-                  Coordinates overall health, refers to specialists and monitors for related conditions like thyroid disease.
-                </p>
-              </div>
-              <div className="p-5 rounded-2xl bg-[#E3F6EF] border border-[#BCEBD7]">
-                <h3 className="font-bold text-sm text-[#0B1F6B]">Psychologist or counsellor</h3>
-                <p className="text-xs text-[#5B6785] mt-1">
-                  Supports emotional wellbeing, helps manage anxiety, depression or self-esteem issues.
-                </p>
-              </div>
-              <div className="p-5 rounded-2xl bg-[#FFEDE3] border border-[#FEDDC7]">
-                <h3 className="font-bold text-sm text-[#0B1F6B]">Pharmacist</h3>
-                <p className="text-xs text-[#5B6785] mt-1">
-                  Advises on medications, topical treatments and sun-protection products.
-                </p>
-              </div>
-            </div>
+            {/* Chapter 03 */}
+            <GuideChapter
+              id="ruxolitinib"
+              index="03 / 08"
+              title="Ruxolitinib cream is a targeted option for eligible patients."
+              nextChapter={{
+                id: 'phototherapy',
+                label: 'What actually happens during narrowband UVB?',
+              }}
+            >
+              <p className="my-0">
+                Ruxolitinib is a topical JAK inhibitor. The US indication covers non-segmental vitiligo from age 12; treatment is limited to up to 10% body surface area. The EU indication also specifies facial involvement.
+              </p>
+              <p className="my-0">
+                In the pivotal studies described by the FDA, about 30% reached at least 75% improvement in a facial score at week 24, versus about 10% using vehicle cream. This is not a guarantee or a measure of total-body clearance.
+              </p>
+              <p className="my-0">
+                Response may require more than 24 weeks. The US label uses twice-daily application. The current local label, maximum treated area, other medicines and safety history must be checked.
+              </p>
+              <p className="my-0">
+                Before deciding, ask whether your type and extent fit the indication, how much cream the plan requires, what it will cost over time and when the clinician would reassess benefit. Read the safety summary in the updates page before equating “a cream” with “risk free”.
+              </p>
+              <p className="my-3">
+                <Link
+                  href="/latest-developments#ruxolitinib"
+                  className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
+                >
+                  Read the approval and safety context →
+                </Link>
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-topical-treatment-addressing-repigmentation-vitiligo-patients-aged-12-and-older',
+                    label: 'FDA: ruxolitinib approval and trial results',
+                  },
+                  {
+                    href: 'https://www.ema.europa.eu/en/medicines/human/EPAR/opzelura',
+                    label: 'EMA: ruxolitinib cream',
+                  },
+                ]}
+              />
+            </GuideChapter>
 
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] text-xs sm:text-sm text-[#1E2A4A] leading-relaxed">
-              <strong>You are the most important member of your care team.</strong> Your observations about how vitiligo is changing, what triggers flare-ups and how treatment feels help your doctors make the best decisions for you.
-            </div>
-          </section>
+            {/* Chapter 04 */}
+            <GuideChapter
+              id="phototherapy"
+              index="04 / 08"
+              title="What actually happens during narrowband UVB?"
+              nextChapter={{
+                id: 'targeted',
+                label: 'When might targeted light or surgery enter the discussion?',
+              }}
+            >
+              <p className="my-0">
+                Narrowband UVB uses a controlled band of ultraviolet light. A clinic calculates and adjusts the exposure; it is not sunbathing or a tanning-bed session. Treatment may cover broader areas or be combined with prescribed skin medicines.
+              </p>
+              <p className="my-0">
+                Common schedules involve two or three sessions weekly. A course can extend over 6–12 months, with earlier reassessment. Different guidance uses different response checkpoints, so the service should specify its own review and stopping criteria.
+              </p>
+              <ul className="list-disc pl-5 sm:pl-6 space-y-2.5 my-4 text-[#1E2A4A]">
+                <li className="leading-relaxed">
+                  <strong className="font-semibold text-[#0B1F6B]">Before the session:</strong> the team checks the skin response, missed sessions and relevant medicine changes. Follow its instructions about products, shielding and eye protection.
+                </li>
+                <li className="leading-relaxed">
+                  <strong className="font-semibold text-[#0B1F6B]">During treatment:</strong> exposure is measured and supervised; do not independently add exposure because progress feels slow.
+                </li>
+                <li className="leading-relaxed">
+                  <strong className="font-semibold text-[#0B1F6B]">Between sessions:</strong> report painful redness, blistering or other problems to the service.
+                </li>
+                <li className="leading-relaxed">
+                  <strong className="font-semibold text-[#0B1F6B]">At review:</strong> compare baseline and follow-up images and discuss whether benefit justifies continued treatment.
+                </li>
+              </ul>
+              <p className="my-0">
+                Redness, dryness and burning are possible. Home phototherapy requires a prescribed device, training and continued monitoring; it is not simply purchasing a UV lamp. Ask how device servicing, dosing adjustments and access to advice work.
+              </p>
+              <p className="my-0">
+                The real commitment includes travel, missed work or school, total sessions and follow-up. Ask about those before purchasing a course.
+              </p>
+              <p className="my-3">
+                <Link
+                  href="/journey-changing"
+                  className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
+                >
+                  Connect phototherapy to changing patches →
+                </Link>
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://doi.org/10.1007/s13555-025-01402-5',
+                    label: 'Canadian consensus guideline 2025',
+                  },
+                ]}
+              />
+            </GuideChapter>
 
-          <section id="checklist" className="mb-14">
-            <DoctorChecklist />
-          </section>
+            {/* Chapter 05 */}
+            <GuideChapter
+              id="targeted"
+              index="05 / 08"
+              title="When might targeted light or surgery enter the discussion?"
+              nextChapter={{
+                id: 'systemic',
+                label: 'What are oral treatments intended to do?',
+              }}
+            >
+              <p className="my-0">
+                <strong className="font-semibold text-[#0B1F6B]">Excimer light or laser</strong> treats selected patches rather than the whole body. It may be useful when localised treatment is practical, but attending repeated sessions and paying per treated area can matter.
+              </p>
+              <p className="my-0">
+                <strong className="font-semibold text-[#0B1F6B]">Surgery</strong> transfers skin or pigment-producing cells. It is generally reserved for selected stable cases. Stability, past treatment and the donor and recipient sites need specialist assessment.
+              </p>
+              <p className="my-0">
+                Ask which technique is proposed, why it fits the location, expected healing, scar or colour-mismatch risks, additional treatment and what a limited result would mean. A procedure changes the decision from repeated medicine or light exposure to an intervention with recovery and aftercare.
+              </p>
+              <p className="my-0">
+                A clinic should distinguish suitable stable disease from ongoing activity before offering a procedure. A persuasive before-and-after image cannot establish that distinction for you.
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://onlinelibrary.wiley.com/doi/10.1111/jdv.19450',
+                    label: 'International Vitiligo Task Force: treatment recommendations 2023',
+                  },
+                ]}
+              />
+            </GuideChapter>
+
+            {/* Chapter 06 */}
+            <GuideChapter
+              id="systemic"
+              index="06 / 08"
+              title="What are oral treatments intended to do?"
+              nextChapter={{
+                id: 'maintenance',
+                label: 'What happens after a response?',
+              }}
+            >
+              <p className="my-0">
+                For selected rapidly progressive cases, a specialist may discuss a short oral corticosteroid course to suppress activity. This is different from a pigment-restoring plan and carries systemic risks.
+              </p>
+              <p className="my-0">
+                Oral JAK inhibition is another pathway. The EMA currently lists upadacitinib for non-segmental vitiligo from age 12 in people who are candidates for systemic therapy. Eligibility, infection risks and monitoring need individual assessment.
+              </p>
+              <p className="my-0">
+                A systemic medicine affects the body beyond the treated patches. Expect a discussion of health history, other medicines, pregnancy considerations, relevant screening and laboratory follow-up. An approval for one country or another condition does not establish a vitiligo indication everywhere.
+              </p>
+              <p className="my-3">
+                <Link
+                  href="/latest-developments#upadacitinib"
+                  className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
+                >
+                  Read the verified upadacitinib update →
+                </Link>
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://onlinelibrary.wiley.com/doi/10.1111/jdv.19450',
+                    label: 'International Vitiligo Task Force: treatment recommendations 2023',
+                  },
+                  {
+                    href: 'https://www.ema.europa.eu/en/medicines/human/EPAR/rinvoq',
+                    label: 'EMA: upadacitinib indication and safety',
+                  },
+                ]}
+              />
+            </GuideChapter>
+
+            {/* Chapter 07 */}
+            <GuideChapter
+              id="maintenance"
+              index="07 / 08"
+              title="What happens after a response?"
+              nextChapter={{
+                id: 'access',
+                label: 'Check eligibility, access and cost separately.',
+              }}
+            >
+              <p className="my-0">
+                Repigmented skin can lose colour again. Maintenance may use a lower-frequency prescribed topical plan or another individual approach.
+              </p>
+              <p className="my-0">
+                Before the starting course ends, clarify which areas still need care, the new schedule, review intervals and what to do if new pigment loss appears. Ask for a plan that distinguishes maintaining benefit from restarting intensive treatment.
+              </p>
+              <p className="my-0">
+                If benefit has been limited, review the goal, body area, actual use, duration, side effects and practical burden. The choices are not simply “keep going forever” or “give up”. A clinician may advise continuing, changing, combining or ending a treatment trial.
+              </p>
+              <p className="my-0">
+                Do not compare treatment success only by how much colour returns. Track whether the outcome you chose at the start has improved and whether the plan remains acceptable.
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://doi.org/10.1007/s13555-025-01402-5',
+                    label: 'Canadian consensus guideline 2025',
+                  },
+                ]}
+              />
+            </GuideChapter>
+
+            {/* Chapter 08 */}
+            <GuideChapter
+              id="access"
+              index="08 / 08"
+              title="Check eligibility, access and cost separately."
+              nextChapter={{
+                id: 'related',
+                label: 'Choose where to go next',
+              }}
+            >
+              <p className="my-0">
+                A treatment can be authorised but not funded, stocked or offered locally. Ask the prescriber and pharmacy which local indication applies, whether prior approval is needed and what documentation supports it.
+              </p>
+              <p className="my-0">
+                Before agreeing, compare ongoing supply, consultation, laboratory, travel and session costs. If an option is unavailable, ask about locally appropriate alternatives or a legitimate clinical study rather than buying an unknown formulation online.
+              </p>
+              <p className="my-0">
+                Vitiligo Hub’s Phase 2 objective is to address difficult access through partnerships and new delivery strategies. That service is a future objective; this sample does not yet supply treatments or arrange cross-border care.
+              </p>
+              <p className="my-3">
+                <Link
+                  href="/latest-developments"
+                  className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
+                >
+                  See treatment developments and their status →
+                </Link>
+              </p>
+            </GuideChapter>
+
+            {/* Editorial Review Stamp */}
+            <GuideReviewStamp />
+          </article>
         </div>
+
+        {/* Related Starting Points */}
+        <GuideRelatedLinks currentPath="/treatment-and-care" />
       </main>
 
+      {/* Existing Original Footer (Untouched) */}
       <Footer />
     </div>
   );

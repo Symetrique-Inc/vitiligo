@@ -54,8 +54,8 @@ export const Hero: React.FC = () => {
             {/* Right Photo Portion (5 cols / ~42%) */}
             <div className="lg:col-span-5 relative min-h-[340px] sm:min-h-[400px] lg:min-h-full h-full w-full overflow-hidden border-t lg:border-t-0 lg:border-l border-[#E4DCF5]/70">
               <Image
-                src="/images/hero-panoramic.jpg"
-                alt="Diverse group of smiling people with vitiligo standing proudly with a healthcare professional"
+                src="/images/home-hero.jpg"
+                alt="Diverse group of smiling people with vitiligo standing proudly"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 42vw"

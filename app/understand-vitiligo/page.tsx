@@ -1,284 +1,302 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { UnderstandAccordion } from '@/components/UnderstandAccordion';
-import { KeyNumbersLancet } from '@/components/KeyNumbersLancet';
-import { SkinBiologyComparison } from '@/components/SkinBiologyComparison';
-import {
-  Layers,
-  Users,
-  Heart,
-  Activity,
-  Bandage,
-  Info,
-  ArrowRight,
-} from 'lucide-react';
+import { GuideHero } from '@/components/guide/GuideHero';
+import { GuideTableOfContents } from '@/components/guide/GuideTableOfContents';
+import { GuideChapter } from '@/components/guide/GuideChapter';
+import { GuideTable } from '@/components/guide/GuideTable';
+import { GuideExample } from '@/components/guide/GuideExample';
+import { GuideSources } from '@/components/guide/GuideSources';
+import { GuidePigmentDiagram } from '@/components/guide/GuidePigmentDiagram';
+import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
+import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
 export const metadata: Metadata = {
-  title: 'Understand Vitiligo — What It Is and Why It Happens | Vitiligo Hub',
+  title: 'Understand vitiligo | Vitiligo Hub',
   description:
-    'Vitiligo is an autoimmune condition that causes loss of skin colour. Learn what happens in the skin, how it can affect health beyond appearance, and what is true.',
+    'A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face.',
+  openGraph: {
+    title: 'Understand vitiligo | Vitiligo Hub',
+    description:
+      'A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face.',
+  },
 };
 
-export default function UnderstandVitiligoPage() {
-  const exploreTiles = [
-    {
-      title: 'The Basics',
-      description: 'Facts, types, symptoms, causes and more',
-      icon: Layers,
-      href: '#p02-s03',
-      color: 'text-[#1D5FE0]',
-      bg: 'bg-[#EAF2FF]',
-    },
-    {
-      title: 'Stigma & Misconceptions',
-      description: 'What people think vs. what is true',
-      icon: Users,
-      href: '/understand-vitiligo/stigma-and-misconceptions',
-      color: 'text-[#E8456B]',
-      bg: 'bg-[#FDE8EE]',
-    },
-    {
-      title: 'Living with Vitiligo',
-      description: 'Family, work, relationships and daily life',
-      icon: Heart,
-      href: '/living-with-vitiligo',
-      color: 'text-[#7C5CE0]',
-      bg: 'bg-[#EFEAFF]',
-    },
-    {
-      title: 'Behaviours & Daily Life',
-      description: 'How people seek information and treatment',
-      icon: Activity,
-      href: '/living-with-vitiligo',
-      color: 'text-[#1FA37A]',
-      bg: 'bg-[#E3F6EF]',
-    },
-    
-  ];
+const tocItems = [
+  { id: 'pigment', label: '01 · What actually changes in the skin?' },
+  { id: 'diagnosis', label: '02 · A lighter patch needs a diagnosis, not a guess.' },
+  { id: 'pattern', label: '03 · Type, activity and extent answer different questions.' },
+  { id: 'journey', label: '04 · The journey is not a straight line.' },
+  { id: 'myths', label: '05 · Facts that take some weight off.' },
+  { id: 'goals', label: '06 · Connect the facts to a useful outcome.' },
+];
 
+export default function UnderstandVitiligoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
+      {/* Existing Original Header (Untouched) */}
       <Header />
 
-      <Breadcrumbs items={[{ label: 'Understand Vitiligo' }]} />
+      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
+        {/* Guide Hero */}
+        <GuideHero
+          crumbLabel="← All starting points"
+          crumbHref="/#start"
+          eyebrow="Understand vitiligo"
+          title="Understand the condition. Then understand your choices."
+          lead="A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face."
+          edition="EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 3 MIN READ"
+          startHref="#pigment"
+        />
 
-      <main className="flex-1 pb-16">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* P02-S01 — Hero (half height) */}
-          <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-3">
-                <span className="text-xs font-bold text-[#1D5FE0] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-                  Condition & Biology
-                </span>
-                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] tracking-tight">
-                  Understand Vitiligo
-                </h1>
-                <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-xl">
-                  Clear, reliable and easy-to-understand information for patients, families and the wider public.
-                </p>
-              </div>
+        {/* Guide 2-Column Responsive Layout */}
+        <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
+          {/* Sticky Chapter Navigation on Desktop */}
+          <GuideTableOfContents items={tocItems} />
 
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full max-w-md mx-auto shadow-md border-4 border-white">
-                  <Image
-                    src="/images/card-understand.jpg"
-                    alt="Close-up of a person with vitiligo patches on the cheek."
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-center"
-                  />
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* P02-S02 — Explore this section (2 columns × 4 rows on desktop, 1 on mobile, 5 tiles handled gracefully) */}
-          <section className="mb-14" aria-labelledby="explore-section-heading">
-            <div className="mb-6">
-              <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                Index
-              </span>
-              <h2 id="explore-section-heading" className="text-2xl font-bold font-serif text-[#0B1F6B] mt-1">
-                Explore this section
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {exploreTiles.map((tile, idx) => {
-                const Icon = tile.icon;
-                return (
-                  <Link
-                    key={idx}
-                    href={tile.href}
-                    className="p-5 rounded-2xl bg-white border border-[#DDE5F5] hover:border-[#1D5FE0] hover:shadow-md transition-all group flex items-center justify-between"
-                  >
-                    <div className="flex items-center space-x-3.5">
-                      <div className={`w-11 h-11 rounded-xl ${tile.bg} ${tile.color} flex items-center justify-center shrink-0`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <h3 className="text-sm sm:text-base font-bold text-[#0B1F6B] group-hover:text-[#1D5FE0] transition-colors">
-                          {tile.title}
-                        </h3>
-                        <p className="text-xs text-[#5B6785]">{tile.description}</p>
-                      </div>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-[#1D5FE0] group-hover:translate-x-1 transition-all shrink-0" />
-                  </Link>
-                );
-              })}
-            </div>
-          </section>
-
-          {/* P02-S03 — What is vitiligo? */}
-          <section id="p02-s03" className="py-10 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mb-14">
-            <div className="max-w-6xl space-y-8">
-              <div className="space-y-4">
-                <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                  Section 1
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-bold font-serif text-[#0B1F6B] mt-1">
-                  What is vitiligo?
-                </h2>
-                <p className="text-xl sm:text-2xl font-serif text-[#0B1F6B] font-semibold leading-snug">
-                  Vitiligo is more than a change in skin colour.
-                </p>
-
-                <div className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed space-y-3.5 max-w-3xl">
-                  <p>
-                    Vitiligo is a medical condition in which areas of the skin lose their natural colour. The affected areas may look lighter than the surrounding skin and can sometimes appear white or pink.
-                  </p>
-                  <p>
-                    Vitiligo develops when the body&apos;s immune system mistakenly attacks melanocytes — the cells that produce pigment. Melanocytes give colour to the skin, hair and eyes, and they also help protect the skin from ultraviolet (UV) radiation. Vitiligo can appear at any age, though it often begins before the age of 30. It affects people of all skin tones and backgrounds equally. It is not contagious — you cannot catch vitiligo from another person.
-                  </p>
-                </div>
-
-                {/* Key-message callout */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-[#EAF2FF] border border-[#D5E2FA] flex items-start space-x-3 text-sm text-[#0B1F6B] font-semibold max-w-3xl">
-                  <Info className="w-5 h-5 text-[#1D5FE0] shrink-0 mt-0.5" />
-                  <p>Vitiligo is an autoimmune disease. It is not simply a cosmetic condition.</p>
-                </div>
-              </div>
-
-              {/* Interactive Cellular Mechanism & Healthy Skin Comparison */}
-              <div className="pt-6 border-t border-[#EEF2FA]">
-                <SkinBiologyComparison />
-              </div>
-            </div>
-          </section>
-
-          {/* P02-S05 — Why does vitiligo matter beyond the skin? Accordion */}
-          <section id="p02-s05" className="py-10 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mb-14">
-            <div className="max-w-4xl space-y-6">
-              <div>
-                <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                  Health & Wellbeing
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-                  Why does vitiligo matter beyond the skin?
-                </h2>
-                <p className="text-xs sm:text-sm text-[#5B6785] mt-1">
-                  Vitiligo is often thought of as a condition that only changes appearance. In fact, it can affect other parts of health and wellbeing.
-                </p>
-              </div>
-
-              <UnderstandAccordion />
-
-              {/* Reassurance line under accordion (bold) + Link */}
-              <div className="pt-4 border-t border-gray-100 space-y-2">
-                <p className="font-bold text-sm text-[#0B1F6B]">
-                  Having vitiligo does not mean you will automatically develop thyroid disease, another autoimmune condition or hearing loss.
-                </p>
-                <Link
-                  href="/understand-vitiligo/stigma-and-misconceptions"
-                  className="inline-flex items-center space-x-1.5 text-xs sm:text-sm font-semibold text-[#1D5FE0] hover:underline"
-                >
-                  <span>Read more myths and facts</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          {/* P02-S06 — Key numbers (Lancet 2024, no 70M+) */}
-          <section className="mb-14">
-            <KeyNumbersLancet />
-          </section>
-
-          {/* What should I do next? (from DOC B) */}
-          <section className="py-8 bg-[#F4F8FF] rounded-3xl border border-[#DDE5F5] p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="space-y-2 max-w-2xl">
-              <h3 className="text-xl font-bold font-serif text-[#0B1F6B]">
-                What should I do next?
-              </h3>
-              <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
-                If you think you may have vitiligo, or if you have been recently diagnosed, a dermatologist can help. They can confirm whether it is vitiligo, discuss what to expect and talk through the options that may be right for you.
+          {/* Guide Article Content */}
+          <article className="min-w-0">
+            {/* Chapter 01 */}
+            <GuideChapter
+              id="pigment"
+              index="01 / 06"
+              title="What actually changes in the skin?"
+              nextChapter={{
+                id: 'diagnosis',
+                label: 'A lighter patch needs a diagnosis, not a guess.',
+              }}
+            >
+              <p className="my-0">
+                Melanocytes make melanin, the pigment in skin. In vitiligo, immune activity targets these cells and areas lose colour. This is an autoimmune process rather than an infection.
               </p>
-            </div>
+              <p className="my-0">
+                Care can involve two linked tasks: reducing the attack on pigment-making cells and helping colour return. Understanding that difference makes treatment goals easier to follow.
+              </p>
 
-            <div className="flex flex-wrap gap-3 shrink-0">
-              <Link
-                href="/treatment-and-care"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] transition-colors shadow-xs"
-              >
-                <span>Explore Treatment Options</span>
-              </Link>
-              <Link
-                href="/understand-vitiligo/stigma-and-misconceptions"
-                className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-white border border-[#DDE5F5] text-[#0B1F6B] hover:bg-gray-50 transition-colors"
-              >
-                <span>Read about Stigma & Misconceptions</span>
-              </Link>
-            </div>
-          </section>
+              {/* Pigment Diagram Figure */}
+              <GuidePigmentDiagram />
 
-          {/* P02-S07 — Next steps CTA band (two cards) */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="p-7 rounded-3xl bg-[#FDE8EE] border border-[#FAD0DC] flex flex-col justify-between space-y-4">
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold font-serif text-[#0B1F6B]">
-                  Heard something about vitiligo that worries you?
-                </h3>
-                <p className="text-xs sm:text-sm text-[#5B6785] mt-2">
-                  Separate myth from fact, and learn why stigma happens.
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://www.niams.nih.gov/health-topics/vitiligo',
+                    label: 'NIAMS: understanding vitiligo',
+                  },
+                ]}
+              />
+            </GuideChapter>
+
+            {/* Chapter 02 */}
+            <GuideChapter
+              id="diagnosis"
+              index="02 / 06"
+              title="A lighter patch needs a diagnosis, not a guess."
+              nextChapter={{
+                id: 'pattern',
+                label: 'Type, activity and extent answer different questions.',
+              }}
+            >
+              <p className="my-0">
+                Fungal conditions and changes after inflammation or injury can also cause lighter patches. A dermatologist uses your history and skin examination; a Wood’s lamp may help show pigment loss.
+              </p>
+              <ul className="list-disc pl-5 sm:pl-6 space-y-2.5 my-4 text-[#1E2A4A]">
+                <li className="leading-relaxed">
+                  Bring a timeline, earlier photographs and the names of products used on the area.
+                </li>
+                <li className="leading-relaxed">
+                  Ask what supports the diagnosis and what remains uncertain.
+                </li>
+                <li className="leading-relaxed">
+                  Ask whether any tests would change the plan.
+                </li>
+                <li className="leading-relaxed">
+                  Leave knowing what to do next and when to return.
+                </li>
+              </ul>
+              <p className="my-0">
+                An online photograph cannot distinguish every cause. Establish what is being treated before comparing remedies.
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://www.aad.org/public/diseases/a-z/vitiligo-treatment',
+                    label: 'American Academy of Dermatology: treatment',
+                  },
+                ]}
+              />
+            </GuideChapter>
+
+            {/* Chapter 03 */}
+            <GuideChapter
+              id="pattern"
+              index="03 / 06"
+              title="Type, activity and extent answer different questions."
+              nextChapter={{
+                id: 'journey',
+                label: 'The journey is not a straight line.',
+              }}
+            >
+              <GuideTable
+                headers={['Term', 'What it describes', 'Why it matters']}
+                rows={[
+                  [
+                    'Type',
+                    'Non-segmental commonly affects both sides; segmental usually follows one side or region.',
+                    'Frames patterns and treatment discussions.',
+                  ],
+                  [
+                    'Activity',
+                    'Whether patches are new or enlarging.',
+                    'Separates controlling change from restoring colour.',
+                  ],
+                  [
+                    'Extent and location',
+                    'How much skin and which areas.',
+                    'A small facial area and widespread patches can call for different approaches.',
+                  ],
+                ]}
+              />
+              <p className="my-0">
+                These descriptions guide assessment. They do not tell you how someone feels or how much a patch affects their life.
+              </p>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://dermnetnz.org/topics/vitiligo',
+                    label: 'DermNet: vitiligo',
+                  },
+                ]}
+              />
+            </GuideChapter>
+
+            {/* Chapter 04 */}
+            <GuideChapter
+              id="journey"
+              index="04 / 06"
+              title="The journey is not a straight line."
+              nextChapter={{
+                id: 'myths',
+                label: 'Facts that take some weight off.',
+              }}
+            >
+              <p className="my-0">
+                A visitor may move from diagnosis to changing patches, a quiet period, repigmentation, maintenance or renewed activity. Years since diagnosis do not automatically determine the next option.
+              </p>
+              <p className="my-0">
+                Someone diagnosed long ago may need an activity review today. Someone newly diagnosed may mainly need an explanation and a manageable plan. The five starting points are doors into information, not permanent labels.
+              </p>
+              <ul className="list-disc pl-5 sm:pl-6 space-y-2.5 my-4 text-[#1E2A4A]">
+                <li className="leading-relaxed">
+                  <Link
+                    href="/journey-noticed"
+                    className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
+                  >
+                    New patch or uncertain diagnosis →
+                  </Link>
+                </li>
+                <li className="leading-relaxed">
+                  <Link
+                    href="/journey-changing"
+                    className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
+                  >
+                    New or enlarging patches →
+                  </Link>
+                </li>
+                <li className="leading-relaxed">
+                  <Link
+                    href="/journey-steady"
+                    className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
+                  >
+                    Patches that seem unchanged →
+                  </Link>
+                </li>
+                <li className="leading-relaxed">
+                  <Link
+                    href="/journey-long-journey"
+                    className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
+                  >
+                    Reviewing previous treatment →
+                  </Link>
+                </li>
+                <li className="leading-relaxed">
+                  <Link
+                    href="/journey-for-my-child"
+                    className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
+                  >
+                    Supporting a child →
+                  </Link>
+                </li>
+              </ul>
+            </GuideChapter>
+
+            {/* Chapter 05 */}
+            <GuideChapter
+              id="myths"
+              index="05 / 06"
+              title="Facts that take some weight off."
+              nextChapter={{
+                id: 'goals',
+                label: 'Connect the facts to a useful outcome.',
+              }}
+            >
+              <p className="my-0">
+                Vitiligo is not contagious. There is no proven diet that cures it. A family tendency does not mean every child will develop it.
+              </p>
+              <p className="my-0">
+                If someone offers a remedy, ask for its ingredients, evidence and possible harm. Avoid removing food groups because of a promise that doing so will restore colour. A confident claim is not the same as a tested treatment.
+              </p>
+              <GuideExample title="A practical example">
+                <p>
+                  “Is this a diagnosis or a possibility? What evidence supports this option for my type of vitiligo?” Those are reasonable questions even when advice sounds certain.
                 </p>
-              </div>
-              <Link
-                href="/understand-vitiligo/stigma-and-misconceptions"
-                className="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#E8456B] text-white hover:bg-[#c93354] transition-colors self-start shadow-xs"
-              >
-                <span>Myths & facts</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
+              </GuideExample>
+              <GuideSources
+                links={[
+                  {
+                    href: 'https://www.bad.org.uk/pils/vitiligo',
+                    label: 'British Association of Dermatologists: patient information',
+                  },
+                ]}
+              />
+            </GuideChapter>
 
-            <div className="p-7 rounded-3xl bg-[#EAF2FF] border border-[#D5E2FA] flex flex-col justify-between space-y-4">
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold font-serif text-[#0B1F6B]">
-                  Still have questions?
-                </h3>
-                <p className="text-xs sm:text-sm text-[#5B6785] mt-2">
-                  Get answers from dermatologists and other experts.
-                </p>
-              </div>
-              <Link
-                href="/expert-insights"
-                className="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full text-xs font-semibold bg-[#1D5FE0] text-white hover:bg-[#154bb3] transition-colors self-start shadow-xs"
-              >
-                <span>Explore Expert Insights</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-          </section>
+            {/* Chapter 06 */}
+            <GuideChapter
+              id="goals"
+              index="06 / 06"
+              title="Connect the facts to a useful outcome."
+              nextChapter={{
+                id: 'related',
+                label: 'Choose where to go next',
+              }}
+            >
+              <p className="my-0">
+                You might prioritise fewer new patches, colour in one particular area, a simpler routine, or less disruption to work or school. Write down the priority before comparing treatments.
+              </p>
+              <p className="my-0">
+                A good discussion connects the clinical problem, the proposed option, the practical commitment and the review point. If one is missing, you have a specific question to bring back.
+              </p>
+              <p className="my-3">
+                <Link
+                  href="/treatment-and-care"
+                  className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
+                >
+                  Compare treatment options by purpose →
+                </Link>
+              </p>
+            </GuideChapter>
+
+            {/* Editorial Review Stamp */}
+            <GuideReviewStamp />
+          </article>
         </div>
+
+        {/* Related Starting Points */}
+        <GuideRelatedLinks currentPath="/understand-vitiligo" />
       </main>
 
+      {/* Existing Original Footer (Untouched) */}
       <Footer />
     </div>
   );
