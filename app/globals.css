@@ -44,11 +44,48 @@ html {
   }
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  color: var(--body-text);
-  background: linear-gradient(180deg, #FFFFFF 0%, #F5F9FF 50%, #F7F5FF 100%);
+/* ==========================================================================
+   Impressive Luminous Pearl Polka Dot Background Pattern
+   Applied across body and .bg-pastel-mesh wrappers on every page
+   ========================================================================== */
+body,
+.bg-pastel-mesh {
+  background-color: #E6EFFB;
+  background-image: 
+    /* Layer 1: Crisp SVG Luminous White Pearl Polka Dots with subtle 3D depth */
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='pearlGlow' x='-40%25' y='-40%25' width='180%25' height='180%25'%3E%3CfeDropShadow dx='0' dy='1' stdDeviation='1.2' flood-color='%231D5FE0' flood-opacity='0.18'/%3E%3C/filter%3E%3C/defs%3E%3C!-- Primary crisp white pearl polka dot --%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%23ffffff' filter='url(%23pearlGlow)'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%23ffffff' filter='url(%23pearlGlow)'/%3E%3C!-- Secondary delicate micro sparkle dots --%3E%3Ccircle cx='30' cy='10' r='1.3' fill='%23ffffff' fill-opacity='0.65'/%3E%3Ccircle cx='10' cy='30' r='1.3' fill='%23ffffff' fill-opacity='0.65'/%3E%3C/svg%3E"),
+    /* Layer 2: Ambient luminous pastel mesh glow orbs */
+    radial-gradient(circle 700px at 10% 12%, rgba(29, 95, 224, 0.12) 0%, transparent 65%),
+    radial-gradient(circle 650px at 90% 18%, rgba(124, 92, 224, 0.10) 0%, transparent 65%),
+    radial-gradient(circle 800px at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 70%),
+    radial-gradient(circle 700px at 85% 85%, rgba(31, 163, 122, 0.08) 0%, transparent 65%),
+    radial-gradient(circle 650px at 15% 88%, rgba(242, 136, 75, 0.07) 0%, transparent 65%),
+    /* Layer 3: Smooth silky clinical pastel gradient base */
+    linear-gradient(180deg, #E6EFFB 0%, #EFF5FC 25%, #E9F1FA 55%, #E1EDF9 100%);
+  background-size: 
+    40px 40px,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%;
+  background-position: 
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  background-attachment: 
+    fixed,
+    scroll,
+    scroll,
+    scroll,
+    scroll,
+    scroll,
+    scroll;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -66,18 +103,7 @@ body {
   font-family: var(--font-caveat), cursive;
 }
 
-/* Lighter, colorful ambient mesh background */
-.bg-pastel-mesh {
-  background-image: 
-    radial-gradient(circle at 12% 15%, rgba(29, 95, 224, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 88% 20%, rgba(124, 92, 224, 0.05) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(31, 163, 122, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 75%, rgba(242, 136, 75, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(232, 69, 107, 0.03) 0%, transparent 45%);
-}
-
 /* Accessibility Focus States (WCAG 2.2 AA) */
-a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,

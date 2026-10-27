@@ -40,35 +40,57 @@ export default function ResourcesPage() {
       <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
-          <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-10 overflow-hidden relative">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-3">
-                <span className="text-xs font-bold text-[#7C5CE0] bg-[#EFEAFF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-                  {resourcesContent.header.eyebrow}
-                </span>
-                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] tracking-tight">
-                  {resourcesContent.header.h1}
-                </h1>
-                <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-xl">
-                  {resourcesContent.header.subheading}
-                </p>
-                <p className="text-sm text-[#1E2A4A] pt-1 leading-relaxed">
-                  {resourcesContent.header.intro}
-                </p>
-              </div>
+          <section className="relative rounded-3xl border border-[#DDE5F5] bg-white shadow-sm mt-4 mb-10 overflow-hidden flex flex-col min-[750px]:flex-row min-[750px]:items-center min-h-[460px] sm:min-h-[480px] lg:min-h-[500px]">
+            {/* Mobile illustration banner (≤750px) */}
+            <div className="relative w-full aspect-[2/1] max-h-[280px] min-[750px]:hidden overflow-hidden bg-[#EAF2FF]">
+              <Image
+                src="/images/resources-hero.png"
+                alt="Illustration of diverse hands joined together surrounded by leaves and community support icons"
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 750px) 100vw, 50vw"
+                className="object-cover object-right"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent" />
+            </div>
 
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full max-w-md mx-auto shadow-md border-4 border-white">
-                  <Image
-                    src="/images/card-resources.jpg"
-                    alt="Hands joined in solidarity and community support."
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-center"
-                  />
-                </div>
-              </div>
+            {/* Desktop & Tablet Background Illustration (anchored right, full height, min-width 750px) */}
+            <div className="hidden min-[750px]:block absolute top-0 right-0 bottom-0 w-[52%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden bg-[#E2EDFA]">
+              <Image
+                src="/images/resources-hero.png"
+                alt="Illustration of diverse hands joined together surrounded by leaves and community support icons"
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(min-width: 750px) 60vw, 100vw"
+                className="object-cover object-right"
+              />
+              {/* Soft horizontal fade gradient so live text on left sits on clean white without clipping the illustration */}
+              <div
+                className="absolute inset-y-0 left-0 w-[42%] lg:w-[48%] bg-gradient-to-r from-white via-white/85 to-transparent z-10"
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Hero Content Container with Live Text */}
+            <div className="relative z-10 w-full min-[750px]:w-[55%] lg:w-[48%] xl:w-[45%] max-w-[580px] p-6 sm:p-10 lg:p-12 space-y-3 sm:space-y-4">
+              <span className="text-[11px] font-semibold text-[#7C5CE0] bg-[#EFEAFF] px-3.5 py-1 rounded-full uppercase tracking-wider inline-block">
+                {resourcesContent.header.eyebrow}
+              </span>
+
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-bold font-serif text-[#0B1F6B] tracking-tight leading-[1.12]">
+                Find the right<br />
+                support.
+              </h1>
+
+              <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-xl font-medium">
+                {resourcesContent.header.subheading}
+              </p>
+
+              <p className="text-sm text-[#5B6785] pt-1 leading-relaxed max-w-lg">
+                {resourcesContent.header.intro}
+              </p>
             </div>
           </section>
 

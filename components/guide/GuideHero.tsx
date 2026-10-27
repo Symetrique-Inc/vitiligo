@@ -30,7 +30,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
   startHref,
   illustration,
 }) => {
-  // Two-tone H1 rendering: first sentence in Navy (#0B1F6B), concluding sentence in Royal Blue (#1D5FE0)
+  // Two-tone H1 rendering: first sentence in Navy (#0B1F6B), concluding sentence/phrase in Royal Blue (#1D5FE0)
   const renderTwoToneTitle = (rawTitle: string) => {
     const dotIndex = rawTitle.indexOf('. ');
     if (dotIndex !== -1) {
@@ -43,13 +43,35 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
         </>
       );
     }
+    const mattersIndex = rawTitle.indexOf('matters next.');
+    if (mattersIndex !== -1) {
+      const firstPart = rawTitle.slice(0, mattersIndex);
+      const secondPart = rawTitle.slice(mattersIndex);
+      return (
+        <>
+          <span className="block text-[#0B1F6B]">{firstPart}</span>
+          <span className="block text-[#1D5FE0]">{secondPart}</span>
+        </>
+      );
+    }
+    const conversationIndex = rawTitle.indexOf('the conversation forward.');
+    if (conversationIndex !== -1) {
+      const firstPart = rawTitle.slice(0, conversationIndex);
+      const secondPart = rawTitle.slice(conversationIndex);
+      return (
+        <>
+          <span className="block text-[#0B1F6B]">{firstPart}</span>
+          <span className="block text-[#1D5FE0]">{secondPart}</span>
+        </>
+      );
+    }
     return <span className="text-[#0B1F6B]">{rawTitle}</span>;
   };
 
   // Case 1: Illustrated Hero Layout (matching Target IMAGE 2 & 3)
   if (illustration) {
     return (
-      <section className="relative w-full min-h-[520px] min-[750px]:min-h-[540px] lg:min-h-[580px] bg-white overflow-hidden flex flex-col justify-center border-b border-[#DDE5F5]/60 mb-6 sm:mb-8">
+      <section className="relative w-full min-h-[520px] min-[750px]:min-h-[540px] lg:min-h-[580px] bg-transparent overflow-hidden flex flex-col justify-center border-b border-[#DDE5F5]/60 mb-6 sm:mb-8">
         {/* Mobile illustration banner (≤750px): fixed ~4/3 aspect ratio, centered subjects */}
         <div className="relative w-full aspect-[4/3] max-h-[380px] bg-[#EAF2FF] min-[750px]:hidden overflow-hidden">
           <Image

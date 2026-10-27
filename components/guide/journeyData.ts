@@ -436,6 +436,11 @@ export const journeySteadyData: JourneyPageData = {
   lead: 'A quiet period can create room to consider restoring colour, maintaining it, exploring a procedure or choosing not to pursue pigment treatment.',
   edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ',
   startHref: '#stable',
+  illustration: {
+    src: '/images/journey-steady-hero.png',
+    alt: 'Illustration of a diverse family with vitiligo looking toward an arched window with a rising sun and mountain path, with badges indicating Maintain, Restore, Explore, and Choose.',
+    objectPosition: 'right center',
+  },
   tocItems: [
     { id: 'stable', label: '01 · What does stable mean for a treatment decision?' },
     { id: 'goals', label: '02 · Choose an area and a goal first.' },
@@ -614,6 +619,11 @@ export const journeyLongJourneyData: JourneyPageData = {
   lead: 'Another list of remedies may not help. What matters is why an earlier plan was limited, what has changed and what would make the next option worth considering.',
   edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ',
   startHref: '#history',
+  illustration: {
+    src: '/images/journey-long-journey-hero.png',
+    alt: 'Illustration of four diverse young adults with vitiligo patches on their skin looking thoughtfully toward a winding path leading to mountains, with thought bubbles showing a magnifying glass for Understand, an open book for Explore, and a signpost for Decide.',
+    objectPosition: 'right center',
+  },
   tocItems: [
     { id: 'history', label: '01 · Make a history that explains the result.' },
     { id: 'trial', label: '02 · Was the trial enough to answer the question?' },
