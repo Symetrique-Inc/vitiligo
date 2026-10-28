@@ -10,11 +10,11 @@ import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
 import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
 export const metadata: Metadata = {
-  title: 'Living with vitiligo | Vitiligo Hub',
+  title: 'Living with vitiligo | OneVitiligo',
   description:
     'There are many ways to live with vitiligo. Understand what your skin needs, explore the care available and choose what fits your everyday life.',
   openGraph: {
-    title: 'Living with vitiligo | Vitiligo Hub',
+    title: 'Living with vitiligo | OneVitiligo',
     description:
       'There are many ways to live with vitiligo. Understand what your skin needs, explore the care available and choose what fits your everyday life.',
   },
@@ -33,18 +33,23 @@ export default function LivingWithVitiligoPage() {
       {/* Existing Original Header (Untouched) */}
       <Header />
 
-      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
-        {/* Guide Hero */}
-        <GuideHero
-          crumbLabel="← All starting points"
-          crumbHref="/#start"
-          eyebrow="Living with vitiligo"
-          title="Your skin. Your choice."
-          lead="There are many ways to live with vitiligo. Understand what your skin needs, explore the care available and choose what fits your everyday life."
-          edition="EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ"
-          startHref="#feelings"
-        />
+      {/* Full-width Guide Hero matching journey-noticed & understand-vitiligo */}
+      <GuideHero
+        crumbLabel="← All starting points"
+        crumbHref="/#start"
+        eyebrow="Living with vitiligo"
+        title="Your skin. Your choice."
+        lead="There are many ways to live with vitiligo. Understand what your skin needs, explore the care available and choose what fits your everyday life."
+        edition="EXPANDED PATIENT GUIDE · 4 MIN READ"
+        startHref="#feelings"
+        illustration={{
+          src: '/images/living-with-vitiligo-hero.jpg',
+          alt: 'Illustration of a woman with vitiligo looking forward toward diverse pathways: learning, skincare, physical wellness, social connection, and sun protection.',
+          objectPosition: 'center center',
+        }}
+      />
 
+      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
         {/* Guide 2-Column Responsive Layout */}
         <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
           {/* Sticky Chapter Navigation on Desktop */}

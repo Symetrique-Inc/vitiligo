@@ -14,9 +14,6 @@ export const GuidePigmentDiagram: React.FC = () => {
           style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
         />
       </div>
-      <figcaption className="text-[11px] text-[#5B6785] leading-relaxed mt-2.5 text-center sm:text-left">
-        Simplified pigment diagram. This compares skin changes rather than showing the complete sequence of disease initiation. Clinical review pending.
-      </figcaption>
     </figure>
   );
 };

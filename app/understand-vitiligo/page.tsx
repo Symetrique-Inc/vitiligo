@@ -13,11 +13,11 @@ import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
 import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
 export const metadata: Metadata = {
-  title: 'Understand vitiligo | Vitiligo Hub',
+  title: 'Understand vitiligo | OneVitiligo',
   description:
     'A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face.',
   openGraph: {
-    title: 'Understand vitiligo | Vitiligo Hub',
+    title: 'Understand vitiligo | OneVitiligo',
     description:
       'A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face.',
   },
@@ -38,18 +38,23 @@ export default function UnderstandVitiligoPage() {
       {/* Existing Original Header (Untouched) */}
       <Header />
 
-      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
-        {/* Guide Hero */}
-        <GuideHero
-          crumbLabel="← All starting points"
-          crumbHref="/#start"
-          eyebrow="Understand vitiligo"
-          title="Understand the condition. Then understand your choices."
-          lead="A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face."
-          edition="EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 3 MIN READ"
-          startHref="#pigment"
-        />
+      {/* Full-width Guide Hero matching journey-noticed */}
+      <GuideHero
+        crumbLabel="← All starting points"
+        crumbHref="/#start"
+        eyebrow="Understand vitiligo"
+        title="Understand the condition. Then understand your choices."
+        lead="A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face."
+        edition="EXPANDED PATIENT GUIDE · 3 MIN READ"
+        startHref="#pigment"
+        illustration={{
+          src: '/images/understand-vitiligo-hero.jpg',
+          alt: 'Illustration of a woman with vitiligo at a crossroads of choices: expert guidance, community, treatment options, camouflage, and everyday care, with an open book exploring skin changes.',
+          objectPosition: 'center center',
+        }}
+      />
 
+      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
         {/* Guide 2-Column Responsive Layout */}
         <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
           {/* Sticky Chapter Navigation on Desktop */}

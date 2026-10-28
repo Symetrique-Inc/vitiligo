@@ -45,6 +45,13 @@ const journeyCards: JourneyCard[] = [
     linkLabel: 'Explore support for my child',
     href: '/journey-for-my-child',
   },
+  {
+    index: '06 / SUPPORTING MY LOVED ONES',
+    title: 'I am here for my loved ones',
+    description: 'Learn how to offer reassurance, understand their choices and support them without making them feel defined by their condition. Understand what vitiligo means.',
+    linkLabel: 'Direct them to treatment & care',
+    href: '/journey-for-loved-ones',
+  },
 ];
 
 export const LandingJourneyCards: React.FC = () => {
@@ -60,17 +67,14 @@ export const LandingJourneyCards: React.FC = () => {
         Choose a topic that feels relevant today. You can explore any path and change direction whenever you like.
       </p>
 
-      {/* 6-column grid: cards 1-3 span 2 cols each, cards 4-5 span 3 cols each */}
-      <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
-        {journeyCards.map((card, i) => {
-          const isWideCard = i >= 3;
+      {/* Responsive 3-column grid (3 cards x 2 rows) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {journeyCards.map((card) => {
           return (
             <Link
               key={card.index}
               href={card.href}
-              className={`group flex flex-col justify-between bg-white border border-[#DDE5F5] rounded-lg p-6 sm:p-6.5 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[#1D5FE0] hover:shadow-md ${
-                isWideCard ? 'lg:col-span-3' : 'lg:col-span-2'
-              }`}
+              className="group flex flex-col justify-between bg-white border border-[#DDE5F5] rounded-lg p-6 sm:p-6.5 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[#1D5FE0] hover:shadow-md"
             >
               <div>
                 <span className="text-[11px] text-[#5B6785] tracking-[2px] block">

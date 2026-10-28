@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -19,27 +20,21 @@ export const Footer: React.FC = () => {
           {/* Column 1 — About */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2.5">
-              <div className="w-8 h-8 flex items-center justify-center shrink-0">
-                <svg className="w-7 h-7" viewBox="0 0 32 32" fill="none">
-                  <path d="M12 7 C7 13, 6 21, 14 27 C11 21, 10 13, 12 7 Z" fill="#0B1F6B" />
-                  <path d="M16 4 C14 11, 14 21, 16 28 C18 21, 18 11, 16 4 Z" fill="#1D5FE0" />
-                  <path d="M20 7 C25 13, 26 21, 18 27 C21 21, 22 13, 20 7 Z" fill="#1FA37A" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-base font-serif text-[#0B1F6B] leading-tight">
-                  VITILIGO HUB
-                </span>
-                <span className="text-[11px] text-[#5B6785] font-medium">
-                  An initiative by Symetrique
-                </span>
-              </div>
+              <Link href="/" className="inline-block" aria-label="OneVitiligo Home">
+                <Image
+                  src="/images/onevitiligo-logo.png"
+                  alt="OneVitiligo"
+                  width={200}
+                  height={50}
+                  className="h-10 w-auto object-contain"
+                />
+              </Link>
             </div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
               About
             </h4>
             <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
-              Vitiligo Hub is an initiative by Symetrique for people living with vitiligo and those who support them. Our aim is to make information easier to understand and help people prepare for conversations about their care.
+              OneVitiligo is a dedicated initiative for people living with vitiligo and those who support them. Our aim is to make information easier to understand and help people prepare for conversations about their care.
             </p>
           </div>
 
@@ -77,10 +72,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3 — Symetrique */}
+          {/* Column 3 — OneVitiligo */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
-              Symetrique
+              OneVitiligo
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#5B6785]">
               <li>
@@ -133,7 +128,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar: Copyright & Scroll to Top */}
         <div className="pt-6 border-t border-gray-100 flex items-center justify-between text-xs text-[#5B6785]">
-          <p>© 2026 Symetrique. All rights reserved.</p>
+          <p>© 2026 OneVitiligo. All rights reserved.</p>
 
           <button
             onClick={scrollToTop}

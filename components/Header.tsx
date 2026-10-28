@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { Search, Globe, Menu, X, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
 
@@ -44,38 +45,20 @@ export const Header: React.FC = () => {
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5ECF6] transition-all">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* 3-petal Logo matching reference screenshot */}
+            {/* OneVitiligo Brand Logo */}
             <Link
               href="/"
-              className="flex items-center space-x-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D5FE0] rounded-xl py-1 pr-2 shrink-0"
+              className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1D5FE0] rounded-xl py-1 pr-2 shrink-0"
+              aria-label="OneVitiligo Home"
             >
-              <div className="w-10 h-10 flex items-center justify-center shrink-0">
-                <svg className="w-9 h-9" viewBox="0 0 32 32" fill="none">
-                  {/* Left Navy Petal */}
-                  <path
-                    d="M12 7 C7 13, 6 21, 14 27 C11 21, 10 13, 12 7 Z"
-                    fill="#0B1F6B"
-                  />
-                  {/* Center Royal Blue Petal */}
-                  <path
-                    d="M16 4 C14 11, 14 21, 16 28 C18 21, 18 11, 16 4 Z"
-                    fill="#1D5FE0"
-                  />
-                  {/* Right Teal Petal */}
-                  <path
-                    d="M20 7 C25 13, 26 21, 18 27 C21 21, 22 13, 20 7 Z"
-                    fill="#1FA37A"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-[17px] tracking-tight text-[#0B1F6B] font-serif leading-none">
-                  VITILIGO HUB
-                </span>
-                <span className="text-[11px] font-medium text-[#5B6785] tracking-wide mt-0.5">
-                  See Beyond the Skin
-                </span>
-              </div>
+              <Image
+                src="/images/onevitiligo-logo.png"
+                alt="OneVitiligo - Understand. Support. Brighter Tomorrows."
+                width={220}
+                height={54}
+                className="h-10 sm:h-12 w-auto object-contain"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation with active blue underline indicator */}

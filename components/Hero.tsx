@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
               
               {/* Top Label */}
               <span className="text-xs sm:text-[13px] font-bold tracking-widest text-[#5E4D9A] uppercase mb-3 sm:mb-4">
-                Vitiligo Hub
+                OneVitiligo
               </span>
 
               {/* Main Headline */}

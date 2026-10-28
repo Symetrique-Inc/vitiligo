@@ -13,6 +13,7 @@ const allGuideLinks: RelatedLinkItem[] = [
   { href: '/journey-steady', label: 'My patches seem steady' },
   { href: '/journey-long-journey', label: 'I have lived with vitiligo for a while' },
   { href: '/journey-for-my-child', label: 'I am here for my child' },
+  { href: '/journey-for-loved-ones', label: 'I am here for my loved ones' },
   { href: '/treatment-and-care', label: 'Treatment and care' },
   { href: '/living-with-vitiligo', label: 'Living with vitiligo' },
   { href: '/latest-developments', label: 'Treatment developments' },

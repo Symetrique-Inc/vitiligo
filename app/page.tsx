@@ -8,13 +8,13 @@ import { LandingSupportPanel } from '@/components/landing/LandingSupportPanel';
 import { LandingAbout } from '@/components/landing/LandingAbout';
 
 export const metadata: Metadata = {
-  title: 'Vitiligo Hub | See Beyond the Skin — by Symetrique',
+  title: 'OneVitiligo | Understand. Support. Brighter Tomorrows.',
   description:
-    'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.',
+    'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.',
   openGraph: {
-    title: 'Vitiligo Hub | See Beyond the Skin — by Symetrique',
+    title: 'OneVitiligo | Understand. Support. Brighter Tomorrows.',
     description:
-      'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.',
+      'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.',
     type: 'website',
   },
 };

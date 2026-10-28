@@ -48,16 +48,16 @@ export default function AboutPage() {
                     Vitiligo is often dismissed as a cosmetic issue. In reality, it is an autoimmune condition that can affect mental health, self-esteem and overall wellbeing. Despite affecting millions of people worldwide, it receives far less research attention and public understanding than many other conditions.
                   </p>
                   <p>
-                    The Vitiligo Hub is our commitment to changing that. We are building a trusted space where patients, families and healthcare professionals can find clear information, share experiences and connect with a global community that understands.
+                    OneVitiligo is our commitment to changing that. We are building a trusted space where patients, families and healthcare professionals can find clear information, share experiences and connect with a global community that understands.
                   </p>
                 </div>
               </div>
 
               {/* Right Column: Image */}
-              <div className="lg:col-span-5 relative h-[260px] sm:h-[320px] lg:h-[340px] rounded-2xl overflow-hidden border border-[#E5ECF6] shadow-xs">
+              <div className="lg:col-span-5 relative w-full aspect-[16/10] min-h-[260px] sm:min-h-[300px] lg:min-h-[320px] rounded-2xl overflow-hidden border border-[#E5ECF6] shadow-xs bg-[#EBF5FB]">
                 <Image
-                  src="/images/card-understand.jpg"
-                  alt="Person with vitiligo smiling with confidence"
+                  src="/images/about-why-vitiligo.png"
+                  alt="Illustration of an open book with magnifying glass exploring vitiligo, surrounded by community, mind-health, research, and global connectivity"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 42vw"

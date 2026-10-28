@@ -20,7 +20,7 @@ export const AboutSymetrique: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 text-[#1E2A4A] text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
           <div className="space-y-4">
             <p className="text-[#0B1F6B]">
-              Vitiligo Hub is built by Symetrique. We started with a simple belief: the people who live with a condition understand it in ways no textbook can. Too often their experience is missing from the conversations where care is designed and new treatments are developed.
+              OneVitiligo was built with a simple belief: the people who live with a condition understand it in ways no textbook can. Too often their experience is missing from the conversations where care is designed and new treatments are developed.
             </p>
             <p className="text-[#0A0A0A]">
               We are changing that. We listen to people living with vitiligo and to the doctors who care for them. With clear consent, we collect real experiences — how symptoms change, how treatment feels, what daily life is like — and turn them into reliable evidence. We then work with researchers and pharmaceutical companies so that new treatments and services reflect what patients actually need.
@@ -128,7 +128,7 @@ export const AboutSymetrique: React.FC = () => {
               href="/about#partner"
               className="px-6 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-colors"
             >
-              Partner with Symetrique →
+              Partner with OneVitiligo →
             </Link>
           </div>
         </div>

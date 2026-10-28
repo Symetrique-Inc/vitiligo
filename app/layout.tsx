@@ -25,17 +25,17 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://vitiligohub.org'),
   title: {
-    default: "Vitiligo Hub | See Beyond the Skin — by Symetrique",
-    template: "%s | Vitiligo Hub",
+    default: "OneVitiligo | Understand. Support. Brighter Tomorrows.",
+    template: "%s | OneVitiligo",
   },
-  description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.",
+  description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
   keywords: ["vitiligo", "vitiligo support", "melanocytes", "dermatology", "autoimmune skin condition", "vitiligo treatment", "JAK inhibitors", "phototherapy"],
-  authors: [{ name: "Symetrique & Vitiligo Hub Medical Advisory Board" }],
+  authors: [{ name: "OneVitiligo Medical Advisory Board" }],
   openGraph: {
-    title: "Vitiligo Hub | See Beyond the Skin — by Symetrique",
-    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.",
+    title: "OneVitiligo | Understand. Support. Brighter Tomorrows.",
+    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
     url: "https://vitiligohub.org",
-    siteName: "Vitiligo Hub",
+    siteName: "OneVitiligo",
     images: [
       {
         url: "/images/hero-panoramic.jpg",
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vitiligo Hub | See Beyond the Skin — by Symetrique",
-    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by Symetrique.",
+    title: "OneVitiligo | Understand. Support. Brighter Tomorrows.",
+    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
     images: ["/images/hero-panoramic.jpg"],
   },
 };

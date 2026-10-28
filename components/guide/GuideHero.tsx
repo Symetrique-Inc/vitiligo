@@ -88,8 +88,8 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
           />
         </div>
 
-        {/* Desktop & Tablet Background Illustration (anchored right, full height, min-width 750px) */}
-        <div className="hidden min-[750px]:block absolute top-0 right-0 bottom-0 w-[50%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden bg-[#E2EDFA]">
+        {/* Desktop & Tablet Background Illustration: positioned adjacent to text without awkward white gap */}
+        <div className="hidden min-[750px]:block absolute top-0 right-0 bottom-0 w-[52%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden bg-[#E2EDFA]">
           <Image
             src={illustration.src}
             alt={illustration.alt}
@@ -99,12 +99,12 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
             sizes="(min-width: 750px) 60vw, 100vw"
             className="object-cover"
             style={{
-              objectPosition: illustration.objectPosition || 'right center',
+              objectPosition: illustration.objectPosition || 'center center',
             }}
           />
-          {/* Soft white-to-transparent horizontal fade gradient so live text sits on clean white without clipping the subjects */}
+          {/* Subtle edge blend gradient replacing the previous wide white block */}
           <div
-            className="absolute inset-y-0 left-0 w-[42%] lg:w-[48%] bg-gradient-to-r from-white via-white/85 to-transparent z-10"
+            className="absolute inset-y-0 left-0 w-[14%] sm:w-[16%] bg-gradient-to-r from-white via-white/40 to-transparent z-10"
             aria-hidden="true"
           />
         </div>
@@ -135,9 +135,13 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
               {lead}
             </p>
 
-            {/* Meta line: guide type, date, read time */}
+            {/* Meta line: guide type, read time (date removed per design) */}
             <p className="text-[11px] tracking-[1.5px] text-[#5B6785] font-medium uppercase m-0 mb-6">
-              {edition}
+              {edition
+                .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, ' · ')
+                .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}/gi, '')
+                .replace(/\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, '')
+                .trim()}
             </p>
 
             {/* Two Action Buttons: same height, 6px radius */}
@@ -183,9 +187,13 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
         {lead}
       </p>
 
-      {/* Meta line */}
+      {/* Meta line (date removed per design) */}
       <p className="text-[11px] tracking-[1.5px] text-[#5B6785] font-medium uppercase m-0 mb-6">
-        {edition}
+        {edition
+          .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, ' · ')
+          .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}/gi, '')
+          .replace(/\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, '')
+          .trim()}
       </p>
 
       {/* Action buttons */}

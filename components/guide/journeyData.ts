@@ -58,7 +58,7 @@ export const journeyNoticedData: JourneyPageData = {
   eyebrow: 'I have noticed a white patch',
   heroTitle: 'A new patch can bring questions. Start with clarity.',
   lead: 'You may want an answer quickly without knowing which information to trust. First understand the patch; a treatment decision comes after that.',
-  edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 3 MIN READ',
+  edition: 'EXPANDED PATIENT GUIDE · 3 MIN READ',
   startHref: '#first',
   illustration: {
     src: '/images/journey-noticed-hero.png',
@@ -242,12 +242,12 @@ export const journeyChangingData: JourneyPageData = {
   eyebrow: 'My patches are changing',
   heroTitle: 'Understand the change. Understand the purpose of treatment.',
   lead: 'New patches can make the future feel uncertain. This journey explains the choices that matter when the main concern is ongoing change.',
-  edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ',
+  edition: 'EXPANDED PATIENT GUIDE · 4 MIN READ',
   startHref: '#activity',
   illustration: {
     src: '/images/journey-changing-hero.png',
-    alt: 'Illustration of four diverse young adults with vitiligo patches on their skin looking thoughtfully toward a winding path leading to mountains, with thought bubbles showing a magnifying glass for Understand, an open book for Explore, and a signpost for Decide.',
-    objectPosition: 'right center',
+    alt: 'Illustration of diverse young adults with vitiligo looking thoughtfully toward choices, with question, magnifying glass, book, and signpost icons.',
+    objectPosition: 'center center',
   },
   tocItems: [
     { id: 'activity', label: '01 · What does active vitiligo mean?' },
@@ -434,12 +434,12 @@ export const journeySteadyData: JourneyPageData = {
   eyebrow: 'My patches seem steady',
   heroTitle: 'When skin seems steady, choose what matters next.',
   lead: 'A quiet period can create room to consider restoring colour, maintaining it, exploring a procedure or choosing not to pursue pigment treatment.',
-  edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ',
+  edition: 'EXPANDED PATIENT GUIDE · 4 MIN READ',
   startHref: '#stable',
   illustration: {
     src: '/images/journey-steady-hero.png',
     alt: 'Illustration of a diverse family with vitiligo looking toward an arched window with a rising sun and mountain path, with badges indicating Maintain, Restore, Explore, and Choose.',
-    objectPosition: 'right center',
+    objectPosition: 'center center',
   },
   tocItems: [
     { id: 'stable', label: '01 · What does stable mean for a treatment decision?' },
@@ -617,12 +617,12 @@ export const journeyLongJourneyData: JourneyPageData = {
   eyebrow: 'I have lived with vitiligo for a while',
   heroTitle: 'Your history should move the conversation forward.',
   lead: 'Another list of remedies may not help. What matters is why an earlier plan was limited, what has changed and what would make the next option worth considering.',
-  edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ',
+  edition: 'EXPANDED PATIENT GUIDE · 4 MIN READ',
   startHref: '#history',
   illustration: {
     src: '/images/journey-long-journey-hero.png',
-    alt: 'Illustration of four diverse young adults with vitiligo patches on their skin looking thoughtfully toward a winding path leading to mountains, with thought bubbles showing a magnifying glass for Understand, an open book for Explore, and a signpost for Decide.',
-    objectPosition: 'right center',
+    alt: 'Illustration of a supportive group of friends and young adults gathered around a laptop sharing experiences and community guidance.',
+    objectPosition: 'center center',
   },
   tocItems: [
     { id: 'history', label: '01 · Make a history that explains the result.' },
@@ -782,8 +782,13 @@ export const journeyForMyChildData: JourneyPageData = {
   eyebrow: 'I am here for my child',
   heroTitle: 'A skin-care plan should also fit their childhood.',
   lead: 'You may be balancing treatment questions, school life and your own worry. Separate clinical choices from everyday support, with room for your child’s voice.',
-  edition: 'EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 4 MIN READ',
+  edition: 'EXPANDED PATIENT GUIDE · 4 MIN READ',
   startHref: '#diagnosis',
+  illustration: {
+    src: '/images/journey-for-my-child-hero.png',
+    alt: 'Illustration of a supportive parent and young child reading a book together, with home, education, and medical guidance icons.',
+    objectPosition: 'center center',
+  },
   tocItems: [
     { id: 'diagnosis', label: '01 · Understand the diagnosis and pattern first.' },
     { id: 'options', label: '02 · What choices may be considered for children?' },
@@ -938,6 +943,113 @@ export const journeyForMyChildData: JourneyPageData = {
         id: 'related',
         label: 'Choose where to go next',
       },
+    },
+  ],
+};
+
+
+export const journeyForLovedOnesData: JourneyPageData = {
+  slug: 'journey-for-loved-ones',
+  metaTitle: 'I am here for my loved ones',
+  metaDescription:
+    'Learn how to offer reassurance, understand their choices and support them without making them feel defined by their condition. Understand what vitiligo means and direct them to treatment and care.',
+  eyebrow: 'I am here for my loved ones',
+  heroTitle: 'Support them with clarity, empathy and informed choices.',
+  lead:
+    'Learn how to offer reassurance, understand their choices and support them without making them feel defined by their condition. Understand what vitiligo means and direct them to treatment and care.',
+  edition: 'EXPANDED PATIENT GUIDE · 4 MIN READ',
+  startHref: '#understanding',
+  tocItems: [
+    { id: 'understanding', label: '01 · Understand what vitiligo means and does not mean.' },
+    { id: 'reassurance', label: '02 · Offer reassurance without defining them by their skin.' },
+    { id: 'treatment', label: '03 · Direct them to reliable treatment and care options.' },
+    { id: 'conversations', label: '04 · Prepare for conversations and doctor appointments together.' },
+  ],
+  chapters: [
+    {
+      id: 'understanding',
+      index: '01 / 04',
+      title: 'Understand what vitiligo means and does not mean.',
+      paragraphsBefore: [
+        'Vitiligo is an autoimmune condition where the body’s immune system affects pigment-producing cells (melanocytes). It is not contagious, not caused by diet, and not an infection.',
+        'Learning the facts helps you dispel common myths and approach your loved one with confidence and understanding, rather than unhelpful assumptions or unwarranted alarm.',
+      ],
+      sources: [
+        {
+          href: '/understand-vitiligo',
+          label: 'OneVitiligo: Understanding vitiligo fundamentals',
+        },
+      ],
+      nextChapter: {
+        id: 'reassurance',
+        label: 'Offer reassurance without defining them by their skin.',
+      },
+    },
+    {
+      id: 'reassurance',
+      index: '02 / 04',
+      title: 'Offer reassurance without defining them by their skin.',
+      paragraphsBefore: [
+        'A person with vitiligo is much more than their skin. Unsolicited advice, frequent comments on patches, or over-focusing on appearance can inadvertently increase stress.',
+        'Support looks like listening when they want to talk, validating their feelings, and respecting whether they choose to explore treatments, use camouflage, or embrace their skin as it is.',
+      ],
+      nextChapter: {
+        id: 'treatment',
+        label: 'Direct them to reliable treatment and care options.',
+      },
+    },
+    {
+      id: 'treatment',
+      index: '03 / 04',
+      title: 'Direct them to reliable treatment and care options.',
+      table: {
+        headers: ['Goal', 'Options to explore', 'How to support'],
+        rows: [
+          [
+            'Seeking medical advice',
+            'Consulting a certified dermatologist',
+            'Help prepare questions and review symptom history before the appointment.',
+          ],
+          [
+            'Topical & light therapies',
+            'Prescription creams, phototherapy',
+            'Encourage consistent routine without making it an obligation.',
+          ],
+          [
+            'Everyday living & confidence',
+            'Camouflage, sunscreen, community support',
+            'Follow their lead and provide practical, non-judgmental assistance.',
+          ],
+        ],
+      },
+      paragraphsAfterTable: [
+        'Encourage them to explore evidence-based therapies with a medical specialist. Early evaluation helps determine whether patches are active or stable, and what treatments are most suitable.',
+      ],
+      sources: [
+        {
+          href: '/treatment-and-care',
+          label: 'OneVitiligo: Comprehensive treatment and care guide',
+        },
+      ],
+      nextChapter: {
+        id: 'conversations',
+        label: 'Prepare for conversations and doctor appointments together.',
+      },
+    },
+    {
+      id: 'conversations',
+      index: '04 / 04',
+      title: 'Prepare for conversations and doctor appointments together.',
+      paragraphsBefore: [
+        'Offer to accompany them to consultations if they want an advocate or a second pair of ears. Take notes on medical advice, discussion points, and follow-up timelines.',
+        'Remember that decisions belong to them. Being a supportive loved one means creating a safe space where they feel loved, accepted, and empowered.',
+      ],
+      sources: [
+        {
+          href: '/resources',
+          label: 'OneVitiligo: Resources and patient support networks',
+        },
+      ],
     },
   ],
 };
