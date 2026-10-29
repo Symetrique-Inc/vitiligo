@@ -1,7 +1,7 @@
 {
   "en": {
     "brand": {
-      "name": "VITILIGO HUB",
+      "name": "ONEVITILIGO",
       "tagline": "See Beyond the Skin",
       "subline": "Clear information. Expert insights. Practical support.",
       "quoteScript": "Different skin. Same dreams.",
@@ -20,7 +20,7 @@
       "language": "Language"
     },
     "hero": {
-      "eyebrow": "THE GLOBAL VITILIGO HUB",
+      "eyebrow": "THE GLOBAL ONEVITILIGO",
       "title": "See Beyond the Skin",
       "subtitle": "Clear information. Expert insights. Practical support.",
       "lead": "Helping people around the world understand vitiligo and live with greater confidence.",
@@ -106,8 +106,8 @@
       "disclaimer": "Safe, anonymous & confidential. We do not diagnose. Answers are reviewed by certified clinicians for educational purposes only."
     },
     "footer": {
-      "disclaimer": "Medical Disclaimer: The information on Vitiligo Hub is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified dermatologist or physician.",
-      "copyright": "© 2026 Vitiligo Hub. Supported by Global Vitiligo Research Alliance. All rights reserved.",
+      "disclaimer": "Medical Disclaimer: The information on OneVitiligo is for educational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified dermatologist or physician.",
+      "copyright": "© 2026 OneVitiligo. Supported by Global Vitiligo Research Alliance. All rights reserved.",
       "accessibility": "WCAG 2.2 AA Compliant",
       "languageToggle": "Switch Language"
     }

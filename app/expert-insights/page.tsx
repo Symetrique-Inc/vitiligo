@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Ask. Learn. Stay informed. — Expert Insights | Vitiligo Hub',
+  title: 'Ask. Learn. Stay informed. — Expert Insights | OneVitiligo',
   description:
     'Expert answers to common questions and latest research updates. Perspectives from dermatologists, researchers, and people living with vitiligo.',
 };

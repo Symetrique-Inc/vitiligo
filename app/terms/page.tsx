@@ -7,8 +7,8 @@ import { PlaceholderTag } from '@/components/PlaceholderTag';
 import { FileText, ArrowRight, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms of Use | Vitiligo Hub by Symetrique',
-  description: 'Terms of Use governing the use of the Vitiligo Hub platform.',
+  title: 'Terms of Use | OneVitiligo by Symetrique',
+  description: 'Terms of Use governing the use of the OneVitiligo platform.',
 };
 
 export default function TermsPage() {
@@ -32,7 +32,7 @@ export default function TermsPage() {
                 Terms of Use
               </h1>
               <p className="text-sm sm:text-base text-[#5B6785] leading-relaxed">
-                These terms govern your access to and use of Vitiligo Hub. All content is intended strictly for educational and informational purposes.
+                These terms govern your access to and use of OneVitiligo. All content is intended strictly for educational and informational purposes.
               </p>
 
               <div className="p-6 rounded-2xl bg-[#FFF6EE] border border-[#FEDDC7] text-xs text-[#B34F18] flex items-start space-x-3 my-6">

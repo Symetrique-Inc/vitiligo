@@ -40,7 +40,7 @@ export default function PatientJourneysPage() {
               &ldquo;Different skin. Same dreams.&rdquo;
             </p>
             <p className="text-xs text-[#7C5CE0] font-semibold mt-2 uppercase tracking-wider">
-              Vitiligo Hub Global Community
+              OneVitiligo Global Community
             </p>
           </div>
 

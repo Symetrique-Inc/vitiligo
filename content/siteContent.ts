@@ -387,7 +387,7 @@ export const resourcesContent = {
   },
   community: {
     title: 'Community',
-    body: 'The Vitiligo Hub community is a space to connect, share and learn from people who understand. Whether you have been living with vitiligo for years or have just been diagnosed, you are welcome here.',
+    body: 'The OneVitiligo community is a space to connect, share and learn from people who understand. Whether you have been living with vitiligo for years or have just been diagnosed, you are welcome here.',
     status: 'Community features coming soon. In the meantime, follow us on social media for updates and stories.',
   },
   dermatologistCriteria: {

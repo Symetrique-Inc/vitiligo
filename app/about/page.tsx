@@ -121,7 +121,26 @@ export default function AboutPage() {
             </div>
           </section>
 
-        
+          {/* Beyond The Prescription Section */}
+          <section className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-xs mb-14" aria-labelledby="prescription-story-heading">
+            <div className="max-w-4xl space-y-4">
+              <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
+                Beyond The Prescription
+              </span>
+              <h2 id="prescription-story-heading" className="text-2xl sm:text-3xl lg:text-[32px] font-bold font-serif text-[#0B1F6B] leading-tight">
+                Because a prescription is not the whole story.
+              </h2>
+              <div className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed space-y-4 pt-1">
+                <p>
+                  OneVitiligo, an initiative by Symetrique, bridges the information gap between the scientific community and people living with vitiligo. A consultation may provide a diagnosis and treatment, but patients can still leave with unanswered questions about their skin, treatment options and emotional well-being. Scientific language can be difficult to understand, online advice can be conflicting, and reliable information may not be available in a language they know well.
+                </p>
+                <p>
+                  OneVitiligo brings trusted scientific information, practical care guidance and emotional support together in one accessible, multilingual platform. We help patients understand their condition, explore available choices and prepare for more informed conversations with healthcare professionals. Our goal is to make knowledge accessible, reduce uncertainty and empower every person to take an active role in their care—because everyone deserves to feel informed, understood and supported throughout their vitiligo journey.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section id="partner" className="bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mb-12">
             <div className="max-w-3xl space-y-6">
               <div>

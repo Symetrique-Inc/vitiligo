@@ -12,11 +12,11 @@ import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
 import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
 export const metadata: Metadata = {
-  title: 'Treatment and care | Vitiligo Hub',
+  title: 'Treatment and care | OneVitiligo',
   description:
     'Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan.',
   openGraph: {
-    title: 'Treatment and care | Vitiligo Hub',
+    title: 'Treatment and care | OneVitiligo',
     description:
       'Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan.',
   },
@@ -39,18 +39,23 @@ export default function TreatmentAndCarePage() {
       {/* Existing Original Header (Untouched) */}
       <Header />
 
-      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
-        {/* Guide Hero */}
-        <GuideHero
-          crumbLabel="← All starting points"
-          crumbHref="/#start"
-          eyebrow="Treatment and care"
-          title="Know what each option does, demands and cannot promise."
-          lead="Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan."
-          edition="EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 7 MIN READ"
-          startHref="#state"
-        />
+      {/* Full-width Guide Hero matching journey-noticed & understand-vitiligo */}
+      <GuideHero
+        crumbLabel="← All starting points"
+        crumbHref="/#start"
+        eyebrow="Treatment and care"
+        title="Know what each option does, demands and cannot promise."
+        lead="Treatment choices depend on activity, body area, age and your goals. Use this guide to compare the purpose, practical commitment and limitations before discussing a plan."
+        edition="EXPANDED PATIENT GUIDE · 7 MIN READ"
+        startHref="#state"
+        illustration={{
+          src: '/images/treatment-and-care-hero.jpg',
+          alt: 'Illustration of vitiligo treatment and care pathways: dermatological consultation, topical treatments, phototherapy, cosmetic camouflage, sun protection, balanced nutrition, and mindful living.',
+          objectPosition: 'center center',
+        }}
+      />
 
+      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
         {/* Guide 2-Column Responsive Layout */}
         <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
           {/* Sticky Chapter Navigation on Desktop */}
@@ -360,7 +365,7 @@ export default function TreatmentAndCarePage() {
                 Before agreeing, compare ongoing supply, consultation, laboratory, travel and session costs. If an option is unavailable, ask about locally appropriate alternatives or a legitimate clinical study rather than buying an unknown formulation online.
               </p>
               <p className="my-0">
-                Vitiligo Hub’s Phase 2 objective is to address difficult access through partnerships and new delivery strategies. That service is a future objective; this sample does not yet supply treatments or arrange cross-border care.
+                OneVitiligo’s Phase 2 objective is to address difficult access through partnerships and new delivery strategies. That service is a future objective; this sample does not yet supply treatments or arrange cross-border care.
               </p>
               <p className="my-3">
                 <Link

@@ -27,7 +27,7 @@ export const TopicTiles: React.FC = () => {
             Explore Key Topics
           </span>
           <h2 id="topics-heading" className="text-2xl sm:text-3xl font-bold font-serif text-[#0B1F6B] mt-1">
-            Navigate the Global Vitiligo Hub
+            Navigate the Global OneVitiligo
           </h2>
           <p className="text-sm text-[#5B6785] mt-2">
             Clear, science-backed guidance organized by your questions and stage in the journey.

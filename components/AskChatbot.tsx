@@ -22,7 +22,7 @@ export const AskChatbot: React.FC = () => {
     {
       id: 'welcome',
       sender: 'bot',
-      text: 'Hello! I am the Vitiligo Hub Anonymous Knowledge Assistant. You can ask anything you might feel hesitant to ask in person—without giving your name, email, or any personal details. What would you like to understand today?',
+      text: 'Hello! I am the OneVitiligo Anonymous Knowledge Assistant. You can ask anything you might feel hesitant to ask in person—without giving your name, email, or any personal details. What would you like to understand today?',
     },
   ]);
   const [isSubmitting, setIsSubmitting] = useState(false);

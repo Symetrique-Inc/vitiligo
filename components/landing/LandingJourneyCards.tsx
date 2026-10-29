@@ -48,8 +48,8 @@ const journeyCards: JourneyCard[] = [
   {
     index: '06 / SUPPORTING MY LOVED ONES',
     title: 'I am here for my loved ones',
-    description: 'Learn how to offer reassurance, understand their choices and support them without making them feel defined by their condition. Understand what vitiligo means.',
-    linkLabel: 'Direct them to treatment & care',
+    description: 'Learn how to offer reassurance, understand their choices and support them without making them feel defined by their condition.',
+    linkLabel: 'Understand what vitiligo means',
     href: '/journey-for-loved-ones',
   },
 ];

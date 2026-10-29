@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
     { href: '/understand-vitiligo', label: 'Understand Vitiligo' },
     { href: '/living-with-vitiligo', label: 'My Life & Daily Living' },
     { href: '/treatment-and-care', label: 'Treatment & Care' },
-    { href: '/expert-insights', label: 'Expert Insights' },
+    { href: '/latest-developments', label: 'Treatment Developments' },
     { href: '/resources', label: 'Resources & Support' },
   ];
  
@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
     { title: "Myths vs Facts (10 Common Myths)", href: "/understand-vitiligo/stigma-and-misconceptions#p03-s02" },
     { title: "Skin biology & melanocytes infographic", href: "/understand-vitiligo#p02-s04" },
     { title: "Why see a dermatologist?", href: "/understand-vitiligo/stigma-and-misconceptions#p03-s05" },
-    { title: "Ask questions anonymously", href: "/expert-insights#ask" },
+    { title: "Treatment developments & clinical updates", href: "/latest-developments" },
     { title: "Treatment & Care Options", href: "/treatment-and-care" },
     { title: "Global prevalence: The Lancet Public Health 2024", href: "/understand-vitiligo#p02-s06" },
   ];
@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
             >
               <Image
                 src="/images/onevitiligo-logo.png"
-                alt="OneVitiligo - Understand. Support. Brighter Tomorrows."
+                alt="OneVitiligo - Every skin. Every story. One community."
                 width={220}
                 height={54}
                 className="h-10 sm:h-12 w-auto object-contain"
@@ -88,7 +88,7 @@ export const Header: React.FC = () => {
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
                   className="flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-medium text-[#1E2A4A] bg-[#F8FAFF] hover:bg-[#EAF2FF] rounded-full border border-[#DDE5F5] transition-colors"
-                  aria-label="Search vitiligo hub"
+                  aria-label="Search OneVitiligo"
                   aria-expanded={isSearchOpen}
                 >
                   <Search className="w-3.5 h-3.5 text-[#1D5FE0]" />

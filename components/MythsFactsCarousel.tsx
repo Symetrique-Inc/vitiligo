@@ -200,7 +200,7 @@ export const MythsFactsCarousel: React.FC = () => {
             &ldquo;Treatment is a choice. Camouflage is a choice. Showing your skin is a choice.&rdquo;
           </p>
           <p className="text-xs font-medium text-[#7C5CE0] mt-2">
-            Vitiligo Hub Core Value &bull; Autonomy Without Judgment
+            OneVitiligo Core Value &bull; Autonomy Without Judgment
           </p>
         </div>
       </div>

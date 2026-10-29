@@ -744,7 +744,7 @@ export const journeyLongJourneyData: JourneyPageData = {
       paragraphsBefore: [
         'Decide what is manageable in money, travel and time per month. Ask for consultation fees, supply costs, laboratory monitoring, device or session charges and follow-up costs.',
         'If insurance or public coverage applies, ask about prior approval and the documents required. If paying directly, check the ongoing expense rather than only the first prescription. These are practical eligibility questions, not a test of commitment.',
-        'Phase 2 of Vitiligo Hub aims to address access through partnerships. This sample does not yet arrange medicines, devices, funding or treatment.',
+        'Phase 2 of OneVitiligo aims to address access through partnerships. This sample does not yet arrange medicines, devices, funding or treatment.',
       ],
       nextChapter: {
         id: 'review',
@@ -959,6 +959,11 @@ export const journeyForLovedOnesData: JourneyPageData = {
     'Learn how to offer reassurance, understand their choices and support them without making them feel defined by their condition. Understand what vitiligo means and direct them to treatment and care.',
   edition: 'EXPANDED PATIENT GUIDE · 4 MIN READ',
   startHref: '#understanding',
+  illustration: {
+    src: '/images/journey-for-loved-ones-hero.jpg',
+    alt: 'Illustration of a supportive and affectionate family gathered closely around a loved one with vitiligo, smiling and sharing love, reassurance, and empathy.',
+    objectPosition: 'center center',
+  },
   tocItems: [
     { id: 'understanding', label: '01 · Understand what vitiligo means and does not mean.' },
     { id: 'reassurance', label: '02 · Offer reassurance without defining them by their skin.' },

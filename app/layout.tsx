@@ -25,14 +25,14 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://vitiligohub.org'),
   title: {
-    default: "OneVitiligo | Understand. Support. Brighter Tomorrows.",
+    default: "OneVitiligo | Every skin. Every story. One community.",
     template: "%s | OneVitiligo",
   },
   description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
   keywords: ["vitiligo", "vitiligo support", "melanocytes", "dermatology", "autoimmune skin condition", "vitiligo treatment", "JAK inhibitors", "phototherapy"],
   authors: [{ name: "OneVitiligo Medical Advisory Board" }],
   openGraph: {
-    title: "OneVitiligo | Understand. Support. Brighter Tomorrows.",
+    title: "OneVitiligo | Every skin. Every story. One community.",
     description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
     url: "https://vitiligohub.org",
     siteName: "OneVitiligo",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "OneVitiligo | Understand. Support. Brighter Tomorrows.",
+    title: "OneVitiligo | Every skin. Every story. One community.",
     description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
     images: ["/images/hero-panoramic.jpg"],
   },

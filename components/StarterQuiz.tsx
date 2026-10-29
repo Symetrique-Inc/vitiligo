@@ -14,7 +14,7 @@ export const StarterQuiz: React.FC = () => {
 
   const questions = [
     {
-      title: "Who are you visiting Vitiligo Hub for today?",
+      title: "Who are you visiting OneVitiligo for today?",
       options: [
         { label: "Myself — I have or suspect I have vitiligo", value: "self" },
         { label: "My child, partner, or family member", value: "family" },

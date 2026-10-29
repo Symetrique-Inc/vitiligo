@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Find the right support — Resources & Support | Vitiligo Hub',
+  title: 'Find the right support — Resources & Support | OneVitiligo',
   description:
     'Trusted resources for you and your community: mental health support, peer networks, and what to look for when choosing a dermatologist.',
 };

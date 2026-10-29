@@ -122,7 +122,7 @@ export const Footer: React.FC = () => {
         <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFF] border border-[#DDE5F5] text-xs text-[#5B6785] leading-relaxed mb-8">
           <p className="font-semibold text-[#0B1F6B] mb-1">Medical Disclaimer:</p>
           <p>
-            The information on Vitiligo Hub is for general education only. It is not medical advice and does not replace a consultation with a qualified doctor. Always speak to a dermatologist or your healthcare professional about your own skin and treatment. If you have urgent health concerns, contact a doctor or your local emergency service.
+            The information on OneVitiligo is for general education only. It is not medical advice and does not replace a consultation with a qualified doctor. Always speak to a dermatologist or your healthcare professional about your own skin and treatment. If you have urgent health concerns, contact a doctor or your local emergency service.
           </p>
         </div>
 

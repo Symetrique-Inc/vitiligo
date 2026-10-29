@@ -7,7 +7,7 @@ import { PlaceholderTag } from '@/components/PlaceholderTag';
 import { ShieldCheck, Heart, ArrowRight, Lock, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Share Your Experience — Symetrique Vitiligo Hub',
+  title: 'Share Your Experience — Symetrique OneVitiligo',
   description:
     'Join Symetrique patient-reported outcome programmes. Share your journey with complete consent and privacy protection to help improve vitiligo care and research.',
 };

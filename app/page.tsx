@@ -8,11 +8,11 @@ import { LandingSupportPanel } from '@/components/landing/LandingSupportPanel';
 import { LandingAbout } from '@/components/landing/LandingAbout';
 
 export const metadata: Metadata = {
-  title: 'OneVitiligo | Understand. Support. Brighter Tomorrows.',
+  title: 'OneVitiligo | Every skin. Every story. One community.',
   description:
     'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.',
   openGraph: {
-    title: 'OneVitiligo | Understand. Support. Brighter Tomorrows.',
+    title: 'OneVitiligo | Every skin. Every story. One community.',
     description:
       'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.',
     type: 'website',

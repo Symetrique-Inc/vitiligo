@@ -11,11 +11,11 @@ import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
 import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
 export const metadata: Metadata = {
-  title: 'Treatment developments | Vitiligo Hub',
+  title: 'Treatment Developments | OneVitiligo',
   description:
     'Evidence checked 25 October 2026. This page separates authorised treatment, published studies and ongoing research. It is a dated review, not an automatically updated news feed.',
   openGraph: {
-    title: 'Treatment developments | Vitiligo Hub',
+    title: 'Treatment Developments | OneVitiligo',
     description:
       'Evidence checked 25 October 2026. This page separates authorised treatment, published studies and ongoing research. It is a dated review, not an automatically updated news feed.',
   },
@@ -45,7 +45,7 @@ export default function LatestDevelopmentsPage() {
           eyebrow="Treatment developments"
           title="What has changed, and what does it mean for you?"
           lead="Evidence checked 25 October 2026. This page separates authorised treatment, published studies and ongoing research. It is a dated review, not an automatically updated news feed."
-          edition="EXPANDED PATIENT GUIDE · 25 OCTOBER 2026 · 8 MIN READ"
+          edition="EXPANDED PATIENT GUIDE · 8 MIN READ"
           startHref="#brand-names"
         />
 
@@ -530,7 +530,7 @@ export default function LatestDevelopmentsPage() {
                 </li>
               </ul>
               <p className="my-0">
-                Vitiligo Hub’s next phase aims to work on difficult access through partnerships and innovative delivery strategies. No partnership or treatment-access service is being claimed as available in this prototype.
+                OneVitiligo’s next phase aims to work on difficult access through partnerships and innovative delivery strategies. No partnership or treatment-access service is being claimed as available in this prototype.
               </p>
               <p className="my-3">
                 <Link

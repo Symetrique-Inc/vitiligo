@@ -43,7 +43,7 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="text-sm sm:text-base text-[#5B6785] leading-relaxed">
-                Have questions about Vitiligo Hub, suggestions for new topics, or inquiries for the Symetrique team? We are here to listen.
+                Have questions about OneVitiligo, suggestions for new topics, or inquiries for the Symetrique team? We are here to listen.
               </p>
 
               <div className="p-4 rounded-2xl bg-[#FFF6EE] border border-[#FEDDC7] text-xs text-[#B34F18]">

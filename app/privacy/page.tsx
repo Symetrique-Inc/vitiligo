@@ -7,8 +7,8 @@ import { PlaceholderTag } from '@/components/PlaceholderTag';
 import { Shield, ArrowRight, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Vitiligo Hub by Symetrique',
-  description: 'Privacy Policy for Vitiligo Hub, an educational and patient-centred initiative by Symetrique.',
+  title: 'Privacy Policy | OneVitiligo by Symetrique',
+  description: 'Privacy Policy for OneVitiligo, an educational and patient-centred initiative by Symetrique.',
 };
 
 export default function PrivacyPage() {
