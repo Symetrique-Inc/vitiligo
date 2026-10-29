@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 export const LandingHero: React.FC = () => {
   return (
-    <section className="max-w-[1160px] mx-auto px-5 sm:px-10 py-9 sm:py-16" aria-label="Hero">
+    <section className="max-w-[1160px] mx-auto px-4 sm:px-10 py-7 sm:py-16" aria-label="Hero">
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] items-center gap-8 sm:gap-14">
         {/* Left Column: Narrative & CTA */}
         <div>
           <div className="text-[11px] tracking-[2px] uppercase font-semibold text-[#0B1F6B] mb-3 sm:mb-4">
             Information. Understanding. Support.
           </div>
-          <h1 className="font-serif font-normal text-[#0B1F6B] text-[clamp(40px,4.8vw,64px)] leading-[1.12] -tracking-[1.7px] my-4 sm:my-6">
+          <h1 className="font-serif font-normal text-[#0B1F6B] text-[30px] xs:text-[34px] sm:text-[42px] lg:text-[clamp(40px,4.8vw,64px)] leading-[1.12] -tracking-[1.7px] my-4 sm:my-6">
             Living with vitiligo.<br />
             <em className="not-italic text-[#1D5FE0]">You are not alone.</em>
           </h1>

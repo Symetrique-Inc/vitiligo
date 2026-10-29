@@ -24,7 +24,7 @@ export const CookieBanner: React.FC = () => {
     <div
       role="region"
       aria-label="Cookie consent banner"
-      className="fixed bottom-0 inset-x-0 z-50 p-4 sm:p-6 bg-white/95 backdrop-blur-md border-t border-[#DDE5F5] shadow-2xl animate-fadeIn"
+      className="fixed bottom-0 inset-x-0 z-50 p-3 sm:p-5 bg-white/95 backdrop-blur-md border-t border-[#DDE5F5] shadow-2xl animate-fadeIn"
     >
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <p className="text-xs sm:text-sm text-[#1E2A4A] leading-relaxed max-w-4xl">
@@ -35,16 +35,16 @@ export const CookieBanner: React.FC = () => {
           to learn more.
         </p>
 
-        <div className="flex flex-wrap items-center gap-2 shrink-0">
+        <div className="flex flex-wrap items-center gap-2 shrink-0 w-full sm:w-auto">
           <button
             onClick={() => handleChoice('all')}
-            className="px-4 py-2 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] transition-colors shadow-xs"
+            className="flex-1 sm:flex-none px-4 py-2 rounded-full text-xs font-semibold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] transition-colors shadow-xs text-center"
           >
             Accept all
           </button>
           <button
             onClick={() => handleChoice('essential')}
-            className="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-[#DDE5F5] text-[#1E2A4A] hover:bg-[#F8FAFF] transition-colors"
+            className="flex-1 sm:flex-none px-4 py-2 rounded-full text-xs font-semibold bg-white border border-[#DDE5F5] text-[#1E2A4A] hover:bg-[#F8FAFF] transition-colors text-center"
           >
             Essential only
           </button>

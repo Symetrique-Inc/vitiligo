@@ -71,9 +71,9 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
   // Case 1: Illustrated Hero Layout (matching Target IMAGE 2 & 3)
   if (illustration) {
     return (
-      <section className="relative w-full min-h-[520px] min-[750px]:min-h-[540px] lg:min-h-[580px] bg-transparent overflow-hidden flex flex-col justify-center border-b border-[#DDE5F5]/60 mb-6 sm:mb-8">
+      <section className="relative w-full min-[750px]:min-h-[540px] lg:min-h-[580px] bg-transparent overflow-hidden flex flex-col justify-center border-b border-[#DDE5F5]/60 mb-6 sm:mb-8">
         {/* Mobile illustration banner (≤750px): fixed ~4/3 aspect ratio, centered subjects */}
-        <div className="relative w-full aspect-[4/3] max-h-[380px] bg-[#EAF2FF] min-[750px]:hidden overflow-hidden">
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[280px] sm:max-h-[360px] bg-[#EAF2FF] min-[750px]:hidden overflow-hidden">
           <Image
             src={illustration.src}
             alt={illustration.alt}
@@ -110,7 +110,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
         </div>
 
         {/* Hero Content Container aligned with site's 1160px width */}
-        <div className="relative z-10 max-w-[1160px] mx-auto px-5 sm:px-10 w-full py-8 min-[750px]:py-12 lg:py-16 flex items-center">
+        <div className="relative z-10 max-w-[1160px] mx-auto px-4 sm:px-10 w-full py-6 sm:py-8 min-[750px]:py-12 lg:py-16 flex items-center">
           <div className="w-full min-[750px]:w-[55%] lg:w-[48%] xl:w-[45%] max-w-[540px]">
             {/* Back link: Underlined */}
             <Link
@@ -126,7 +126,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
             </p>
 
             {/* H1: Two lines with distinct navy and vibrant royal blue tokens */}
-            <h1 className="font-serif font-normal text-[clamp(34px,4vw,50px)] leading-[1.12] -tracking-[1.5px] mt-2 mb-4">
+            <h1 className="font-serif font-normal text-[26px] sm:text-[32px] min-[750px]:text-[clamp(34px,4vw,50px)] leading-[1.15] sm:leading-[1.12] -tracking-[1px] sm:-tracking-[1.5px] mt-2 mb-4">
               {renderTwoToneTitle(title)}
             </h1>
 
@@ -145,7 +145,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
             </p>
 
             {/* Two Action Buttons: same height, 6px radius */}
-            <div className="guide-actions flex flex-wrap gap-3 items-center">
+            <div className="guide-actions flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center">
               <a
                 href={startHref}
                 className="inline-flex items-center justify-center gap-2.5 rounded-[6px] bg-[#0B1F6B] hover:bg-[#07154B] text-white px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-2xs"
@@ -178,7 +178,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
       </p>
 
       {/* H1: Two-tone Playfair serif */}
-      <h1 className="font-serif font-normal text-[clamp(36px,4.5vw,54px)] leading-[1.12] -tracking-[1.7px] mt-2 mb-4">
+      <h1 className="font-serif font-normal text-[28px] sm:text-[34px] min-[750px]:text-[clamp(36px,4.5vw,54px)] leading-[1.15] sm:leading-[1.12] -tracking-[1px] sm:-tracking-[1.7px] mt-2 mb-4">
         {renderTwoToneTitle(title)}
       </h1>
 
@@ -197,7 +197,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
       </p>
 
       {/* Action buttons */}
-      <div className="guide-actions flex flex-wrap gap-3 items-center">
+      <div className="guide-actions flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center">
         <a
           href={startHref}
           className="inline-flex items-center justify-center gap-2.5 rounded-[6px] bg-[#0B1F6B] hover:bg-[#07154B] text-white px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-2xs"

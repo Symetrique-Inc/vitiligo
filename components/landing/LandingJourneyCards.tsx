@@ -56,7 +56,7 @@ const journeyCards: JourneyCard[] = [
 
 export const LandingJourneyCards: React.FC = () => {
   return (
-    <section id="start" className="max-w-[1160px] mx-auto px-5 sm:px-10 py-10 sm:py-16">
+    <section id="start" className="max-w-[1160px] mx-auto px-4 sm:px-10 py-8 sm:py-16">
       <div className="text-[11px] tracking-[2px] uppercase font-semibold text-[#0B1F6B] mb-2 sm:mb-3">
         Your starting point
       </div>
@@ -74,13 +74,13 @@ export const LandingJourneyCards: React.FC = () => {
             <Link
               key={card.index}
               href={card.href}
-              className="group flex flex-col justify-between bg-white border border-[#DDE5F5] rounded-lg p-6 sm:p-6.5 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[#1D5FE0] hover:shadow-md"
+              className="group flex flex-col justify-between bg-white border border-[#DDE5F5] rounded-lg p-5 sm:p-6.5 no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[#1D5FE0] hover:shadow-md"
             >
               <div>
                 <span className="text-[11px] text-[#5B6785] tracking-[2px] block">
                   {card.index}
                 </span>
-                <h3 className="font-serif font-normal text-xl sm:text-[24px] text-[#0B1F6B] leading-[1.25] mt-3.5 mb-2.5 whitespace-pre-line group-hover:text-[#1D5FE0] transition-colors">
+                <h3 className="font-serif font-normal text-lg sm:text-[22px] text-[#0B1F6B] leading-[1.25] mt-3.5 mb-2.5 whitespace-pre-line group-hover:text-[#1D5FE0] transition-colors">
                   {card.title}
                 </h3>
                 <p className="text-sm text-[#5B6785] mb-5 leading-relaxed">

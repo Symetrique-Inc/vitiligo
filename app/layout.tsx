@@ -53,6 +53,16 @@ export const metadata: Metadata = {
     description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
     images: ["/images/hero-panoramic.jpg"],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
