@@ -19,37 +19,22 @@ interface JourneyPageTemplateProps {
 export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }) => {
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
-      {/* Existing Original Header (Untouched) */}
+      {/* Header */}
       <Header />
 
-      {/* If illustration is provided, render full-width hero */}
-      {data.illustration && (
-        <GuideHero
-          crumbLabel="← All starting points"
-          crumbHref="/#start"
-          eyebrow={data.eyebrow}
-          title={data.heroTitle}
-          lead={data.lead}
-          edition={data.edition}
-          startHref={data.startHref}
-          illustration={data.illustration}
-        />
-      )}
+      {/* Guide Hero rendered full-width with responsive 2-column grid (ZERO text overlap) */}
+      <GuideHero
+        crumbLabel="← All starting points"
+        crumbHref="/#start"
+        eyebrow={data.eyebrow}
+        title={data.heroTitle}
+        lead={data.lead}
+        edition={data.edition}
+        startHref={data.startHref}
+        illustration={data.illustration}
+      />
 
       <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
-        {/* If no illustration is provided, render standard inside container */}
-        {!data.illustration && (
-          <GuideHero
-            crumbLabel="← All starting points"
-            crumbHref="/#start"
-            eyebrow={data.eyebrow}
-            title={data.heroTitle}
-            lead={data.lead}
-            edition={data.edition}
-            startHref={data.startHref}
-          />
-        )}
-
         {/* Guide 2-Column Responsive Layout */}
         <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
           {/* Sticky Chapter Navigation on Desktop */}
@@ -135,7 +120,7 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
               </GuideChapter>
             ))}
 
-            {/* Editorial Review Stamp */}
+            {/* Editorial Review Stamp (Suppressed by component) */}
             <GuideReviewStamp />
           </article>
         </div>
@@ -144,7 +129,6 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
         <GuideRelatedLinks currentPath={`/${data.slug}`} />
       </main>
 
-      {/* Existing Original Footer (Untouched) */}
       <Footer />
     </div>
   );

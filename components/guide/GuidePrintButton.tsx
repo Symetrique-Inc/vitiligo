@@ -12,10 +12,10 @@ export const GuidePrintButton: React.FC<GuidePrintButtonProps> = ({ className = 
     <button
       type="button"
       onClick={() => window.print()}
-      className={`inline-flex items-center justify-center gap-2.5 rounded-[6px] bg-white border border-[#0B1F6B] hover:bg-[#F5F8FF] text-[#0B1F6B] px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-2xs cursor-pointer ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-xl bg-white border border-[#DDE5F5] hover:border-[#1D5FE0] hover:bg-[#F8FAFF] text-[#0B1F6B] hover:text-[#1D5FE0] px-5 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-xs cursor-pointer ${className}`}
       aria-label="Print this guide"
     >
-      <Printer className="w-4 h-4 text-[#0B1F6B]" aria-hidden="true" />
+      <Printer className="w-4 h-4 text-[#1D5FE0]" aria-hidden="true" />
       <span>Print this guide</span>
     </button>
   );

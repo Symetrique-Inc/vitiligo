@@ -19,11 +19,11 @@ export const GuideChapter: React.FC<GuideChapterProps> = ({
   children,
 }) => {
   return (
-    <section id={id} className="guide-chapter py-5 sm:py-8 border-t border-[#DDE5F5] scroll-mt-24">
-      <div className="text-[11px] tracking-[2px] uppercase font-semibold text-[#0B1F6B] mb-2">
+    <section id={id} className="guide-chapter py-6 sm:py-9 border-t border-[#DDE5F5] scroll-mt-24">
+      <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1D5FE0] tracking-[2px] uppercase mb-2">
         {index}
       </div>
-      <h2 className="font-serif font-normal text-xl sm:text-2xl lg:text-[31px] text-[#0B1F6B] leading-[1.25] sm:leading-[1.2] -tracking-[0.5px] sm:-tracking-[0.8px] mt-2 mb-3 sm:mb-4">
+      <h2 className="font-serif font-bold text-xl sm:text-2xl lg:text-[30px] text-[#0B1F6B] leading-[1.22] -tracking-[0.5px] sm:-tracking-[0.8px] mt-1 mb-4">
         {title}
       </h2>
       <div className="text-[#1E2A4A] text-sm sm:text-base leading-[1.8] space-y-4">
@@ -32,9 +32,10 @@ export const GuideChapter: React.FC<GuideChapterProps> = ({
       {nextChapter && (
         <a
           href={`#${nextChapter.id}`}
-          className="guide-next-link text-xs font-semibold text-[#0B1F6B] hover:text-[#1D5FE0] inline-block mt-5 underline underline-offset-4 transition-colors"
+          className="guide-next-link text-xs font-bold text-[#0B1F6B] hover:text-[#1D5FE0] inline-flex items-center gap-1.5 mt-6 px-3.5 py-2 rounded-lg bg-[#F4F8FF] hover:bg-[#EAF2FF] transition-all no-underline"
         >
-          Next: {nextChapter.label} ↓
+          <span>Next: {nextChapter.label}</span>
+          <span aria-hidden="true">↓</span>
         </a>
       )}
     </section>

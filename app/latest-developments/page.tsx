@@ -37,18 +37,18 @@ export default function LatestDevelopmentsPage() {
       {/* Existing Original Header (Untouched) */}
       <Header />
 
-      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
-        {/* Guide Hero */}
-        <GuideHero
-          crumbLabel="← All starting points"
-          crumbHref="/#start"
-          eyebrow="Treatment developments"
-          title="What has changed, and what does it mean for you?"
-          lead="Evidence checked 25 October 2026. This page separates authorised treatment, published studies and ongoing research. It is a dated review, not an automatically updated news feed."
-          edition="EXPANDED PATIENT GUIDE · 8 MIN READ"
-          startHref="#brand-names"
-        />
+      {/* Guide Hero */}
+      <GuideHero
+        crumbLabel="← All starting points"
+        crumbHref="/#start"
+        eyebrow="Treatment developments"
+        title="What has changed, and what does it mean for you?"
+        lead="Evidence checked 25 October 2026. This page separates authorised treatment, published studies and ongoing research. It is a dated review, not an automatically updated news feed."
+        edition="EXPANDED PATIENT GUIDE · 8 MIN READ"
+        startHref="#brand-names"
+      />
 
+      <main id="main-content" className="wrap flex-1 max-w-[1160px] mx-auto px-5 sm:px-10 w-full">
         {/* Guide 2-Column Responsive Layout */}
         <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
           {/* Sticky Chapter Navigation on Desktop */}

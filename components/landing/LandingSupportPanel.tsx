@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const LandingSupportPanel: React.FC = () => {
   return (
     <section className="max-w-[1160px] mx-auto px-5 sm:px-10 mb-10 sm:mb-15" aria-label="Support and everyday life">
-      <div className="bg-[#EFEAFF] border border-[#DCD3FC] p-6 sm:p-10 rounded-lg grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-16 items-center">
+      <div className="bg-[#EFEAFF] border border-[#DCD3FC] p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-16 items-center">
         {/* Left Column */}
         <div>
           <div className="text-[11px] tracking-[2px] uppercase font-semibold text-[#0B1F6B] mb-2">
@@ -13,7 +13,7 @@ export const LandingSupportPanel: React.FC = () => {
           <h2 className="font-serif font-normal text-2xl sm:text-[31px] text-[#0B1F6B] leading-[1.2] -tracking-[1.2px] my-2 sm:my-3">
             More than information<br className="hidden sm:inline" /> about skin.
           </h2>
-          <p className="text-sm text-[#5B6785] leading-relaxed m-0 max-w-md">
+          <p className="text-sm sm:text-base text-[#1E2A4A] leading-relaxed m-0 max-w-md">
             Explore the topics that matter to you, from understanding the science to talking about how you feel and preparing for care.
           </p>
         </div>

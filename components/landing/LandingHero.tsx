@@ -14,16 +14,16 @@ export const LandingHero: React.FC = () => {
             Living with vitiligo.<br />
             <em className="not-italic text-[#1D5FE0]">You are not alone.</em>
           </h1>
-          <p className="text-[#5B6785] text-sm sm:text-base leading-relaxed max-w-[470px] mb-3">
+          <p className="text-[#1E2A4A] text-base sm:text-[17px] leading-relaxed max-w-[480px] mb-3.5">
             Your journey with vitiligo is uniquely yours. Whether you explore treatment, choose camouflage or embrace your skin as it is, your choices deserve respect.
           </p>
-          <p className="text-[#5B6785] text-sm sm:text-base leading-relaxed max-w-[470px] mb-5 sm:mb-6">
+          <p className="text-[#1E2A4A] text-base sm:text-[17px] leading-relaxed max-w-[480px] mb-6">
             Start with what matters to you, at your own pace.
           </p>
           <div>
             <a
               href="#start"
-              className="inline-flex items-center gap-6 rounded-[5px] bg-[#0B1F6B] hover:bg-[#07154B] text-white px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-sm"
+              className="inline-flex items-center gap-6 rounded-xl bg-[#0B1F6B] hover:bg-[#1D5FE0] text-white px-6 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-md hover:shadow-lg"
             >
               <span>Find my starting point</span>
               <span aria-hidden="true">↗</span>

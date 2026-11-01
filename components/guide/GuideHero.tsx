@@ -68,87 +68,92 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
     return <span className="text-[#0B1F6B]">{rawTitle}</span>;
   };
 
-  // Case 1: Illustrated Hero Layout (matching Target IMAGE 2 & 3)
+  const cleanedEdition = edition
+    .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, ' · ')
+    .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}/gi, '')
+    .replace(/\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, '')
+    .trim();
+
+  // Case 1: Illustrated Hero Layout matching user reference image
+  // Seamless, unboxed illustration on right with zero text overlap
   if (illustration) {
     return (
-      <section className="relative w-full min-[750px]:min-h-[540px] lg:min-h-[580px] bg-transparent overflow-hidden flex flex-col justify-center border-b border-[#DDE5F5]/60 mb-6 sm:mb-8">
-        {/* Mobile illustration banner (≤750px): fixed ~4/3 aspect ratio, centered subjects */}
-        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[280px] sm:max-h-[360px] bg-[#EAF2FF] min-[750px]:hidden overflow-hidden">
+      <section className="relative w-full min-h-[460px] lg:min-h-[500px] xl:min-h-[520px] bg-gradient-to-r from-[#F6F9FF] via-white to-[#EEF5FF] border-b border-[#DDE5F5]/70 overflow-hidden flex flex-col justify-center mb-6 sm:mb-10">
+        {/* Mobile illustration banner (≤900px): clean natural aspect ratio */}
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[300px] sm:max-h-[360px] bg-[#EAF2FF] min-[900px]:hidden overflow-hidden">
           <Image
             src={illustration.src}
             alt={illustration.alt}
             fill
             priority
             fetchPriority="high"
-            sizes="(max-width: 750px) 100vw, 50vw"
-            className="object-cover"
-            style={{
-              objectPosition: 'center 25%',
-            }}
-          />
-        </div>
-
-        {/* Desktop & Tablet Background Illustration: positioned adjacent to text without awkward white gap */}
-        <div className="hidden min-[750px]:block absolute top-0 right-0 bottom-0 w-[52%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden bg-[#E2EDFA]">
-          <Image
-            src={illustration.src}
-            alt={illustration.alt}
-            fill
-            priority
-            fetchPriority="high"
-            sizes="(min-width: 750px) 60vw, 100vw"
+            sizes="(max-width: 900px) 100vw, 50vw"
             className="object-cover"
             style={{
               objectPosition: illustration.objectPosition || 'center center',
             }}
           />
-          {/* Subtle edge blend gradient replacing the previous wide white block */}
+        </div>
+
+        {/* Desktop & Tablet Seamless Illustration (≥900px): unboxed, seamless blend */}
+        <div className="hidden min-[900px]:block absolute top-0 right-0 bottom-0 w-[56%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden">
+          <Image
+            src={illustration.src}
+            alt={illustration.alt}
+            fill
+            priority
+            fetchPriority="high"
+            sizes="(min-width: 900px) 60vw, 100vw"
+            className="object-cover"
+            style={{
+              objectPosition: illustration.objectPosition || 'center center',
+            }}
+          />
+          {/* Smooth blend gradient on left edge of illustration for seamless transition to text */}
           <div
-            className="absolute inset-y-0 left-0 w-[14%] sm:w-[16%] bg-gradient-to-r from-white via-white/40 to-transparent z-10"
+            className="absolute inset-y-0 left-0 w-[24%] bg-gradient-to-r from-white via-white/80 to-transparent z-10"
             aria-hidden="true"
           />
         </div>
 
-        {/* Hero Content Container aligned with site's 1160px width */}
-        <div className="relative z-10 max-w-[1160px] mx-auto px-4 sm:px-10 w-full py-6 sm:py-8 min-[750px]:py-12 lg:py-16 flex items-center">
-          <div className="w-full min-[750px]:w-[55%] lg:w-[48%] xl:w-[45%] max-w-[540px]">
-            {/* Back link: Underlined */}
+        {/* Hero Content Container: constrained width ensures zero overlap with illustration */}
+        <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-8 lg:px-10 w-full py-6 sm:py-10 lg:py-12 flex items-center">
+          <div className="w-full min-[900px]:w-[44%] lg:w-[40%] xl:w-[38%] max-w-[440px]">
+            {/* Back link */}
             <Link
               href={crumbHref}
-              className="guide-crumb text-xs font-medium text-[#1D5FE0] hover:text-[#0B1F6B] underline underline-offset-4 transition-colors mb-3 inline-block font-sans"
+              className="guide-crumb inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D5FE0] hover:text-[#0B1F6B] transition-colors mb-3 group font-sans w-fit"
             >
-              {crumbLabel}
+              <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
+              <span>{crumbLabel.replace(/^[←\s]+/, '')}</span>
             </Link>
 
-            {/* Eyebrow: Small uppercase with letter-spacing in muted blue */}
-            <p className="text-[11px] tracking-[2px] uppercase font-semibold text-[#5B6785] m-0 mb-2.5">
-              {eyebrow}
-            </p>
+            {/* Eyebrow Pill Badge matching reference image */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF2FF] border border-[#D5E2FA] text-[#1D5FE0] text-xs font-bold tracking-wider uppercase mb-3 w-fit">
+              <span>{eyebrow}</span>
+            </div>
 
-            {/* H1: Two lines with distinct navy and vibrant royal blue tokens */}
-            <h1 className="font-serif font-normal text-[26px] sm:text-[32px] min-[750px]:text-[clamp(34px,4vw,50px)] leading-[1.15] sm:leading-[1.12] -tracking-[1px] sm:-tracking-[1.5px] mt-2 mb-4">
+            {/* H1: Playfair serif with existing brand colors */}
+            <h1 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] leading-[1.16] -tracking-[1px] sm:-tracking-[1.5px] mt-1 mb-4 text-[#0B1F6B]">
               {renderTwoToneTitle(title)}
             </h1>
 
-            {/* Intro paragraph */}
-            <p className="text-[#5B6785] text-sm sm:text-base leading-relaxed m-0 mb-4 max-w-[480px]">
+            {/* Intro paragraph: Crisp typography, strictly constrained width */}
+            <p className="text-[#1E2A4A] text-sm sm:text-[15.5px] leading-[1.68] m-0 mb-5 font-normal">
               {lead}
             </p>
 
-            {/* Meta line: guide type, read time (date removed per design) */}
-            <p className="text-[11px] tracking-[1.5px] text-[#5B6785] font-medium uppercase m-0 mb-6">
-              {edition
-                .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, ' · ')
-                .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}/gi, '')
-                .replace(/\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, '')
-                .trim()}
-            </p>
+            {/* Meta line: guide type, read time */}
+            <div className="flex items-center gap-2 text-xs font-semibold text-[#5B6785] tracking-wider uppercase mb-6">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#1D5FE0]" />
+              <span>{cleanedEdition}</span>
+            </div>
 
-            {/* Two Action Buttons: same height, 6px radius */}
-            <div className="guide-actions flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center">
+            {/* Action buttons */}
+            <div className="guide-actions flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
               <a
                 href={startHref}
-                className="inline-flex items-center justify-center gap-2.5 rounded-[6px] bg-[#0B1F6B] hover:bg-[#07154B] text-white px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-2xs"
+                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0B1F6B] hover:bg-[#1D5FE0] text-white px-6 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-md hover:shadow-lg text-center"
               >
                 <span>Start reading</span>
                 <span aria-hidden="true">↓</span>
@@ -161,52 +166,54 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
     );
   }
 
-  // Case 2: Clean Text-Only Hero Layout (for pages without an illustration yet)
+  // Case 2: Clean Text-Only Hero Layout (for pages without an illustration)
   return (
-    <div className="guide-hero max-w-[850px] pt-7 pb-8 sm:pt-10 sm:pb-9">
-      {/* Back link: Underlined */}
-      <Link
-        href={crumbHref}
-        className="guide-crumb text-xs font-medium text-[#1D5FE0] hover:text-[#0B1F6B] underline underline-offset-4 transition-colors mb-3.5 inline-block font-sans"
-      >
-        {crumbLabel}
-      </Link>
+    <section className="relative w-full bg-gradient-to-r from-[#F6F9FF] via-white to-[#EEF5FF] border-b border-[#DDE5F5]/70 overflow-hidden mb-6 sm:mb-10">
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-8 lg:px-10 py-8 lg:py-12">
+        <div className="max-w-[850px]">
+          {/* Back link */}
+          <Link
+            href={crumbHref}
+            className="guide-crumb inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D5FE0] hover:text-[#0B1F6B] transition-colors mb-3 group font-sans w-fit"
+          >
+            <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
+            <span>{crumbLabel.replace(/^[←\s]+/, '')}</span>
+          </Link>
 
-      {/* Eyebrow: Small uppercase with letter-spacing in muted blue */}
-      <p className="text-[11px] tracking-[2px] uppercase font-semibold text-[#5B6785] m-0 mb-2">
-        {eyebrow}
-      </p>
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF2FF] border border-[#D5E2FA] text-[#1D5FE0] text-xs font-bold tracking-wider uppercase mb-3 w-fit">
+            <span>{eyebrow}</span>
+          </div>
 
-      {/* H1: Two-tone Playfair serif */}
-      <h1 className="font-serif font-normal text-[28px] sm:text-[34px] min-[750px]:text-[clamp(36px,4.5vw,54px)] leading-[1.15] sm:leading-[1.12] -tracking-[1px] sm:-tracking-[1.7px] mt-2 mb-4">
-        {renderTwoToneTitle(title)}
-      </h1>
+          {/* H1 */}
+          <h1 className="font-serif font-bold text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] leading-[1.18] -tracking-[1px] sm:-tracking-[1.7px] mt-1 mb-4 text-[#0B1F6B]">
+            {renderTwoToneTitle(title)}
+          </h1>
 
-      {/* Intro paragraph */}
-      <p className="text-[#5B6785] text-base sm:text-[17px] leading-relaxed max-w-[740px] m-0 mb-4">
-        {lead}
-      </p>
+          {/* Intro paragraph */}
+          <p className="text-[#1E2A4A] text-base sm:text-lg leading-[1.7] max-w-[740px] m-0 mb-5 font-normal">
+            {lead}
+          </p>
 
-      {/* Meta line (date removed per design) */}
-      <p className="text-[11px] tracking-[1.5px] text-[#5B6785] font-medium uppercase m-0 mb-6">
-        {edition
-          .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, ' · ')
-          .replace(/\s*·\s*\d{1,2}\s+[A-Za-z]+\s+\d{4}/gi, '')
-          .replace(/\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, '')
-          .trim()}
-      </p>
+          {/* Meta line */}
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#5B6785] tracking-wider uppercase mb-6">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#1D5FE0]" />
+            <span>{cleanedEdition}</span>
+          </div>
 
-      {/* Action buttons */}
-      <div className="guide-actions flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center">
-        <a
-          href={startHref}
-          className="inline-flex items-center justify-center gap-2.5 rounded-[6px] bg-[#0B1F6B] hover:bg-[#07154B] text-white px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 active:translate-y-0 shadow-2xs"
-        >
-          <span>Start reading</span>
-          <span aria-hidden="true">↓</span>
-        </a>
-        <GuidePrintButton />
+          {/* Action buttons */}
+          <div className="guide-actions flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+            <a
+              href={startHref}
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0B1F6B] hover:bg-[#1D5FE0] text-white px-6 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-md hover:shadow-lg text-center"
+            >
+              <span>Start reading</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <GuidePrintButton />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -33,34 +33,88 @@ export default function StigmaAndMisconceptionsPage() {
 
       <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          {/* P03-S01 — Hero (half height, image right) */}
-          <section className="py-8 sm:py-12 bg-white rounded-3xl border border-[#DDE5F5] p-6 sm:p-10 shadow-sm mt-4 mb-6 overflow-hidden relative">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-7 space-y-3">
-                <span className="text-xs font-bold text-[#E8456B] bg-[#FDE8EE] px-3.5 py-1 rounded-full uppercase tracking-wider">
-                  Social Understanding & Misconceptions
-                </span>
-                <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B] tracking-tight">
-                  Stigma & Misconceptions
+          {/* P03-S01 — Seamless Illustrated Hero matching reference design */}
+          <section className="relative w-full min-h-[460px] lg:min-h-[500px] xl:min-h-[520px] bg-gradient-to-r from-[#F6F9FF] via-white to-[#EEF5FF] rounded-3xl border border-[#DDE5F5]/80 overflow-hidden flex flex-col justify-center mt-4 mb-8 shadow-sm">
+            {/* Mobile illustration banner (≤900px): clean natural aspect ratio */}
+            <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[300px] sm:max-h-[360px] bg-[#EAF2FF] min-[900px]:hidden overflow-hidden">
+              <Image
+                src="/images/stigma-and-misconceptions-hero.jpg"
+                alt="Illustration of a thoughtful woman with vitiligo addressing stigma and misconceptions"
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 900px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
+
+            {/* Desktop & Tablet Seamless Illustration (≥900px): unboxed, seamless blend */}
+            <div className="hidden min-[900px]:block absolute top-0 right-0 bottom-0 w-[56%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden">
+              <Image
+                src="/images/stigma-and-misconceptions-hero.jpg"
+                alt="Illustration of a thoughtful woman with vitiligo addressing stigma and misconceptions"
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(min-width: 900px) 60vw, 100vw"
+                className="object-cover object-center"
+              />
+              {/* Smooth blend gradient on left edge of illustration for seamless transition to text */}
+              <div
+                className="absolute inset-y-0 left-0 w-[24%] bg-gradient-to-r from-white via-white/80 to-transparent z-10"
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Hero Content Container: constrained width ensures zero overlap with illustration */}
+            <div className="relative z-10 max-w-[1240px] mx-auto px-6 sm:px-10 lg:px-12 w-full py-8 lg:py-12 flex items-center">
+              <div className="w-full min-[900px]:w-[44%] lg:w-[40%] xl:w-[38%] max-w-[440px]">
+                {/* Back crumb */}
+                <Link
+                  href="/understand-vitiligo"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D5FE0] hover:text-[#0B1F6B] transition-colors mb-3 group font-sans w-fit"
+                >
+                  <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
+                  <span>Understand Vitiligo</span>
+                </Link>
+
+                {/* Eyebrow Pill Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FDE8EE] border border-[#FCD4DF] text-[#E8456B] text-xs font-bold tracking-wider uppercase mb-3 w-fit">
+                  <span>Social Understanding & Misconceptions</span>
+                </div>
+
+                {/* H1 */}
+                <h1 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] leading-[1.16] -tracking-[1px] sm:-tracking-[1.5px] mt-1 mb-4 text-[#0B1F6B]">
+                  Stigma &amp; Misconceptions.<br />
+                  <span className="text-[#1D5FE0]">Let&apos;s change the conversation.</span>
                 </h1>
-                <p className="text-lg sm:text-xl font-medium text-[#E8456B]">
-                  Let&apos;s change the conversation.
-                </p>
-                <p className="text-base sm:text-lg text-[#5B6785] leading-relaxed max-w-4xl">
+
+                {/* Intro paragraph */}
+                <p className="text-[#1E2A4A] text-sm sm:text-[15.5px] leading-[1.68] m-0 mb-5 font-normal">
                   Vitiligo changes the skin. It shouldn&apos;t change how the world sees you. Stigma often grows from questions that never get a clear answer.
                 </p>
-              </div>
 
-              <div className="lg:col-span-5 relative">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] w-full max-w-md mx-auto shadow-md border-4 border-white">
-                  <Image
-                    src="/images/card-mylife.jpg"
-                    alt="Three smiling friends, one with vitiligo on her face."
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover object-center"
-                  />
+                {/* Meta line */}
+                <div className="flex items-center gap-2 text-xs font-semibold text-[#5B6785] tracking-wider uppercase mb-6">
+                  <span className="inline-block w-2 h-2 rounded-full bg-[#1D5FE0]" />
+                  <span>CORE PATIENT PERSPECTIVE · 5 MIN READ</span>
+                </div>
+
+                {/* Action buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
+                  <a
+                    href="#p03-s02"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#0B1F6B] hover:bg-[#1D5FE0] text-white px-6 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-md hover:shadow-lg text-center"
+                  >
+                    <span>Explore myths &amp; facts</span>
+                    <span aria-hidden="true">↓</span>
+                  </a>
+                  <a
+                    href="#p03-s04"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white border border-[#DDE5F5] hover:border-[#1D5FE0] hover:bg-[#F8FAFF] text-[#0B1F6B] hover:text-[#1D5FE0] px-5 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-xs text-center"
+                  >
+                    <span>Your skin, your choice</span>
+                  </a>
                 </div>
               </div>
             </div>
