@@ -1,35 +1,39 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '@/components/LanguageContext';
 
 export const LandingHero: React.FC = () => {
+  const { tById } = useLanguage();
   return (
-    <section className="max-w-[1160px] mx-auto px-4 sm:px-10 py-7 sm:py-16" aria-label="Hero">
+    <section className="max-w-[1160px] mx-auto px-4 sm:px-10 py-7 sm:py-16" aria-label={tById('VTH-00738', 'Hero')}>
       <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] items-center gap-8 sm:gap-14">
         {/* Left Column: Narrative & CTA */}
         <div>
           <div className="text-[11px] tracking-[2px] uppercase font-semibold text-[#0B1F6B] mb-3 sm:mb-4">
-            Information. Understanding. Support.
+            {tById('VTH-00008', 'Information. Understanding. Support.')}
           </div>
           <h1 className="font-serif font-normal text-[#0B1F6B] text-[30px] xs:text-[34px] sm:text-[42px] lg:text-[clamp(40px,4.8vw,64px)] leading-[1.12] -tracking-[1.7px] my-4 sm:my-6">
-            Living with vitiligo.<br />
-            <em className="not-italic text-[#1D5FE0]">You are not alone.</em>
+            {tById('VTH-00009', 'Living with vitiligo.')}<br />
+            <em className="not-italic text-[#1D5FE0]">{tById('VTH-00010', 'You are not alone.')}</em>
           </h1>
           <p className="text-[#1E2A4A] text-base sm:text-[17px] leading-relaxed max-w-[480px] mb-3.5">
-            Your journey with vitiligo is uniquely yours. Whether you explore treatment, choose camouflage or embrace your skin as it is, your choices deserve respect.
+            {tById('VTH-00717', 'Your journey with vitiligo is uniquely yours. Whether you explore treatment, choose camouflage or embrace your skin as it is, your choices deserve respect.')}
           </p>
           <p className="text-[#1E2A4A] text-base sm:text-[17px] leading-relaxed max-w-[480px] mb-6">
-            Start with what matters to you, at your own pace.
+            {tById('VTH-00012', 'Start with what matters to you, at your own pace.')}
           </p>
           <div>
             <a
               href="#start"
               className="inline-flex items-center gap-6 rounded-xl bg-[#0B1F6B] hover:bg-[#1D5FE0] text-white px-6 py-3.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-md hover:shadow-lg"
             >
-              <span>Find my starting point</span>
+              <span>{tById('VTH-00013', 'Find my starting point')}</span>
               <span aria-hidden="true">↗</span>
             </a>
             <p className="text-xs text-[#5B6785] mt-2">
-              No account needed. Just a place to begin.
+              {tById('VTH-00014', 'No account needed. Just a place to begin.')}
             </p>
           </div>
         </div>
@@ -42,7 +46,7 @@ export const LandingHero: React.FC = () => {
           >
             <Image
               src="/images/home-hero.jpg"
-              alt="Illustration of a diverse family and young people with vitiligo smiling and looking upward together"
+              alt={tById('VTH-00739', 'Illustration of a diverse family and young people with vitiligo smiling and looking upward together')}
               fill
               priority
               loading="eager"
@@ -51,7 +55,7 @@ export const LandingHero: React.FC = () => {
             />
           </div>
           <p className="text-[11px] text-[#5B6785] text-right mt-2.5">
-            Every experience is different. There is room for yours.
+            {tById('VTH-00016', 'Every experience is different. There is room for yours.')}
           </p>
         </div>
       </div>
