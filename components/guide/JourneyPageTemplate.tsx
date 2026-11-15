@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
@@ -11,25 +13,33 @@ import { GuideSources } from './GuideSources';
 import { GuideReviewStamp } from './GuideReviewStamp';
 import { GuideRelatedLinks } from './GuideRelatedLinks';
 import type { JourneyPageData } from './journeyData';
+import { useLanguage } from '@/components/LanguageContext';
 
 interface JourneyPageTemplateProps {
   data: JourneyPageData;
 }
 
 export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }) => {
+  const { t } = useLanguage();
+
+  const translatedTocItems = data.tocItems.map((item) => ({
+    id: item.id,
+    label: t(item.label),
+  }));
+
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
       {/* Header */}
       <Header />
 
-      {/* Guide Hero rendered full-width with responsive 2-column grid (ZERO text overlap) */}
+      {/* Guide Hero rendered full-width with responsive 2-column grid */}
       <GuideHero
-        crumbLabel="← All starting points"
+        crumbLabel={t('← All starting points')}
         crumbHref="/#start"
-        eyebrow={data.eyebrow}
-        title={data.heroTitle}
-        lead={data.lead}
-        edition={data.edition}
+        eyebrow={t(data.eyebrow)}
+        title={t(data.heroTitle)}
+        lead={t(data.lead)}
+        edition={t(data.edition)}
         startHref={data.startHref}
         illustration={data.illustration}
       />
@@ -38,7 +48,7 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
         {/* Guide 2-Column Responsive Layout */}
         <div className="guide-layout grid grid-cols-1 lg:grid-cols-[230px_minmax(0,1fr)] gap-8 lg:gap-12 items-start mt-2">
           {/* Sticky Chapter Navigation on Desktop */}
-          <GuideTableOfContents items={data.tocItems} />
+          <GuideTableOfContents items={translatedTocItems} />
 
           {/* Guide Article Content */}
           <article className="min-w-0">
@@ -47,20 +57,27 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
                 key={chapter.id}
                 id={chapter.id}
                 index={chapter.index}
-                title={chapter.title}
-                nextChapter={chapter.nextChapter}
+                title={t(chapter.title)}
+                nextChapter={
+                  chapter.nextChapter
+                    ? {
+                        id: chapter.nextChapter.id,
+                        label: t(chapter.nextChapter.label),
+                      }
+                    : undefined
+                }
               >
                 {/* Paragraphs before callouts/lists */}
                 {chapter.paragraphsBefore?.map((p, idx) => (
                   <p key={idx} className="my-0">
-                    {p}
+                    {t(p)}
                   </p>
                 ))}
 
                 {/* Practical Example Box */}
                 {chapter.example && (
-                  <GuideExample title={chapter.example.title}>
-                    <p>{chapter.example.text}</p>
+                  <GuideExample title={chapter.example.title ? t(chapter.example.title) : undefined}>
+                    <p>{t(chapter.example.text)}</p>
                   </GuideExample>
                 )}
 
@@ -69,7 +86,7 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
                   <ul className="list-disc pl-5 sm:pl-6 space-y-2.5 my-4 text-[#1E2A4A]">
                     {chapter.bullets.map((bullet, idx) => (
                       <li key={idx} className="leading-relaxed">
-                        {bullet}
+                        {t(bullet)}
                       </li>
                     ))}
                   </ul>
@@ -78,22 +95,22 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
                 {/* Paragraphs after bullets */}
                 {chapter.paragraphsAfterBullets?.map((p, idx) => (
                   <p key={idx} className="my-0">
-                    {p}
+                    {t(p)}
                   </p>
                 ))}
 
                 {/* Table */}
                 {chapter.table && (
                   <GuideTable
-                    headers={chapter.table.headers}
-                    rows={chapter.table.rows}
+                    headers={chapter.table.headers.map((h) => t(h))}
+                    rows={chapter.table.rows.map((row) => row.map((cell) => t(cell)))}
                   />
                 )}
 
                 {/* Paragraphs after table */}
                 {chapter.paragraphsAfterTable?.map((p, idx) => (
                   <p key={idx} className="my-0">
-                    {p}
+                    {t(p)}
                   </p>
                 ))}
 
@@ -106,7 +123,7 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
                           href={action.href}
                           className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
                         >
-                          {action.label}
+                          {t(action.label)}
                         </Link>
                       </p>
                     ))}
@@ -115,7 +132,12 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
 
                 {/* Sources */}
                 {chapter.sources && chapter.sources.length > 0 && (
-                  <GuideSources links={chapter.sources} />
+                  <GuideSources
+                    links={chapter.sources.map((src) => ({
+                      ...src,
+                      label: t(src.label),
+                    }))}
+                  />
                 )}
               </GuideChapter>
             ))}

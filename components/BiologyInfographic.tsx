@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { CheckCircle2, XCircle, Info, Sparkles } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext';
 
 interface Hotspot {
   id: string;
@@ -48,6 +49,7 @@ const hotspots: Hotspot[] = [
 ];
 
 export const BiologyInfographic: React.FC = () => {
+  const { t } = useLanguage();
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot>(hotspots[2]);
 
   return (
@@ -56,13 +58,13 @@ export const BiologyInfographic: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#EAF2FF] text-[#1D5FE0] text-xs font-semibold uppercase tracking-wider mb-2">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Cellular Mechanism Explained</span>
+            <span>{t('Cellular Mechanism Explained')}</span>
           </div>
           <h2 id="biology-heading" className="text-3xl sm:text-4xl font-bold font-serif text-[#0B1F6B]">
-            What Happens in Vitiligo?
+            {t('What Happens in Vitiligo?')}
           </h2>
           <p className="text-sm sm:text-base text-[#5B6785] mt-2">
-            Vitiligo develops when the body&apos;s immune system mistakenly attacks melanocytes, leading to a loss of pigment in certain areas of the skin.
+            {t("Vitiligo develops when the body's immune system mistakenly attacks melanocytes, leading to a loss of pigment in certain areas of the skin.")}
           </p>
         </div>
 
@@ -76,10 +78,10 @@ export const BiologyInfographic: React.FC = () => {
               </div>
               <div>
                 <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider">
-                  Normal Process
+                  {t('Normal Process')}
                 </span>
                 <h3 className="text-xl font-bold font-serif text-[#0B1F6B]">
-                  Healthy Skin
+                  {t('Healthy Skin')}
                 </h3>
               </div>
             </div>
@@ -91,9 +93,9 @@ export const BiologyInfographic: React.FC = () => {
                   1
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0B1F6B]">Melanocytes produce pigment</h4>
+                  <h4 className="text-sm font-bold text-[#0B1F6B]">{t('Melanocytes produce pigment')}</h4>
                   <p className="text-xs text-[#5B6785]">
-                    Specialized cells in the basal skin layer make microscopic pigment granules called melanin.
+                    {t('Specialized cells in the basal skin layer make microscopic pigment granules called melanin.')}
                   </p>
                 </div>
               </div>
@@ -103,9 +105,9 @@ export const BiologyInfographic: React.FC = () => {
                   2
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0B1F6B]">Melanin distributes color</h4>
+                  <h4 className="text-sm font-bold text-[#0B1F6B]">{t('Melanin distributes color')}</h4>
                   <p className="text-xs text-[#5B6785]">
-                    Melanin is transferred to surrounding skin cells, determining natural skin, hair, and eye tone.
+                    {t('Melanin is transferred to surrounding skin cells, determining natural skin, hair, and eye tone.')}
                   </p>
                 </div>
               </div>
@@ -115,9 +117,9 @@ export const BiologyInfographic: React.FC = () => {
                   3
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0B1F6B]">Natural UV protection</h4>
+                  <h4 className="text-sm font-bold text-[#0B1F6B]">{t('Natural UV protection')}</h4>
                   <p className="text-xs text-[#5B6785]">
-                    Pigment forms a protective cap over cell DNA, shielding deeper layers from sun damage.
+                    {t('Pigment forms a protective cap over cell DNA, shielding deeper layers from sun damage.')}
                   </p>
                 </div>
               </div>
@@ -126,20 +128,20 @@ export const BiologyInfographic: React.FC = () => {
             {/* Healthy Result Row */}
             <div className="mt-8 pt-4 border-t border-gray-100 bg-[#F4FAF6] rounded-2xl p-4">
               <span className="text-xs font-bold text-[#1FA37A] uppercase tracking-wider block mb-2">
-                Result
+                {t('Result')}
               </span>
               <div className="grid grid-cols-3 gap-2 text-center">
                 <div className="p-2 bg-white rounded-xl shadow-xs">
                   <div className="w-6 h-6 rounded-full bg-[#B87D4B] mx-auto mb-1 border-2 border-white" />
-                  <span className="text-[11px] font-semibold text-gray-700">Skin colour</span>
+                  <span className="text-[11px] font-semibold text-gray-700">{t('Skin colour')}</span>
                 </div>
                 <div className="p-2 bg-white rounded-xl shadow-xs">
                   <div className="w-6 h-6 rounded-full bg-[#2E1A0C] mx-auto mb-1 border-2 border-white" />
-                  <span className="text-[11px] font-semibold text-gray-700">Hair colour</span>
+                  <span className="text-[11px] font-semibold text-gray-700">{t('Hair colour')}</span>
                 </div>
                 <div className="p-2 bg-white rounded-xl shadow-xs">
                   <div className="w-6 h-6 rounded-full bg-[#3D2314] mx-auto mb-1 border-2 border-white" />
-                  <span className="text-[11px] font-semibold text-gray-700">Eye colour</span>
+                  <span className="text-[11px] font-semibold text-gray-700">{t('Eye colour')}</span>
                 </div>
               </div>
             </div>
@@ -153,10 +155,10 @@ export const BiologyInfographic: React.FC = () => {
               </div>
               <div>
                 <span className="text-xs font-bold text-[#E8456B] uppercase tracking-wider">
-                  Autoimmune Reaction
+                  {t('Autoimmune Reaction')}
                 </span>
                 <h3 className="text-xl font-bold font-serif text-[#0B1F6B]">
-                  What Happens in Vitiligo
+                  {t('What Happens in Vitiligo')}
                 </h3>
               </div>
             </div>
@@ -168,9 +170,9 @@ export const BiologyInfographic: React.FC = () => {
                   1
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0B1F6B]">Immune system mistake</h4>
+                  <h4 className="text-sm font-bold text-[#0B1F6B]">{t('Immune system mistake')}</h4>
                   <p className="text-xs text-[#5B6785]">
-                    The body&apos;s immune system mistakenly identifies melanocytes as foreign antigens.
+                    {t("The body's immune system mistakenly identifies melanocytes as foreign antigens.")}
                   </p>
                 </div>
               </div>
@@ -180,9 +182,9 @@ export const BiologyInfographic: React.FC = () => {
                   2
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0B1F6B]">Melanocytes are attacked</h4>
+                  <h4 className="text-sm font-bold text-[#0B1F6B]">{t('Melanocytes are attacked')}</h4>
                   <p className="text-xs text-[#5B6785]">
-                    Immune T-cells damage melanocytes, causing them to cease pigment synthesis or detach.
+                    {t('Immune T-cells damage melanocytes, causing them to cease pigment synthesis or detach.')}
                   </p>
                 </div>
               </div>
@@ -192,9 +194,9 @@ export const BiologyInfographic: React.FC = () => {
                   3
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0B1F6B]">Loss of pigment (Depigmentation)</h4>
+                  <h4 className="text-sm font-bold text-[#0B1F6B]">{t('Loss of pigment (Depigmentation)')}</h4>
                   <p className="text-xs text-[#5B6785]">
-                    With fewer melanocytes, no new melanin reaches the surface, appearing as lighter or white patches.
+                    {t('With fewer melanocytes, no new melanin reaches the surface, appearing as lighter or white patches.')}
                   </p>
                 </div>
               </div>
@@ -203,20 +205,20 @@ export const BiologyInfographic: React.FC = () => {
             {/* Vitiligo Result Row */}
             <div className="mt-8 pt-4 border-t border-gray-100 bg-[#FFF5F7] rounded-2xl p-4">
               <span className="text-xs font-bold text-[#E8456B] uppercase tracking-wider block mb-2">
-                Result
+                {t('Result')}
               </span>
               <div className="grid grid-cols-3 gap-2 text-center">
                 <div className="p-2 bg-white rounded-xl shadow-xs">
                   <div className="w-6 h-6 rounded-full bg-[#FFFBF7] mx-auto mb-1 border-2 border-rose-200" />
-                  <span className="text-[11px] font-semibold text-gray-700">Lighter skin patches</span>
+                  <span className="text-[11px] font-semibold text-gray-700">{t('Lighter skin patches')}</span>
                 </div>
                 <div className="p-2 bg-white rounded-xl shadow-xs">
                   <div className="w-6 h-6 rounded-full bg-[#FFFFFF] mx-auto mb-1 border-2 border-gray-300" />
-                  <span className="text-[11px] font-semibold text-gray-700">White hair (poliosis)</span>
+                  <span className="text-[11px] font-semibold text-gray-700">{t('White hair (poliosis)')}</span>
                 </div>
                 <div className="p-2 bg-white rounded-xl shadow-xs">
                   <div className="w-6 h-6 rounded-full bg-[#C8B6A6] mx-auto mb-1 border-2 border-rose-200" />
-                  <span className="text-[11px] font-semibold text-gray-700">Lighter eyelashes</span>
+                  <span className="text-[11px] font-semibold text-gray-700">{t('Lighter eyelashes')}</span>
                 </div>
               </div>
             </div>
@@ -228,14 +230,14 @@ export const BiologyInfographic: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-gray-100 gap-2">
             <div>
               <h3 className="text-lg font-bold text-[#0B1F6B]">
-                Interactive Skin Layer Cross-Section
+                {t('Interactive Skin Layer Cross-Section')}
               </h3>
               <p className="text-xs text-[#5B6785]">
-                Tap the numbered anatomical hotspots below to compare healthy vs affected skin.
+                {t('Tap the numbered anatomical hotspots below to compare healthy vs affected skin.')}
               </p>
             </div>
             <span className="text-xs font-semibold text-[#1D5FE0] bg-[#EAF2FF] px-3 py-1 rounded-full self-start sm:self-center">
-              Active: {selectedHotspot.name}
+              {t('Active:')} {t(selectedHotspot.name)}
             </span>
           </div>
 
@@ -244,10 +246,10 @@ export const BiologyInfographic: React.FC = () => {
             <div className="md:col-span-7 relative bg-gradient-to-b from-[#FCEBE1] via-[#F3D5C5] to-[#E3BEAA] rounded-2xl h-72 border border-[#E7C8B6] overflow-hidden flex items-center justify-center shadow-inner">
               {/* Layers overlay */}
               <div className="absolute top-0 inset-x-0 h-10 bg-amber-500/10 border-b border-amber-600/20 flex items-center px-4">
-                <span className="text-[10px] font-bold text-amber-900 uppercase tracking-wider">Skin Surface</span>
+                <span className="text-[10px] font-bold text-amber-900 uppercase tracking-wider">{t('Skin Surface')}</span>
               </div>
               <div className="absolute bottom-0 inset-x-0 h-14 bg-red-900/10 border-t border-red-900/20 flex items-center px-4">
-                <span className="text-[10px] font-bold text-red-900 uppercase tracking-wider">Basal Layer & Follicles</span>
+                <span className="text-[10px] font-bold text-red-900 uppercase tracking-wider">{t('Basal Layer & Follicles')}</span>
               </div>
 
               {/* Hotspot buttons */}
@@ -261,7 +263,7 @@ export const BiologyInfographic: React.FC = () => {
                       ? 'bg-[#0B1F6B] text-white ring-4 ring-[#1D5FE0]/40 scale-110'
                       : 'bg-white text-[#1D5FE0] border-2 border-[#1D5FE0]'
                   }`}
-                  aria-label={spot.name}
+                  aria-label={t(spot.name)}
                 >
                   {i + 1}
                 </button>
@@ -277,19 +279,19 @@ export const BiologyInfographic: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <Info className="w-4 h-4 text-[#1D5FE0]" />
                 <h4 className="font-bold text-sm text-[#0B1F6B]">
-                  {selectedHotspot.name}
+                  {t(selectedHotspot.name)}
                 </h4>
               </div>
 
               <div className="space-y-3 text-xs">
                 <div className="p-3 bg-white rounded-xl border border-green-200">
-                  <span className="font-bold text-green-700 block mb-0.5">In Healthy Skin:</span>
-                  <p className="text-[#1E2A4A]">{selectedHotspot.healthyDesc}</p>
+                  <span className="font-bold text-green-700 block mb-0.5">{t('In Healthy Skin:')}</span>
+                  <p className="text-[#1E2A4A]">{t(selectedHotspot.healthyDesc)}</p>
                 </div>
 
                 <div className="p-3 bg-white rounded-xl border border-rose-200">
-                  <span className="font-bold text-[#E8456B] block mb-0.5">In Vitiligo:</span>
-                  <p className="text-[#1E2A4A]">{selectedHotspot.vitiligoDesc}</p>
+                  <span className="font-bold text-[#E8456B] block mb-0.5">{t('In Vitiligo:')}</span>
+                  <p className="text-[#1E2A4A]">{t(selectedHotspot.vitiligoDesc)}</p>
                 </div>
               </div>
             </div>

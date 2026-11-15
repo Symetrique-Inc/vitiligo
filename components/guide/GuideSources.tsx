@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useLanguage } from '@/components/LanguageContext';
 
 interface SourceLink {
   href: string;
@@ -10,6 +13,8 @@ interface GuideSourcesProps {
 }
 
 export const GuideSources: React.FC<GuideSourcesProps> = ({ links }) => {
+  const { t } = useLanguage();
+
   return (
     <p className="sources guide-sources text-[11px] text-[#5B6785] leading-relaxed mt-5 pt-2">
       {links.map((link, index) => (
@@ -21,7 +26,7 @@ export const GuideSources: React.FC<GuideSourcesProps> = ({ links }) => {
             rel="noopener noreferrer"
             className="text-[#1D5FE0] hover:underline underline-offset-2 font-medium"
           >
-            {link.label} <span aria-hidden="true">↗</span>
+            {t(link.label)} <span aria-hidden="true">↗</span>
           </a>
         </React.Fragment>
       ))}

@@ -7,8 +7,10 @@ import { Footer } from '@/components/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { PlaceholderTag } from '@/components/PlaceholderTag';
 import { Mail, Send, CheckCircle2, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -19,7 +21,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect contact form submission to Symetrique backend
     setSubmitted(true);
   };
 
@@ -27,7 +28,7 @@ export default function ContactPage() {
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
       <Header />
 
-      <Breadcrumbs items={[{ label: 'Contact' }]} />
+      <Breadcrumbs items={[{ label: t('Contact') }]} />
 
       <main className="flex-1 pb-16">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,19 +36,19 @@ export default function ContactPage() {
             <div className="space-y-4">
               <div className="inline-flex items-center space-x-2">
                 <span className="text-xs font-bold text-[#1D5FE0] bg-[#EAF2FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
-                  Get in Touch
+                  {t('Get in Touch')}
                 </span>
-                <PlaceholderTag label="Front-end Form" />
+                <PlaceholderTag label={t('Front-end Form')} />
               </div>
               <h1 className="text-3xl sm:text-5xl font-bold font-serif text-[#0B1F6B]">
-                Contact Us
+                {t('Contact Us')}
               </h1>
               <p className="text-sm sm:text-base text-[#5B6785] leading-relaxed">
-                Have questions about OneVitiligo, suggestions for new topics, or inquiries for the Symetrique team? We are here to listen.
+                {t('Have questions about OneVitiligo, suggestions for new topics, or inquiries for the Symetrique team? We are here to listen.')}
               </p>
 
               <div className="p-4 rounded-2xl bg-[#FFF6EE] border border-[#FEDDC7] text-xs text-[#B34F18]">
-                <span>[Content and dedicated inquiry inboxes to be provided by Symetrique]</span>
+                <span>{t('[Content and dedicated inquiry inboxes to be provided by Symetrique]')}</span>
               </div>
 
               {submitted ? (
@@ -55,9 +56,9 @@ export default function ContactPage() {
                   <div className="w-12 h-12 rounded-full bg-[#1FA37A] text-white flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h3 className="font-bold text-lg text-[#0B1F6B]">Message Received</h3>
+                  <h3 className="font-bold text-lg text-[#0B1F6B]">{t('Message Received')}</h3>
                   <p className="text-sm text-[#147053]">
-                    Thank you for reaching out. A member of the Symetrique team will review your note and get back to you.
+                    {t('Thank you for reaching out. A member of the Symetrique team will review your note and get back to you.')}
                   </p>
                 </div>
               ) : (
@@ -65,7 +66,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="contact-name" className="block text-xs font-bold text-[#0B1F6B] uppercase tracking-wider mb-1">
-                        Your Name
+                        {t('Your Name')}
                       </label>
                       <input
                         type="text"
@@ -74,12 +75,12 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D5FE0] bg-[#F8FAFF]"
-                        placeholder="Name"
+                        placeholder={t('Name')}
                       />
                     </div>
                     <div>
                       <label htmlFor="contact-email" className="block text-xs font-bold text-[#0B1F6B] uppercase tracking-wider mb-1">
-                        Email Address
+                        {t('Email Address')}
                       </label>
                       <input
                         type="email"
@@ -95,7 +96,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="contact-subject" className="block text-xs font-bold text-[#0B1F6B] uppercase tracking-wider mb-1">
-                      Subject
+                      {t('Subject')}
                     </label>
                     <input
                       type="text"
@@ -104,13 +105,13 @@ export default function ContactPage() {
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D5FE0] bg-[#F8FAFF]"
-                      placeholder="How can we help?"
+                      placeholder={t('How can we help?')}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="contact-message" className="block text-xs font-bold text-[#0B1F6B] uppercase tracking-wider mb-1">
-                      Message
+                      {t('Message')}
                     </label>
                     <textarea
                       id="contact-message"
@@ -119,7 +120,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D5FE0] bg-[#F8FAFF] resize-none"
-                      placeholder="Write your message here..."
+                      placeholder={t('Write your message here...')}
                     />
                   </div>
 
@@ -128,7 +129,7 @@ export default function ContactPage() {
                     className="inline-flex items-center space-x-2 px-6 py-3 rounded-full text-xs font-bold bg-[#0B1F6B] text-white hover:bg-[#1D5FE0] transition-colors shadow-sm"
                   >
                     <Send className="w-3.5 h-3.5" />
-                    <span>Send Message</span>
+                    <span>{t('Send Message')}</span>
                   </button>
                 </form>
               )}

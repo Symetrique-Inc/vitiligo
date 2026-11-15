@@ -1,6 +1,8 @@
-import type { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import { Header } from '@/components/Header';
+import { useLanguage } from '@/components/LanguageContext';
 import { Footer } from '@/components/Footer';
 import { GuideHero } from '@/components/guide/GuideHero';
 import { GuideTableOfContents } from '@/components/guide/GuideTableOfContents';
@@ -12,17 +14,6 @@ import { GuidePigmentDiagram } from '@/components/guide/GuidePigmentDiagram';
 import { GuideReviewStamp } from '@/components/guide/GuideReviewStamp';
 import { GuideRelatedLinks } from '@/components/guide/GuideRelatedLinks';
 
-export const metadata: Metadata = {
-  title: 'Understand vitiligo | OneVitiligo',
-  description:
-    'A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face.',
-  openGraph: {
-    title: 'Understand vitiligo | OneVitiligo',
-    description:
-      'A diagnosis can arrive with unfamiliar words and conflicting advice. This guide connects the changes in your skin to the decisions you may face.',
-  },
-};
-
 const tocItems = [
   { id: 'pigment', label: '01 · What actually changes in the skin?' },
   { id: 'diagnosis', label: '02 · A lighter patch needs a diagnosis, not a guess.' },
@@ -33,6 +24,7 @@ const tocItems = [
 ];
 
 export default function UnderstandVitiligoPage() {
+  const { t } = useLanguage();
   return (
     <div className="min-h-screen flex flex-col bg-pastel-mesh">
       {/* Existing Original Header (Untouched) */}
@@ -72,12 +64,8 @@ export default function UnderstandVitiligoPage() {
                 label: 'A lighter patch needs a diagnosis, not a guess.',
               }}
             >
-              <p className="my-0">
-                Melanocytes make melanin, the pigment in skin. In vitiligo, immune activity targets these cells and areas lose colour. This is an autoimmune process rather than an infection.
-              </p>
-              <p className="my-0">
-                Care can involve two linked tasks: reducing the attack on pigment-making cells and helping colour return. Understanding that difference makes treatment goals easier to follow.
-              </p>
+              <p className="my-0">{t('Melanocytes make melanin, the pigment in skin. In vitiligo, immune activity targets these cells and areas lose colour. This is an autoimmune process rather than an infection.')}</p>
+              <p className="my-0">{t('Care can involve two linked tasks: reducing the attack on pigment-making cells and helping colour return. Understanding that difference makes treatment goals easier to follow.')}</p>
 
               {/* Pigment Diagram Figure */}
               <GuidePigmentDiagram />
@@ -102,26 +90,14 @@ export default function UnderstandVitiligoPage() {
                 label: 'Type, activity and extent answer different questions.',
               }}
             >
-              <p className="my-0">
-                Fungal conditions and changes after inflammation or injury can also cause lighter patches. A dermatologist uses your history and skin examination; a Wood’s lamp may help show pigment loss.
-              </p>
+              <p className="my-0">{t('Fungal conditions and changes after inflammation or injury can also cause lighter patches. A dermatologist uses your history and skin examination; a Wood’s lamp may help show pigment loss.')}</p>
               <ul className="list-disc pl-5 sm:pl-6 space-y-2.5 my-4 text-[#1E2A4A]">
-                <li className="leading-relaxed">
-                  Bring a timeline, earlier photographs and the names of products used on the area.
-                </li>
-                <li className="leading-relaxed">
-                  Ask what supports the diagnosis and what remains uncertain.
-                </li>
-                <li className="leading-relaxed">
-                  Ask whether any tests would change the plan.
-                </li>
-                <li className="leading-relaxed">
-                  Leave knowing what to do next and when to return.
-                </li>
+                <li className="leading-relaxed">{t('Bring a timeline, earlier photographs and the names of products used on the area.')}</li>
+                <li className="leading-relaxed">{t('Ask what supports the diagnosis and what remains uncertain.')}</li>
+                <li className="leading-relaxed">{t('Ask whether any tests would change the plan.')}</li>
+                <li className="leading-relaxed">{t('Leave knowing what to do next and when to return.')}</li>
               </ul>
-              <p className="my-0">
-                An online photograph cannot distinguish every cause. Establish what is being treated before comparing remedies.
-              </p>
+              <p className="my-0">{t('An online photograph cannot distinguish every cause. Establish what is being treated before comparing remedies.')}</p>
               <GuideSources
                 links={[
                   {
@@ -162,9 +138,7 @@ export default function UnderstandVitiligoPage() {
                   ],
                 ]}
               />
-              <p className="my-0">
-                These descriptions guide assessment. They do not tell you how someone feels or how much a patch affects their life.
-              </p>
+              <p className="my-0">{t('These descriptions guide assessment. They do not tell you how someone feels or how much a patch affects their life.')}</p>
               <GuideSources
                 links={[
                   {
@@ -185,19 +159,15 @@ export default function UnderstandVitiligoPage() {
                 label: 'Facts that take some weight off.',
               }}
             >
-              <p className="my-0">
-                A visitor may move from diagnosis to changing patches, a quiet period, repigmentation, maintenance or renewed activity. Years since diagnosis do not automatically determine the next option.
-              </p>
-              <p className="my-0">
-                Someone diagnosed long ago may need an activity review today. Someone newly diagnosed may mainly need an explanation and a manageable plan. The five starting points are doors into information, not permanent labels.
-              </p>
+              <p className="my-0">{t('A visitor may move from diagnosis to changing patches, a quiet period, repigmentation, maintenance or renewed activity. Years since diagnosis do not automatically determine the next option.')}</p>
+              <p className="my-0">{t('Someone diagnosed long ago may need an activity review today. Someone newly diagnosed may mainly need an explanation and a manageable plan. The five starting points are doors into information, not permanent labels.')}</p>
               <ul className="list-disc pl-5 sm:pl-6 space-y-2.5 my-4 text-[#1E2A4A]">
                 <li className="leading-relaxed">
                   <Link
                     href="/journey-noticed"
                     className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
                   >
-                    New patch or uncertain diagnosis →
+                    {t('New patch or uncertain diagnosis →')}
                   </Link>
                 </li>
                 <li className="leading-relaxed">
@@ -205,7 +175,7 @@ export default function UnderstandVitiligoPage() {
                     href="/journey-changing"
                     className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
                   >
-                    New or enlarging patches →
+                    {t('New or enlarging patches →')}
                   </Link>
                 </li>
                 <li className="leading-relaxed">
@@ -213,7 +183,7 @@ export default function UnderstandVitiligoPage() {
                     href="/journey-steady"
                     className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
                   >
-                    Patches that seem unchanged →
+                    {t('Patches that seem unchanged →')}
                   </Link>
                 </li>
                 <li className="leading-relaxed">
@@ -221,7 +191,7 @@ export default function UnderstandVitiligoPage() {
                     href="/journey-long-journey"
                     className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
                   >
-                    Reviewing previous treatment →
+                    {t('Reviewing previous treatment →')}
                   </Link>
                 </li>
                 <li className="leading-relaxed">
@@ -229,7 +199,7 @@ export default function UnderstandVitiligoPage() {
                     href="/journey-for-my-child"
                     className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4"
                   >
-                    Supporting a child →
+                    {t('Supporting a child →')}
                   </Link>
                 </li>
               </ul>
@@ -245,16 +215,10 @@ export default function UnderstandVitiligoPage() {
                 label: 'Connect the facts to a useful outcome.',
               }}
             >
-              <p className="my-0">
-                Vitiligo is not contagious. There is no proven diet that cures it. A family tendency does not mean every child will develop it.
-              </p>
-              <p className="my-0">
-                If someone offers a remedy, ask for its ingredients, evidence and possible harm. Avoid removing food groups because of a promise that doing so will restore colour. A confident claim is not the same as a tested treatment.
-              </p>
+              <p className="my-0">{t('Vitiligo is not contagious. There is no proven diet that cures it. A family tendency does not mean every child will develop it.')}</p>
+              <p className="my-0">{t('If someone offers a remedy, ask for its ingredients, evidence and possible harm. Avoid removing food groups because of a promise that doing so will restore colour. A confident claim is not the same as a tested treatment.')}</p>
               <GuideExample title="A practical example">
-                <p>
-                  “Is this a diagnosis or a possibility? What evidence supports this option for my type of vitiligo?” Those are reasonable questions even when advice sounds certain.
-                </p>
+                <p>{t('“Is this a diagnosis or a possibility? What evidence supports this option for my type of vitiligo?” Those are reasonable questions even when advice sounds certain.')}</p>
               </GuideExample>
               <GuideSources
                 links={[
@@ -276,18 +240,14 @@ export default function UnderstandVitiligoPage() {
                 label: 'Choose where to go next',
               }}
             >
-              <p className="my-0">
-                You might prioritise fewer new patches, colour in one particular area, a simpler routine, or less disruption to work or school. Write down the priority before comparing treatments.
-              </p>
-              <p className="my-0">
-                A good discussion connects the clinical problem, the proposed option, the practical commitment and the review point. If one is missing, you have a specific question to bring back.
-              </p>
+              <p className="my-0">{t('You might prioritise fewer new patches, colour in one particular area, a simpler routine, or less disruption to work or school. Write down the priority before comparing treatments.')}</p>
+              <p className="my-0">{t('A good discussion connects the clinical problem, the proposed option, the practical commitment and the review point. If one is missing, you have a specific question to bring back.')}</p>
               <p className="my-3">
                 <Link
                   href="/treatment-and-care"
                   className="text-[#1D5FE0] font-semibold hover:underline underline-offset-4 inline-flex items-center gap-1.5"
                 >
-                  Compare treatment options by purpose →
+                  {t('Compare treatment options by purpose →')}
                 </Link>
               </p>
             </GuideChapter>

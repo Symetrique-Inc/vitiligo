@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Globe, MapPin, Info, ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext';
 
 interface RegionData {
   name: string;
@@ -57,6 +58,7 @@ const regionsData: Record<string, RegionData> = {
 };
 
 export const WorldMap: React.FC = () => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'global' | 'region' | 'country'>('global');
   const [selectedRegionKey, setSelectedRegionKey] = useState<string>(
     'South Asia (India, Pakistan, Bangladesh)'
@@ -70,13 +72,13 @@ export const WorldMap: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-gray-100 gap-4">
         <div>
           <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-            Epidemiological Dashboard
+            {t('Epidemiological Dashboard')}
           </span>
           <h3 className="text-2xl font-bold font-serif text-[#0B1F6B]">
-            Vitiligo Around the World
+            {t('Vitiligo Around the World')}
           </h3>
           <p className="text-xs sm:text-sm text-[#5B6785] mt-0.5">
-            Different contexts. Shared experiences. Approximately 28.5 million people worldwide (The Lancet Public Health, 2024).
+            {t('Different contexts. Shared experiences. Approximately 28.5 million people worldwide (The Lancet Public Health, 2024).')}
           </p>
         </div>
 
@@ -90,7 +92,7 @@ export const WorldMap: React.FC = () => {
                 : 'text-gray-500 hover:text-gray-900'
             }`}
           >
-            Global View
+            {t('Global View')}
           </button>
           <button
             onClick={() => setActiveTab('region')}
@@ -100,7 +102,7 @@ export const WorldMap: React.FC = () => {
                 : 'text-gray-500 hover:text-gray-900'
             }`}
           >
-            By Region
+            {t('By Region')}
           </button>
           <button
             onClick={() => setActiveTab('country')}
@@ -110,7 +112,7 @@ export const WorldMap: React.FC = () => {
                 : 'text-gray-500 hover:text-gray-900'
             }`}
           >
-            By Country
+            {t('By Country')}
           </button>
         </div>
       </div>
@@ -183,7 +185,7 @@ export const WorldMap: React.FC = () => {
 
             {/* Float badge */}
             <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-gray-200 text-[11px] font-semibold text-[#0B1F6B]">
-              Interactive: Click any continent on map
+              {t('Interactive: Click any continent on map')}
             </div>
           </div>
 
@@ -191,29 +193,29 @@ export const WorldMap: React.FC = () => {
           <div className="lg:col-span-5 bg-white rounded-2xl p-6 border border-[#DDE5F5] space-y-4 shadow-sm">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-[#1D5FE0] uppercase tracking-wider">
-                Region Focus
+                {t('Region Focus')}
               </span>
-              <span className="text-xs text-gray-400">Validated Cohorts</span>
+              <span className="text-xs text-gray-400">{t('Validated Cohorts')}</span>
             </div>
 
             <h4 className="text-xl font-bold font-serif text-[#0B1F6B]">
-              {regionInfo.name}
+              {t(regionInfo.name)}
             </h4>
 
             <div className="grid grid-cols-2 gap-3 pt-1">
               <div className="p-3 bg-[#F8FAFF] rounded-xl border border-gray-100">
-                <span className="text-[10px] font-bold text-gray-500 uppercase">Prevalence Range</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase">{t('Prevalence Range')}</span>
                 <p className="text-base font-extrabold text-[#1D5FE0]">{regionInfo.prevalenceRange}</p>
               </div>
               <div className="p-3 bg-[#F8FAFF] rounded-xl border border-gray-100">
-                <span className="text-[10px] font-bold text-gray-500 uppercase">Estimated Impact</span>
+                <span className="text-[10px] font-bold text-gray-500 uppercase">{t('Estimated Impact')}</span>
                 <p className="text-base font-extrabold text-[#0B1F6B]">{regionInfo.estimatedPeople}</p>
               </div>
             </div>
 
             <div className="text-xs space-y-2 text-[#5B6785]">
-              <p><strong>Clinical Notes:</strong> {regionInfo.notes}</p>
-              <p className="text-[11px] text-gray-400"><strong>Data Source:</strong> {regionInfo.studies}</p>
+              <p><strong>{t('Clinical Notes:')}</strong> {t(regionInfo.notes)}</p>
+              <p className="text-[11px] text-gray-400"><strong>{t('Data Source:')}</strong> {regionInfo.studies}</p>
             </div>
           </div>
         </div>
@@ -221,7 +223,7 @@ export const WorldMap: React.FC = () => {
 
       {/* Region Selector Pills */}
       <div className="flex flex-wrap items-center gap-2 pt-2">
-        <span className="text-xs font-bold text-gray-500 mr-2">Quick Select Region:</span>
+        <span className="text-xs font-bold text-gray-500 mr-2">{t('Quick Select Region:')}</span>
         {Object.keys(regionsData).map((key) => (
           <button
             key={key}
@@ -232,7 +234,7 @@ export const WorldMap: React.FC = () => {
                 : 'bg-[#F8FAFF] text-gray-600 border border-[#DDE5F5] hover:bg-gray-100'
             }`}
           >
-            {regionsData[key].name}
+            {t(regionsData[key].name)}
           </button>
         ))}
       </div>
