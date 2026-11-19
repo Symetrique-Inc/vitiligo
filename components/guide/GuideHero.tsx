@@ -37,40 +37,70 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
 
   // Two-tone H1 rendering: first sentence in Navy (#0B1F6B), concluding sentence/phrase in Royal Blue (#1D5FE0)
   const renderTwoToneTitle = (rawTitle: string) => {
-    const dotIndex = rawTitle.indexOf('. ');
+    // Check known split pairs first so both parts are translated directly with t()
+    const KNOWN_PAIRS: [string, string][] = [
+      ['Understand the condition.', 'Then understand your choices.'],
+      ['Your skin.', 'Your choice.'],
+      ['A new patch can bring questions.', 'Start with clarity.'],
+      ['Understand the change.', 'Understand the purpose of treatment.'],
+      ['When skin seems steady, choose what', 'matters next.'],
+      ['Your history should move', 'the conversation forward.'],
+    ];
+
+    const normalized = rawTitle.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+
+    for (const [part1, part2] of KNOWN_PAIRS) {
+      if (normalized === `${part1} ${part2}`) {
+        return (
+          <>
+            <span className="block text-[#0B1F6B]">{t(part1)}</span>
+            <span className="block text-[#1D5FE0]">{t(part2)}</span>
+          </>
+        );
+      }
+    }
+
+    // Check direct translation of the whole title
+    const translated = t(rawTitle);
+
+    // If it contains newline
+    if (translated.includes('\n')) {
+      const [p1, ...rest] = translated.split('\n');
+      return (
+        <>
+          <span className="block text-[#0B1F6B]">{p1}</span>
+          <span className="block text-[#1D5FE0]">{rest.join(' ')}</span>
+        </>
+      );
+    }
+
+    // Check poorna viram (Hindi/Bengali/Marathi sentence separator)
+    const pVirIndex = translated.indexOf('। ');
+    if (pVirIndex !== -1) {
+      const p1 = translated.slice(0, pVirIndex + 1);
+      const p2 = translated.slice(pVirIndex + 2);
+      return (
+        <>
+          <span className="block text-[#0B1F6B]">{p1}</span>
+          <span className="block text-[#1D5FE0]">{p2}</span>
+        </>
+      );
+    }
+
+    // Check dot space
+    const dotIndex = translated.indexOf('. ');
     if (dotIndex !== -1) {
-      const firstSentence = rawTitle.slice(0, dotIndex + 1);
-      const secondSentence = rawTitle.slice(dotIndex + 2);
+      const p1 = translated.slice(0, dotIndex + 1);
+      const p2 = translated.slice(dotIndex + 2);
       return (
         <>
-          <span className="block text-[#0B1F6B]">{firstSentence}</span>
-          <span className="block text-[#1D5FE0]">{secondSentence}</span>
+          <span className="block text-[#0B1F6B]">{p1}</span>
+          <span className="block text-[#1D5FE0]">{p2}</span>
         </>
       );
     }
-    const mattersIndex = rawTitle.indexOf('matters next.');
-    if (mattersIndex !== -1) {
-      const firstPart = rawTitle.slice(0, mattersIndex);
-      const secondPart = rawTitle.slice(mattersIndex);
-      return (
-        <>
-          <span className="block text-[#0B1F6B]">{firstPart}</span>
-          <span className="block text-[#1D5FE0]">{secondPart}</span>
-        </>
-      );
-    }
-    const conversationIndex = rawTitle.indexOf('the conversation forward.');
-    if (conversationIndex !== -1) {
-      const firstPart = rawTitle.slice(0, conversationIndex);
-      const secondPart = rawTitle.slice(conversationIndex);
-      return (
-        <>
-          <span className="block text-[#0B1F6B]">{firstPart}</span>
-          <span className="block text-[#1D5FE0]">{secondPart}</span>
-        </>
-      );
-    }
-    return <span className="text-[#0B1F6B]">{rawTitle}</span>;
+
+    return <span className="text-[#0B1F6B]">{translated}</span>;
   };
 
   const cleanedEdition = edition
@@ -79,9 +109,9 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
     .replace(/\d{1,2}\s+[A-Za-z]+\s+\d{4}\s*·\s*/gi, '')
     .trim();
 
-  const translatedCrumb = t(crumbLabel.replace(/^[←\s]+/, ''));
+  const rawCrumb = t(crumbLabel.replace(/^[←\s]+/, ''));
+  const cleanCrumb = rawCrumb.replace(/^[←\s]+/, '');
   const translatedEyebrow = t(eyebrow);
-  const translatedTitle = t(title);
   const translatedLead = t(lead);
   const translatedEdition = t(cleanedEdition);
   const translatedAlt = illustration ? t(illustration.alt) : '';
@@ -135,7 +165,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
               className="guide-crumb inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D5FE0] hover:text-[#0B1F6B] transition-colors mb-3 group font-sans w-fit"
             >
               <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-              <span>{translatedCrumb}</span>
+              <span>{cleanCrumb}</span>
             </Link>
 
             {/* Eyebrow Pill Badge */}
@@ -145,7 +175,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
 
             {/* H1 */}
             <h1 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[38px] xl:text-[42px] leading-[1.16] -tracking-[1px] sm:-tracking-[1.5px] mt-1 mb-4 text-[#0B1F6B]">
-              {renderTwoToneTitle(translatedTitle)}
+              {renderTwoToneTitle(title)}
             </h1>
 
             {/* Intro paragraph */}
@@ -187,7 +217,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
             className="guide-crumb inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D5FE0] hover:text-[#0B1F6B] transition-colors mb-3 group font-sans w-fit"
           >
             <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
-            <span>{translatedCrumb}</span>
+            <span>{cleanCrumb}</span>
           </Link>
 
           {/* Eyebrow Pill Badge */}
@@ -197,7 +227,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
 
           {/* H1 */}
           <h1 className="font-serif font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[42px] leading-[1.16] -tracking-[1px] sm:-tracking-[1.5px] mt-1 mb-4 text-[#0B1F6B]">
-            {renderTwoToneTitle(translatedTitle)}
+            {renderTwoToneTitle(title)}
           </h1>
 
           {/* Intro paragraph */}

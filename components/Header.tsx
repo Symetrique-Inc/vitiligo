@@ -105,7 +105,7 @@ const NAV_ITEMS: NavItem[] = [
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
-  const { locale, setLocale, tById } = useLanguage();
+  const { locale, setLocale, tById, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -272,7 +272,7 @@ export const Header: React.FC = () => {
           <div className="xl:hidden bg-white border-b border-[#DDE5F5] px-4 pt-2 pb-6 space-y-3 animate-fadeIn">
             {/* Mobile Language Switcher */}
             <div className="flex flex-wrap items-center gap-2 pb-3 border-b border-gray-100">
-              <span className="text-xs font-semibold text-gray-500 mr-1">Language:</span>
+              <span className="text-xs font-semibold text-gray-500 mr-1">{t('Language:')}</span>
               {SUPPORTED_LOCALES.map((lang) => (
                 <button
                   key={lang.code}

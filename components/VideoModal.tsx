@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, Play, Volume2, FileText, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '@/components/LanguageContext';
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -22,6 +23,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   duration,
   transcript,
 }) => {
+  const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const [showTranscript, setShowTranscript] = useState(false);
 
@@ -72,18 +74,18 @@ export const VideoModal: React.FC<VideoModalProps> = ({
                 <p className="text-xs text-blue-200">{role}</p>
               </div>
               <p className="text-xs text-white/70 italic max-w-sm mx-auto">
-                Click play to begin story video with synchronized closed captions.
+                {t('Click play to begin story video with synchronized closed captions.')}
               </p>
             </div>
           ) : (
             <div className="w-full h-full flex flex-col justify-between z-10 p-4">
               <div className="flex justify-between items-center text-xs text-blue-200">
                 <span className="bg-red-600/80 text-white px-2 py-0.5 rounded text-[10px] font-bold">
-                  PLAYING WITH CC
+                  {t('PLAYING WITH CC')}
                 </span>
                 <span className="flex items-center space-x-1">
                   <Volume2 className="w-4 h-4" />
-                  <span>Audio Description Enabled</span>
+                  <span>{t('Audio Description Enabled')}</span>
                 </span>
               </div>
 
@@ -100,7 +102,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
                   onClick={() => setIsPlaying(false)}
                   className="px-3 py-1 rounded bg-white/20 hover:bg-white/30 text-white font-medium"
                 >
-                  Pause
+                  {t('Pause')}
                 </button>
                 <span className="text-[11px]">1:24 / {duration}</span>
               </div>
@@ -116,17 +118,17 @@ export const VideoModal: React.FC<VideoModalProps> = ({
               className="inline-flex items-center space-x-1.5 text-xs font-semibold text-[#1D5FE0] hover:underline"
             >
               <FileText className="w-4 h-4" />
-              <span>{showTranscript ? "Hide Full Transcript" : "Read Full Text Transcript"}</span>
+              <span>{showTranscript ? t("Hide Full Transcript") : t("Read Full Text Transcript")}</span>
             </button>
             <span className="text-[11px] text-gray-500 flex items-center">
               <CheckCircle2 className="w-3.5 h-3.5 text-green-600 mr-1" />
-              WCAG 2.2 Audio/Video Compliant
+              {t('WCAG 2.2 Audio/Video Compliant')}
             </span>
           </div>
 
           {showTranscript && (
             <div className="p-3 bg-white rounded-xl border border-gray-200 text-xs text-gray-700 leading-relaxed max-h-40 overflow-y-auto mt-2">
-              <p className="font-semibold text-[#0B1F6B] mb-1">Speaker: {speaker} ({role})</p>
+              <p className="font-semibold text-[#0B1F6B] mb-1">{t('Speaker:')} {speaker} ({role})</p>
               <p>{transcript}</p>
             </div>
           )}
@@ -138,7 +140,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             onClick={onClose}
             className="px-4 py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs font-medium hover:bg-gray-200"
           >
-            Close
+            {t('Close')}
           </button>
         </div>
       </div>

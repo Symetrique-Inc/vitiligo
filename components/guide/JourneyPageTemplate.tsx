@@ -34,12 +34,12 @@ export const JourneyPageTemplate: React.FC<JourneyPageTemplateProps> = ({ data }
 
       {/* Guide Hero rendered full-width with responsive 2-column grid */}
       <GuideHero
-        crumbLabel={t('← All starting points')}
+        crumbLabel="← All starting points"
         crumbHref="/#start"
-        eyebrow={t(data.eyebrow)}
-        title={t(data.heroTitle)}
-        lead={t(data.lead)}
-        edition={t(data.edition)}
+        eyebrow={data.eyebrow}
+        title={data.heroTitle}
+        lead={data.lead}
+        edition={data.edition}
         startHref={data.startHref}
         illustration={data.illustration}
       />

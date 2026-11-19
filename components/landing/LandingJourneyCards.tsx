@@ -10,21 +10,21 @@ export const LandingJourneyCards: React.FC = () => {
   const journeyCards = [
     {
       indexId: 'VTH-00024', index: '01 / FIRST QUESTIONS',
-      titleId: 'VTH-00025', title: 'I have noticed\na white patch',
+      titleId: 'VTH-00137', title: 'I have noticed a white patch',
       descId: 'VTH-00027', desc: 'Understand what a white patch could mean and how to prepare for a dermatologist visit.',
       linkId: 'VTH-00028', linkLabel: 'Understand the first steps',
       href: '/journey-noticed',
     },
     {
       indexId: 'VTH-00029', index: '02 / CHANGES IN MY SKIN',
-      titleId: 'VTH-00030', title: 'My patches\nare changing',
+      titleId: 'VTH-00138', title: 'My patches are changing',
       descId: 'VTH-00032', desc: 'Explore changes in your skin and questions to discuss with your dermatologist.',
       linkId: 'VTH-00033', linkLabel: 'Understand skin changes',
       href: '/journey-changing',
     },
     {
       indexId: 'VTH-00034', index: '03 / EXPLORING CARE',
-      titleId: 'VTH-00035', title: 'My patches\nseem steady',
+      titleId: 'VTH-00139', title: 'My patches seem steady',
       descId: 'VTH-00036', desc: 'Explore care options and what you would like to achieve.',
       linkId: 'VTH-00037', linkLabel: 'Explore care options',
       href: '/journey-steady',
