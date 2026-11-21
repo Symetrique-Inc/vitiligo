@@ -4,14 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.js",
+    "db:test": "node prisma/test-system.js"
   },
   "dependencies": {
+    "@prisma/client": "^5.22.0",
     "framer-motion": "^14.1.0",
     "lucide-react": "^1.55.0",
     "next": "16.4.6",
+    "prisma": "^5.22.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },

@@ -117,6 +117,17 @@ export const Footer: React.FC = () => {
                   {tById('VTH-00729', 'Cookie settings')}
                 </button>
               </li>
+              <li className="pt-1 border-t border-gray-100">
+                <Link
+                  href="/admin/translations"
+                  className="text-[#1D5FE0] hover:text-[#0B1F6B] font-semibold transition-colors flex items-center space-x-1"
+                >
+                  <span>Translation Management</span>
+                  <span className="text-[10px] bg-[#EAF2FF] text-[#1D5FE0] px-1.5 py-0.2 rounded font-bold">
+                    Super Admin
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
