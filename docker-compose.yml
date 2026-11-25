@@ -10,3 +10,12 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3000
+      - DB_HOST=${DB_HOST:-127.0.0.1}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_NAME=${DB_NAME:-u856489652_Vitiligo}
+      - DB_USER=${DB_USER:-u856489652_mohanbirajdar}
+      - DB_PASSWORD=${DB_PASSWORD:-Symetrique26$}
+      - DATABASE_URL=${DATABASE_URL:-mysql://u856489652_mohanbirajdar:Symetrique26%24@127.0.0.1:3306/u856489652_Vitiligo}
+      - JWT_SECRET=${JWT_SECRET:-onevitiligo-super-admin-secret-key-2026-production}
+    env_file:
+      - .env

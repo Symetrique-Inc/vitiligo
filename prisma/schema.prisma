@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -37,8 +37,8 @@ model TranslationKey {
   page          String        // page identifier e.g. home, about, understand-vitiligo, living-with-vitiligo, etc.
   section       String        // section e.g. hero, navigation, footer, myths, etc.
   component     String?       // component name e.g. Header, LandingHero, etc.
-  description   String?       // contextual guidance for translators
-  sourceText    String        // English source text
+  description   String?       @db.Text // contextual guidance for translators
+  sourceText    String        @db.Text // English source text
   sourceVersion Int           @default(1)
   isActive      Boolean       @default(true)
   createdAt     DateTime      @default(now())
@@ -54,10 +54,10 @@ model Translation {
   id               String               @id @default(cuid())
   translationKeyId String
   languageCode     String
-  translatedText   String               // Current working draft / edited translation
+  translatedText   String               @db.Text // Current working draft / edited translation
   status           String               @default("DRAFT") // MISSING, DRAFT, IN_REVIEW, APPROVED, PUBLISHED
   isPublished      Boolean              @default(false)
-  publishedText    String?              // Latest published live version
+  publishedText    String?              @db.Text // Latest published live version
   version          Int                  @default(1)
   updatedBy        String               @default("Super Admin")
   createdAt        DateTime             @default(now())
@@ -77,8 +77,8 @@ model Translation {
 model TranslationHistory {
   id             String      @id @default(cuid())
   translationId  String
-  previousText   String?
-  newText        String
+  previousText   String?     @db.Text
+  newText        String      @db.Text
   previousStatus String?
   newStatus      String
   changedBy      String      @default("Super Admin")
@@ -98,7 +98,7 @@ model TranslationPublishLog {
   languageCode String?
   publishedBy  String   @default("Super Admin")
   changesCount Int
-  details      String?  // JSON string of summary
+  details      String?  @db.Text // JSON string of summary
   publishedAt  DateTime @default(now())
 
   @@index([publishedAt])
