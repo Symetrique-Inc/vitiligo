@@ -3,8 +3,6 @@ import { prisma } from '@/lib/prisma';
 import { getAdminUserFromRequest } from '@/lib/auth';
 import { TranslationService } from '@/lib/translationService';
 
-export const dynamic = 'force-dynamic';
-
 
 
 export async function GET(request: NextRequest) {
