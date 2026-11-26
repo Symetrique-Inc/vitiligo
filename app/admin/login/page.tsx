@@ -29,7 +29,10 @@ export default function AdminLoginPage() {
         router.push('/admin/translations');
         router.refresh();
       } else {
-        setError(data.error || 'Authentication failed. Please check credentials.');
+        const errorMsg = data.details
+          ? `${data.error}: ${data.details}`
+          : (data.error || 'Authentication failed. Please check credentials.');
+        setError(errorMsg);
       }
     } catch (err: any) {
       setError(err.message || 'Network error occurred');
