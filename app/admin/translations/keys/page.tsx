@@ -222,6 +222,7 @@ export default function TranslationKeyManagementPage() {
               <option value="navigation">Navigation</option>
               <option value="footer">Footer</option>
               <option value="common">Common</option>
+              <option value="general">General</option>
             </select>
           </div>
 

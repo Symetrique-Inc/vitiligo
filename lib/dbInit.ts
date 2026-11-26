@@ -15,6 +15,158 @@ const SUPPORTED_LANGUAGES = [
   { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ', scriptName: 'Kannada', isDefault: false, sortOrder: 7 },
 ];
 
+export function determinePageAndSection(key: string, enText: string) {
+  const lower = (enText || '').toLowerCase();
+
+  // Navigation & Common Header UI
+  if (
+    lower.includes('skip to main content') ||
+    lower.includes('search') ||
+    lower.includes('menu') ||
+    lower.includes('close') ||
+    key === 'VTH-00002' ||
+    key === 'VTH-00003' ||
+    key === 'VTH-00715' ||
+    key === 'VTH-01079'
+  ) {
+    return { page: 'navigation', section: 'header', component: 'Header' };
+  }
+
+  // Footer & Disclaimer
+  if (
+    lower.includes('medical disclaimer') ||
+    lower.includes('rights reserved') ||
+    lower.includes('terms of use') ||
+    lower.includes('privacy policy') ||
+    lower.includes('cookie settings') ||
+    lower.includes('back to top') ||
+    lower.includes('disclaimer') ||
+    lower.includes('copyright')
+  ) {
+    return { page: 'footer', section: 'legal_and_disclaimer', component: 'Footer' };
+  }
+
+  // About
+  if (
+    lower.includes('about us') ||
+    lower.includes('why vitiligo') ||
+    lower.includes('our values') ||
+    lower.includes('patient voice first') ||
+    lower.includes('integrity') ||
+    lower.includes('collaboration') ||
+    lower.includes('beyond the prescription') ||
+    lower.includes('symetrique') ||
+    lower.includes('who we are') ||
+    lower.includes('get in touch') ||
+    lower.includes('contact us') ||
+    lower.includes('organisation') ||
+    lower.includes('partnership')
+  ) {
+    return { page: 'about', section: 'values_and_principles', component: 'AboutSymetrique' };
+  }
+
+  // Home Page
+  if (
+    lower.includes('living with vitiligo.') ||
+    lower.includes('you are not alone') ||
+    lower.includes('find my starting point') ||
+    lower.includes('start where you are') ||
+    lower.includes('room for everyday life') ||
+    lower.includes('1 in 200') ||
+    lower.includes('welcome') ||
+    lower.includes('key topics') ||
+    (parseInt(key.replace('VTH-', ''), 10) >= 8 && parseInt(key.replace('VTH-', ''), 10) <= 60)
+  ) {
+    return { page: 'home', section: 'hero_and_highlights', component: 'LandingHero' };
+  }
+
+  // Understand Vitiligo
+  if (
+    lower.includes('melanocyte') ||
+    lower.includes('skin biology') ||
+    lower.includes('autoimmune') ||
+    lower.includes('pigment') ||
+    lower.includes('what is vitiligo') ||
+    lower.includes('myth') ||
+    lower.includes('depigmentation') ||
+    lower.includes('trigger') ||
+    lower.includes('sun exposure') ||
+    lower.includes('biology') ||
+    lower.includes('dermatology') ||
+    lower.includes('diagnosis')
+  ) {
+    return { page: 'understand-vitiligo', section: 'biology_and_myths', component: 'UnderstandAccordion' };
+  }
+
+  // Living with Vitiligo & Emotional Wellbeing
+  if (
+    lower.includes('emotional') ||
+    lower.includes('stigma') ||
+    lower.includes('confidence') ||
+    lower.includes('daily living') ||
+    lower.includes('walk in my skin') ||
+    lower.includes('mental health') ||
+    lower.includes('self-esteem') ||
+    lower.includes('acceptance') ||
+    lower.includes('camouflage') ||
+    lower.includes('coping') ||
+    lower.includes('social') ||
+    lower.includes('workplace') ||
+    lower.includes('school')
+  ) {
+    return { page: 'living-with-vitiligo', section: 'daily_life_and_wellbeing', component: 'StigmaCarousel' };
+  }
+
+  // Treatments and Care
+  if (
+    lower.includes('treatment') ||
+    lower.includes('phototherapy') ||
+    lower.includes('jak inhibitor') ||
+    lower.includes('steroid') ||
+    lower.includes('tacrolimus') ||
+    lower.includes('ruxolitinib') ||
+    lower.includes('dermatologist') ||
+    lower.includes('clinic') ||
+    lower.includes('topical') ||
+    lower.includes('uvb') ||
+    lower.includes('repigmentation') ||
+    lower.includes('therapy') ||
+    lower.includes('prescription')
+  ) {
+    return { page: 'treatment-and-care', section: 'treatment_options_and_guidance', component: 'TreatmentJourneyCycle' };
+  }
+
+  // Patient Journeys
+  if (
+    lower.includes('white patch') ||
+    lower.includes('patches are changing') ||
+    lower.includes('patches seem steady') ||
+    lower.includes('lived with vitiligo for a while') ||
+    lower.includes('here for my child') ||
+    lower.includes('starting point') ||
+    lower.includes('journey') ||
+    lower.includes('experience') ||
+    lower.includes('guide')
+  ) {
+    return { page: 'patient-journeys', section: 'journey_steps', component: 'GuideChapter' };
+  }
+
+  // Resources and Support
+  if (
+    lower.includes('resource') ||
+    lower.includes('support organisation') ||
+    lower.includes('find the right support') ||
+    lower.includes('helpline') ||
+    lower.includes('community') ||
+    lower.includes('advocacy') ||
+    lower.includes('reading list')
+  ) {
+    return { page: 'resources', section: 'support_and_community', component: 'Resources' };
+  }
+
+  return { page: 'common', section: 'general_ui', component: 'UI' };
+}
+
 export async function ensureDatabaseInitialized(): Promise<void> {
   if (initPromise) return initPromise;
 
@@ -168,15 +320,17 @@ export async function ensureDatabaseInitialized(): Promise<void> {
             await prisma.$transaction(async (tx) => {
               for (const [vthKey, langMap] of batch as [string, Record<string, string>][]) {
                 const enText = langMap['en'] || vthKey;
+                const { page, section, component } = determinePageAndSection(vthKey, enText);
+
                 const keyRecord = await tx.translationKey.upsert({
                   where: { key: vthKey },
-                  update: { sourceText: enText },
+                  update: { sourceText: enText, page, section, component },
                   create: {
                     key: vthKey,
                     sourceText: enText,
-                    page: 'general',
-                    section: 'content',
-                    component: 'UI',
+                    page,
+                    section,
+                    component,
                     description: `Key ${vthKey}`,
                   },
                 });
@@ -217,10 +371,31 @@ export async function ensureDatabaseInitialized(): Promise<void> {
           }
           console.log('✔ Initial translations seeded.');
         }
+      } else {
+        // 5. Recategorize existing keys if they are all marked as 'general'
+        const generalCount = await prisma.translationKey.count({
+          where: { page: 'general' },
+        });
+
+        if (generalCount > 0) {
+          console.log(`Recategorizing ${generalCount} translation keys currently marked as 'general'...`);
+          const keysToUpdate = await prisma.translationKey.findMany({
+            where: { page: 'general' },
+            select: { id: true, key: true, sourceText: true },
+          });
+
+          for (const k of keysToUpdate) {
+            const { page, section, component } = determinePageAndSection(k.key, k.sourceText);
+            await prisma.translationKey.update({
+              where: { id: k.id },
+              data: { page, section, component },
+            });
+          }
+          console.log('✔ Keys successfully recategorized into distinct pages.');
+        }
       }
     } catch (err) {
       console.error('Database initialization error:', err);
-      // Reset promise so subsequent requests can retry
       initPromise = null;
       throw err;
     }
@@ -228,4 +403,3 @@ export async function ensureDatabaseInitialized(): Promise<void> {
 
   return initPromise;
 }
-

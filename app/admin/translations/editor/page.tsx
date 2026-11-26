@@ -315,6 +315,7 @@ export default function SideBySideEditorPage() {
                   <option value="navigation">Navigation Header</option>
                   <option value="footer">Footer & Disclaimer</option>
                   <option value="common">Common & UI</option>
+                  <option value="general">General & Other</option>
                 </select>
               </div>
 

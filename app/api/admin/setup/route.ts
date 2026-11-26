@@ -1,15 +1,37 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { ensureDatabaseInitialized } from '@/lib/dbInit';
+import { ensureDatabaseInitialized, determinePageAndSection } from '@/lib/dbInit';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
     await ensureDatabaseInitialized();
+
+    const { searchParams } = new URL(request.url);
+    const shouldReclassify = searchParams.get('reclassify') === 'true';
+
+    if (shouldReclassify) {
+      const allKeys = await prisma.translationKey.findMany({
+        select: { id: true, key: true, sourceText: true },
+      });
+      for (const k of allKeys) {
+        const { page, section, component } = determinePageAndSection(k.key, k.sourceText);
+        await prisma.translationKey.update({
+          where: { id: k.id },
+          data: { page, section, component },
+        });
+      }
+    }
 
     const adminCount = await prisma.adminUser.count();
     const languageCount = await prisma.supportedLanguage.count();
     const keyCount = await prisma.translationKey.count();
     const translationCount = await prisma.translation.count();
+
+    const pageBreakdown = await prisma.translationKey.groupBy({
+      by: ['page'],
+      where: { isActive: true },
+      _count: { id: true },
+    });
 
     return NextResponse.json({
       success: true,
@@ -19,6 +41,7 @@ export async function GET() {
         languageCount,
         keyCount,
         translationCount,
+        pages: pageBreakdown.map((p) => ({ page: p.page, count: p._count.id })),
       },
       dbTarget: {
         host: process.env.DB_HOST || '127.0.0.1',

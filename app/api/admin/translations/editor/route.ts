@@ -1,11 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { TranslationService } from '@/lib/translationService';
 import { getAdminUserFromRequest } from '@/lib/auth';
-
-
+import { ensureDatabaseInitialized } from '@/lib/dbInit';
 
 export async function GET(request: NextRequest) {
   try {
+    try {
+      await ensureDatabaseInitialized();
+    } catch (e) {
+      console.warn('Database init check in editor:', e);
+    }
+
     const { searchParams } = new URL(request.url);
     const page = searchParams.get('page') || undefined;
     const section = searchParams.get('section') || undefined;
