@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "prisma generate && next build --webpack",
     "start": "next start",
     "start:hostinger": "node server.js",
     "lint": "eslint",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
+    "@tailwindcss/postcss": "^4.3.5",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -21,6 +22,7 @@
     "framer-motion": "^14.1.0",
     "lucide-react": "^1.55.0",
     "next": "16.4.6",
+    "postcss": "^8.5.33",
     "prisma": "^5.22.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
