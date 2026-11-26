@@ -23,6 +23,9 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {
+    resolveAlias: {
+      '@': path.resolve(__dirname),
+    },
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],
