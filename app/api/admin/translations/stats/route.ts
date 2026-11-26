@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { TranslationService } from '@/lib/translationService';
 import { getAdminUserFromRequest } from '@/lib/auth';
 
+export const dynamic = 'force-dynamic';
+
 
 
 export async function GET(request: NextRequest) {

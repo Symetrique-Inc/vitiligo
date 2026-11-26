@@ -1,11 +1,17 @@
 import type { NextConfig } from "next";
 import path from "path";
 
+// Restrict libuv threadpool to prevent container thread exhaustion (OS error 11) on Hostinger
+process.env.UV_THREADPOOL_SIZE = process.env.UV_THREADPOOL_SIZE || "2";
+
 const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     agentFeedback: true,
     agentUpgrade: "security",
+    cpus: 1,
+    workerThreads: false,
+    webpackBuildWorker: false,
   },
   webpack: (config) => {
     config.resolve.alias = {
