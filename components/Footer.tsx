@@ -33,9 +33,9 @@ export const Footer: React.FC = () => {
                 />
               </Link>
             </div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
               {tById('VTH-00006', 'About')}
-            </h4>
+            </h2>
             <p className="text-xs sm:text-sm text-[#5B6785] leading-relaxed">
               {tById('VTH-00725', 'OneVitiligo is a dedicated initiative for people living with vitiligo and those who support them. Our aim is to make information easier to understand and help people prepare for conversations about their care.')}
             </p>
@@ -43,9 +43,9 @@ export const Footer: React.FC = () => {
 
           {/* Column 2 — Explore */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
               {tById('VTH-00726', 'Explore')}
-            </h4>
+            </h2>
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#5B6785]">
               <li>
                 <Link href="/understand-vitiligo" className="hover:text-[#1D5FE0] transition-colors">
@@ -68,6 +68,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/latest-developments" className="hover:text-[#1D5FE0] transition-colors">
+                  {tById('VTH-00713', 'Treatment Developments')}
+                </Link>
+              </li>
+              <li>
                 <Link href="/resources" className="hover:text-[#1D5FE0] transition-colors">
                   {tById('VTH-00714', 'Resources & Support')}
                 </Link>
@@ -77,13 +82,23 @@ export const Footer: React.FC = () => {
 
           {/* Column 3 — OneVitiligo */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#0B1F6B]">
               OneVitiligo
-            </h4>
+            </h2>
             <ul className="space-y-2.5 text-xs sm:text-sm text-[#5B6785]">
               <li>
                 <Link href="/about" className="hover:text-[#1D5FE0] transition-colors">
                   {tById('VTH-00006', 'About us')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/medical-advisory-board" className="hover:text-[#1D5FE0] transition-colors">
+                  {tById('VTH-00742', 'Medical Advisory Board')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/editorial-policy" className="hover:text-[#1D5FE0] transition-colors">
+                  {tById('VTH-00743', 'Editorial Policy')}
                 </Link>
               </li>
               <li>
@@ -108,7 +123,9 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button
+                  type="button"
                   onClick={() => {
+                    localStorage.removeItem('onevitiligo_cookie_consent');
                     localStorage.removeItem('vitiligo_hub_cookie_consent');
                     window.location.reload();
                   }}
@@ -116,17 +133,6 @@ export const Footer: React.FC = () => {
                 >
                   {tById('VTH-00729', 'Cookie settings')}
                 </button>
-              </li>
-              <li className="pt-1 border-t border-gray-100">
-                <Link
-                  href="/admin/translations"
-                  className="text-[#1D5FE0] hover:text-[#0B1F6B] font-semibold transition-colors flex items-center space-x-1"
-                >
-                  <span>Translation Management</span>
-                  <span className="text-[10px] bg-[#EAF2FF] text-[#1D5FE0] px-1.5 py-0.2 rounded font-bold">
-                    Super Admin
-                  </span>
-                </Link>
               </li>
             </ul>
           </div>

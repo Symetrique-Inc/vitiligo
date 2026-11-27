@@ -4,6 +4,11 @@ import { AdminSidebar } from '@/components/admin/AdminSidebar';
 export const metadata = {
   title: 'Translation Management | OneVitiligo Super Admin',
   description: 'Manage, review, edit and publish all multilingual website translations.',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 export default function AdminTranslationsLayout({

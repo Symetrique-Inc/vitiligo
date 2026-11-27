@@ -3,13 +3,17 @@ import { JourneyPageTemplate } from '@/components/guide/JourneyPageTemplate';
 import { journeyChangingData } from '@/components/guide/journeyData';
 
 export const metadata: Metadata = {
-  title: 'My patches are changing | OneVitiligo',
+  title: 'Vitiligo Patches Changing: What It Means',
   description:
-    'New patches can make the future feel uncertain. This journey explains the choices that matter when the main concern is ongoing change.',
+    'New patches can make the future feel uncertain. This journey explains the choices that matter when your main concern is ongoing skin change.',
+  alternates: {
+    canonical: 'https://www.onevitiligo.com/journey-changing',
+  },
   openGraph: {
-    title: 'My patches are changing | OneVitiligo',
+    title: 'Vitiligo Patches Changing: What It Means | OneVitiligo',
     description:
-      'New patches can make the future feel uncertain. This journey explains the choices that matter when the main concern is ongoing change.',
+      'New patches can make the future feel uncertain. This journey explains the choices that matter when your main concern is ongoing skin change.',
+    url: 'https://www.onevitiligo.com/journey-changing',
   },
 };
 

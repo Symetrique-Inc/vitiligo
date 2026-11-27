@@ -3,13 +3,17 @@ import { JourneyPageTemplate } from '@/components/guide/JourneyPageTemplate';
 import { journeyForMyChildData } from '@/components/guide/journeyData';
 
 export const metadata: Metadata = {
-  title: 'I am here for my child | OneVitiligo',
+  title: 'Vitiligo in Children: A Guide for Parents',
   description:
-    'You may be balancing treatment questions, school life and your own worry. Separate clinical choices from everyday support, with room for your child’s voice.',
+    'What parents should know about vitiligo in children: diagnosis, treatment choices, school life, and emotional support.',
+  alternates: {
+    canonical: 'https://www.onevitiligo.com/journey-for-my-child',
+  },
   openGraph: {
-    title: 'I am here for my child | OneVitiligo',
+    title: 'Vitiligo in Children: A Guide for Parents | OneVitiligo',
     description:
-      'You may be balancing treatment questions, school life and your own worry. Separate clinical choices from everyday support, with room for your child’s voice.',
+      'What parents should know about vitiligo in children: diagnosis, treatment choices, school life, and emotional support.',
+    url: 'https://www.onevitiligo.com/journey-for-my-child',
   },
 };
 

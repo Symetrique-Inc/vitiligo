@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { ShieldCheck, Share2, Printer, Check, BookOpen } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageContext';
 
@@ -65,7 +66,10 @@ export const MedicalBadge: React.FC<MedicalBadgeProps> = ({
             </span>
           </div>
           <p className="text-xs text-[#5B6785] mt-0.5">
-            {t('By')} <span className="font-medium text-[#1E2A4A]">{reviewerName}</span> ({reviewerTitle})
+            {t('By')} <span className="font-medium text-[#1E2A4A]">{reviewerName}</span> (
+            <Link href="/medical-advisory-board" className="text-[#1D5FE0] hover:underline font-medium">
+              {reviewerTitle}
+            </Link>)
           </p>
         </div>
       </div>
@@ -102,7 +106,7 @@ export const MedicalBadge: React.FC<MedicalBadgeProps> = ({
       {showSources && (
         <div className="w-full pt-3 mt-1 border-t border-[#D5E2FA] text-xs text-[#5B6785]">
           <p className="font-medium text-[#0B1F6B] mb-1">{t('Peer-Reviewed References & Guidelines:')}</p>
-          <ul className="list-disc list-inside space-y-0.5">
+          <ul className="list-disc list-inside space-y-0.5 mb-2">
             {sources.map((src, i) => (
               <li key={i}>
                 <a
@@ -116,6 +120,12 @@ export const MedicalBadge: React.FC<MedicalBadgeProps> = ({
               </li>
             ))}
           </ul>
+          <p className="pt-2 border-t border-[#E2E8F0] text-[11px] text-[#64748B]">
+            All clinical content is developed following our{' '}
+            <Link href="/editorial-policy" className="text-[#1D5FE0] underline hover:text-[#0B1F6B]">
+              Editorial &amp; Verification Standards
+            </Link>.
+          </p>
         </div>
       )}
     </div>

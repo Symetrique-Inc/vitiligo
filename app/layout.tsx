@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Caveat } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { CookieBanner } from "@/components/CookieBanner";
+import { JsonLd } from "@/components/JsonLd";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,25 +24,27 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vitiligohub.org'),
+  metadataBase: new URL('https://www.onevitiligo.com'),
   title: {
-    default: "OneVitiligo | Every skin. Every story. One community.",
+    default: "Vitiligo Information & Support | OneVitiligo",
     template: "%s | OneVitiligo",
   },
-  description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
-  keywords: ["vitiligo", "vitiligo support", "melanocytes", "dermatology", "autoimmune skin condition", "vitiligo treatment", "JAK inhibitors", "phototherapy"],
+  description: "Trusted, plain-language vitiligo information, real experiences and practical support for every stage — for you, your child or someone you love.",
   authors: [{ name: "OneVitiligo Medical Advisory Board" }],
+  alternates: {
+    canonical: 'https://www.onevitiligo.com',
+  },
   openGraph: {
-    title: "OneVitiligo | Every skin. Every story. One community.",
-    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
-    url: "https://vitiligohub.org",
+    title: "Vitiligo Information & Support | OneVitiligo",
+    description: "Trusted, plain-language vitiligo information, real experiences and practical support for every stage — for you, your child or someone you love.",
+    url: "https://www.onevitiligo.com",
     siteName: "OneVitiligo",
     images: [
       {
         url: "/images/hero-panoramic.jpg",
         width: 1200,
         height: 630,
-        alt: "A group of people of different ages and skin tones, some with vitiligo, standing together with a doctor.",
+        alt: "A diverse group of people of different ages and skin tones living with vitiligo.",
       },
     ],
     locale: "en_US",
@@ -49,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "OneVitiligo | Every skin. Every story. One community.",
-    description: "Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.",
+    title: "Vitiligo Information & Support | OneVitiligo",
+    description: "Trusted, plain-language vitiligo information, real experiences and practical support for every stage — for you, your child or someone you love.",
     images: ["/images/hero-panoramic.jpg"],
   },
   icons: {
@@ -68,7 +71,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -89,6 +91,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <LanguageProvider>
+          <JsonLd />
           <div id="main-content" className="flex-1 flex flex-col">
             {children}
           </div>

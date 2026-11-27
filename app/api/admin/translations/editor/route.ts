@@ -11,6 +11,11 @@ export async function GET(request: NextRequest) {
       console.warn('Database init check in editor:', e);
     }
 
+    const user = await getAdminUserFromRequest(request);
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const page = searchParams.get('page') || undefined;
     const section = searchParams.get('section') || undefined;
@@ -40,7 +45,10 @@ export async function GET(request: NextRequest) {
 export async function PUT(request: NextRequest) {
   try {
     const user = await getAdminUserFromRequest(request);
-    const userName = user?.name || 'Super Admin';
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+    const userName = user.name || 'Super Admin';
 
     const body = await request.json();
 

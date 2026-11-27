@@ -6,7 +6,10 @@ import { prisma } from '@/lib/prisma';
 export async function POST(request: NextRequest) {
   try {
     const user = await getAdminUserFromRequest(request);
-    const userName = user?.name || 'Super Admin';
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+    const userName = user.name || 'Super Admin';
 
     const body = await request.json();
     const { key, page, section, component, description, sourceText, translations } = body;
@@ -39,7 +42,10 @@ export async function POST(request: NextRequest) {
 export async function PUT(request: NextRequest) {
   try {
     const user = await getAdminUserFromRequest(request);
-    const userName = user?.name || 'Super Admin';
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+    const userName = user.name || 'Super Admin';
 
     const body = await request.json();
     const { id, sourceText, page, section, component, description } = body;
@@ -67,6 +73,11 @@ export async function PUT(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
+    const user = await getAdminUserFromRequest(request);
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
 

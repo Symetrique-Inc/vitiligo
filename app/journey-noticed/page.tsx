@@ -3,13 +3,17 @@ import { JourneyPageTemplate } from '@/components/guide/JourneyPageTemplate';
 import { journeyNoticedData } from '@/components/guide/journeyData';
 
 export const metadata: Metadata = {
-  title: 'I have noticed a white patch | OneVitiligo',
+  title: 'Noticed a White Patch on Your Skin?',
   description:
-    'You may want an answer quickly without knowing which information to trust. First understand the patch; a treatment decision comes after that.',
+    'Not every light patch is vitiligo. What to note, when to see a dermatologist and what questions to ask first.',
+  alternates: {
+    canonical: 'https://www.onevitiligo.com/journey-noticed',
+  },
   openGraph: {
-    title: 'I have noticed a white patch | OneVitiligo',
+    title: 'Noticed a White Patch on Your Skin? | OneVitiligo',
     description:
-      'You may want an answer quickly without knowing which information to trust. First understand the patch; a treatment decision comes after that.',
+      'Not every light patch is vitiligo. What to note, when to see a dermatologist and what questions to ask first.',
+    url: 'https://www.onevitiligo.com/journey-noticed',
   },
 };
 

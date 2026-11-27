@@ -53,7 +53,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
       if (normalized === `${part1} ${part2}`) {
         return (
           <>
-            <span className="block text-[#0B1F6B]">{t(part1)}</span>
+            <span className="block text-[#0B1F6B]">{t(part1)}</span>{' '}
             <span className="block text-[#1D5FE0]">{t(part2)}</span>
           </>
         );
@@ -68,7 +68,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
       const [p1, ...rest] = translated.split('\n');
       return (
         <>
-          <span className="block text-[#0B1F6B]">{p1}</span>
+          <span className="block text-[#0B1F6B]">{p1}</span>{' '}
           <span className="block text-[#1D5FE0]">{rest.join(' ')}</span>
         </>
       );
@@ -81,7 +81,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
       const p2 = translated.slice(pVirIndex + 2);
       return (
         <>
-          <span className="block text-[#0B1F6B]">{p1}</span>
+          <span className="block text-[#0B1F6B]">{p1}</span>{' '}
           <span className="block text-[#1D5FE0]">{p2}</span>
         </>
       );
@@ -94,7 +94,7 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
       const p2 = translated.slice(dotIndex + 2);
       return (
         <>
-          <span className="block text-[#0B1F6B]">{p1}</span>
+          <span className="block text-[#0B1F6B]">{p1}</span>{' '}
           <span className="block text-[#1D5FE0]">{p2}</span>
         </>
       );
@@ -120,38 +120,21 @@ export const GuideHero: React.FC<GuideHeroProps> = ({
   if (illustration) {
     return (
       <section className="relative w-full min-h-[460px] lg:min-h-[500px] xl:min-h-[520px] bg-gradient-to-r from-[#F6F9FF] via-white to-[#EEF5FF] border-b border-[#DDE5F5]/70 overflow-hidden flex flex-col justify-center mb-6 sm:mb-10">
-        {/* Mobile illustration banner */}
-        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[300px] sm:max-h-[360px] bg-[#EAF2FF] min-[900px]:hidden overflow-hidden">
+        {/* Single Unified Responsive Hero Illustration (prevents duplicate image downloads) */}
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[300px] sm:max-h-[360px] min-[900px]:max-h-none min-[900px]:aspect-auto min-[900px]:absolute min-[900px]:top-0 min-[900px]:right-0 min-[900px]:bottom-0 min-[900px]:w-[56%] lg:min-[900px]:w-[58%] xl:min-[900px]:w-[60%] min-[900px]:h-full z-0 overflow-hidden bg-[#EAF2FF]">
           <Image
             src={illustration.src}
             alt={translatedAlt}
             fill
             priority
-            fetchPriority="high"
-            sizes="(max-width: 900px) 100vw, 50vw"
-            className="object-cover"
-            style={{
-              objectPosition: illustration.objectPosition || 'center center',
-            }}
-          />
-        </div>
-
-        {/* Desktop & Tablet Seamless Illustration */}
-        <div className="hidden min-[900px]:block absolute top-0 right-0 bottom-0 w-[56%] lg:w-[58%] xl:w-[60%] h-full z-0 pointer-events-none overflow-hidden">
-          <Image
-            src={illustration.src}
-            alt={translatedAlt}
-            fill
-            priority
-            fetchPriority="high"
-            sizes="(min-width: 900px) 60vw, 100vw"
+            sizes="(max-width: 900px) 100vw, 60vw"
             className="object-cover"
             style={{
               objectPosition: illustration.objectPosition || 'center center',
             }}
           />
           <div
-            className="absolute inset-y-0 left-0 w-[24%] bg-gradient-to-r from-white via-white/80 to-transparent z-10"
+            className="hidden min-[900px]:block absolute inset-y-0 left-0 w-[24%] bg-gradient-to-r from-white via-white/80 to-transparent z-10"
             aria-hidden="true"
           />
         </div>

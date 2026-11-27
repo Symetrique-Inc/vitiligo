@@ -2,9 +2,23 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { verifyPassword, createSessionToken, COOKIE_NAME } from '@/lib/auth';
 import { ensureDatabaseInitialized } from '@/lib/dbInit';
+import { checkRateLimit, resetRateLimit, getClientIp } from '@/lib/rateLimit';
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request);
+    const rateCheck = checkRateLimit(`login_${ip}`, 5, 15 * 60 * 1000);
+
+    if (!rateCheck.allowed) {
+      const waitMinutes = Math.ceil((rateCheck.resetTime - Date.now()) / 60000);
+      return NextResponse.json(
+        {
+          error: `Too many failed login attempts. Please try again in ${waitMinutes} minute${waitMinutes > 1 ? 's' : ''}.`,
+        },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const { email, password } = body;
 
@@ -35,6 +49,9 @@ export async function POST(request: NextRequest) {
     if (!isValid) {
       return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 });
     }
+
+    // Successful authentication: clear rate limit
+    resetRateLimit(`login_${ip}`);
 
     const sessionUser = {
       id: admin.id,

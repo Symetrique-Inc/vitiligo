@@ -3,13 +3,17 @@ import { JourneyPageTemplate } from '@/components/guide/JourneyPageTemplate';
 import { journeyLongJourneyData } from '@/components/guide/journeyData';
 
 export const metadata: Metadata = {
-  title: 'I have lived with vitiligo for a while | OneVitiligo',
+  title: 'Living with Long-Term Vitiligo: Long-Term Outlook',
   description:
-    'Another list of remedies may not help. What matters is why an earlier plan was limited, what has changed and what would make the next option worth considering.',
+    'Understanding why earlier plans were limited, what new medical options exist, and what makes a next step worth considering.',
+  alternates: {
+    canonical: 'https://www.onevitiligo.com/journey-long-journey',
+  },
   openGraph: {
-    title: 'I have lived with vitiligo for a while | OneVitiligo',
+    title: 'Living with Long-Term Vitiligo: Long-Term Outlook | OneVitiligo',
     description:
-      'Another list of remedies may not help. What matters is why an earlier plan was limited, what has changed and what would make the next option worth considering.',
+      'Understanding why earlier plans were limited, what new medical options exist, and what makes a next step worth considering.',
+    url: 'https://www.onevitiligo.com/journey-long-journey',
   },
 };
 

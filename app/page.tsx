@@ -8,14 +8,26 @@ import { LandingSupportPanel } from '@/components/landing/LandingSupportPanel';
 import { LandingAbout } from '@/components/landing/LandingAbout';
 
 export const metadata: Metadata = {
-  title: 'OneVitiligo | Every skin. Every story. One community.',
+  title: 'Vitiligo Information & Support | OneVitiligo',
   description:
-    'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.',
+    'Trusted, plain-language vitiligo information, real experiences and practical support for every stage — for you, your child or someone you love.',
+  alternates: {
+    canonical: 'https://www.onevitiligo.com',
+  },
   openGraph: {
-    title: 'OneVitiligo | Every skin. Every story. One community.',
+    title: 'Vitiligo Information & Support | OneVitiligo',
     description:
-      'Clear, trusted information about vitiligo, real experiences and practical support. A patient-centred platform by OneVitiligo.',
+      'Trusted, plain-language vitiligo information, real experiences and practical support for every stage — for you, your child or someone you love.',
+    url: 'https://www.onevitiligo.com',
     type: 'website',
+    images: [
+      {
+        url: '/images/hero-panoramic.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'OneVitiligo - Living with vitiligo community',
+      },
+    ],
   },
 };
 

@@ -5,7 +5,10 @@ import { getAdminUserFromRequest } from '@/lib/auth';
 export async function POST(request: NextRequest) {
   try {
     const user = await getAdminUserFromRequest(request);
-    const userName = user?.name || 'Super Admin';
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+    const userName = user.name || 'Super Admin';
 
     const body = await request.json();
     const { scope = 'ALL', page, languageCode, translationIds } = body;

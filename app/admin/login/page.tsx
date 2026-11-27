@@ -41,11 +41,6 @@ export default function AdminLoginPage() {
     }
   };
 
-  const handleQuickDemoLogin = () => {
-    setEmail('admin@onevitiligo.org');
-    setPassword('SuperAdmin@2026');
-  };
-
   return (
     <div className="min-h-screen bg-[#07154B] flex flex-col justify-center items-center p-4 relative overflow-hidden">
       {/* Background Decorative Rings */}
@@ -126,20 +121,6 @@ export default function AdminLoginPage() {
             )}
           </button>
         </form>
-
-        {/* Quick Demo Helper */}
-        <div className="mt-8 pt-6 border-t border-gray-100 text-center">
-          <p className="text-[11px] text-[#5B6785] mb-2.5">
-            Default Super Admin credentials:
-          </p>
-          <button
-            type="button"
-            onClick={handleQuickDemoLogin}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#EAF2FF] hover:bg-[#D6E6FF] text-[#1D5FE0] text-[11px] font-semibold transition-colors"
-          >
-            <span>Auto-fill: admin@onevitiligo.org</span>
-          </button>
-        </div>
       </div>
     </div>
   );

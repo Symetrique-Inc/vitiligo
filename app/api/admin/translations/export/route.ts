@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-
-
+import { getAdminUserFromRequest } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
   try {
+    const user = await getAdminUserFromRequest(request);
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized: Admin authentication required' }, { status: 401 });
+    }
+
     const { searchParams } = new URL(request.url);
     const format = searchParams.get('format') || 'json'; // json or csv
     const languageCode = searchParams.get('language') || 'all';

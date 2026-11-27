@@ -1,10 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { ensureDatabaseInitialized, determinePageAndSection } from '@/lib/dbInit';
+import { getAdminUserFromRequest } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
   try {
     await ensureDatabaseInitialized();
+
+    let adminCount = await prisma.adminUser.count();
+    if (adminCount > 0) {
+      const user = await getAdminUserFromRequest(request);
+      if (!user) {
+        return NextResponse.json(
+          { error: 'Unauthorized: Admin authentication required' },
+          { status: 401 }
+        );
+      }
+    }
 
     const { searchParams } = new URL(request.url);
     const shouldReclassify = searchParams.get('reclassify') === 'true';
@@ -22,7 +34,7 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    const adminCount = await prisma.adminUser.count();
+    adminCount = await prisma.adminUser.count();
     const languageCount = await prisma.supportedLanguage.count();
     const keyCount = await prisma.translationKey.count();
     const translationCount = await prisma.translation.count();
